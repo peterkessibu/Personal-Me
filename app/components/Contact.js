@@ -5,12 +5,15 @@ import { AiFillInstagram, AiFillMail, AiFillLinkedin } from 'react-icons/ai';
 import emailjs from 'emailjs-com';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import ReCAPTCHA from 'react-google-recaptcha';
+
 
 // Contact Component
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '', honeypot: '' });
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const [recaptchaToken, setRecaptchaToken] = useState('');
 
     // Validate form input
     const validateForm = () => {
@@ -28,6 +31,9 @@ const Contact = () => {
         if (phone.length <= 10) {
             return 'Please enter a valid phone number';
         }
+        if (!recaptchaToken) {
+            return 'Please complete the reCAPTCHA';
+        }
         return '';
     };
 
@@ -41,6 +47,11 @@ const Contact = () => {
     // Handle phone number input change
     const handlePhoneChange = (value) => {
         setFormData({ ...formData, phone: value });
+    };
+
+    // Handle reCAPTCHA change
+    const handleRecaptchaChange = (value) => {
+        setRecaptchaToken(value);
     };
 
     // Handle form submission
@@ -64,7 +75,10 @@ const Contact = () => {
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
                 templateParams,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY 
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+                process.env.NEXT_PUBLIC_EMAILJS_PRIVATE_KEY,
+                process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
+
             )
             .then(
                 () => setSuccess('Message sent successfully!'),
@@ -74,7 +88,7 @@ const Contact = () => {
 
     return (
         <motion.section
-            className="min-h-screen p-6 sm:p-10 md:p-16 bg-gray-50"
+            className="min-h-screen p-6 bg-[#dbd5f7]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -84,18 +98,18 @@ const Contact = () => {
             {/* Social Links */}
             <div className="flex justify-center space-x-4 sm:space-x-6 mb-6 sm:mb-8">
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                    <AiFillInstagram className="w-6 h-6 sm:w-8 sm:h-8 text-gray-800 hover:text-purple-600 transition duration-300" />
+                    <AiFillInstagram className="w-8 h-8 hover:text-purple-600 transition duration-300" />
                 </a>
                 <a href="mailto:your.email@example.com">
-                    <AiFillMail className="w-6 h-6 sm:w-8 sm:h-8 text-gray-800 hover:text-purple-600 transition duration-300" />
+                    <AiFillMail className="w-8 h-8 hover:text-[#4e41ff] transition duration-400" />
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                    <AiFillLinkedin className="w-6 h-6 sm:w-8 sm:h-8 text-gray-800 hover:text-purple-600 transition duration-300" />
+                    <AiFillLinkedin className="w-8 h-8 rounded-lg hover:text-[#3c65ee] transition duration-300" />
                 </a>
             </div>
 
             {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="max-w-md lg:max-w-lg mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-lg space-y-4 sm:space-y-6">
+            <form onSubmit={handleSubmit} className="max-w-md lg:max-w-lg mx-auto bg-white p-6 rounded-xl shadow-lg space-y-4 sm:space-y-6">
                 <div className="hidden">
                     <label htmlFor="honeypot" className="block mb-1 sm:mb-2 text-sm sm:text-base font-medium text-gray-600">Leave this field empty</label>
                     <input
@@ -108,7 +122,7 @@ const Contact = () => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="name" className="block mb-1 sm:mb-2 text-sm sm:text-base font-medium text-gray-600">Name</label>
+                    <label htmlFor="name" className="block mb-1 sm:mb-2 text-base font-medium text-gray-700">Name</label>
                     <input
                         type="text"
                         name="name"
@@ -153,6 +167,12 @@ const Contact = () => {
                         required
                     />
                 </div>
+                {/* <div className="mt-4">
+                    <ReCAPTCHA
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                        onChange={handleRecaptchaChange}
+                    />
+                </div> */}
                 {error && <p className="text-red-500 text-sm sm:text-base">{error}</p>}
                 {success && <p className="text-green-500 text-sm sm:text-base">{success}</p>}
                 <button

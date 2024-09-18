@@ -9,6 +9,7 @@ import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 
+
 const Home = () => {
   return (
     <div >

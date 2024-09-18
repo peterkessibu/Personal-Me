@@ -24,7 +24,7 @@ const TechStack = () => {
   return (
     <motion.section
       id="techstack"
-      className="p-10 bg-gray-500 w-full max-w-screen"
+      className="p-10 bg-[#ffffff] w-full max-w-screen"
       ref={ref}
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : { opacity: 0 }}

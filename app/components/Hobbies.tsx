@@ -19,7 +19,7 @@ const Hobbies = () => {
   return (
     <motion.section
       id="hobbies"
-      className="bg-orange-600 p-10 mb-10 w-full max-w-screen"
+      className="bg-white p-10 mb-10 w-full max-w-screen"
       ref={ref}
       initial={{ opacity: 0, x: 50 }}
       animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
@@ -30,7 +30,7 @@ const Hobbies = () => {
         {hobbies.map((hobby, index) => (
           <motion.div
             key={hobby.name}
-            className="bg-white shadow-md rounded-lg overflow-hidden"
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8, delay: index * 0.2 }} // Delays for individual cards

@@ -1,11 +1,12 @@
+'use client'
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 
 const Gallery = () => {
   const { ref, inView } = useInView({
-    triggerOnce: false, // Allow animation on scroll down/up
-    threshold: 0.1,
+    triggerOnce: false, // Ensures the animation can happen multiple times when it enters the viewport
+    threshold: 0.1, // Triggers the animation when 10% of the section is in view
   });
 
   // Variants for section animation
@@ -24,7 +25,6 @@ const Gallery = () => {
     }),
     hover: { scale: 1.05, boxShadow: '0px 4px 20px rgba(0,0,0,0.2)' },
   };
-
   const images = [
     '/images/pic1.jpg',
     '/images/pic2.jpg',

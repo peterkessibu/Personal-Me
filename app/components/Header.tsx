@@ -24,7 +24,7 @@ const Header = () => {
     }, []);
 
     return (
-        <header className={`fixed max-w-screen right-0 left-0 w-full top-0 p-4 transition-transform duration-300 ${scrolled ? 'bg-opacity-80 backdrop-blur-xl shadow-lg' : 'bg-transparent'} text-[#111263]`}>
+        <header className={`fixed rounded-full my-3 mx-4 max-w-screen right-0 left-0 w-full top-0 p-4 transition-transform duration-300 ${scrolled ? 'bg-opacity-80 backdrop-blur-xl shadow-lg' : 'bg-transparent'} text-[#111263] z-50`}>
             <nav className="flex justify-between items-center">
                 {/* Menu button for mobile view */}
                 <button
