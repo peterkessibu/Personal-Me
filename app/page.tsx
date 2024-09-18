@@ -13,6 +13,7 @@ import Hobbies from './components/Hobbies';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import HomePage from './components/Experience';
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -129,6 +130,7 @@ const Home = () => {
         </AnimatePresence>
       </header>
       <Hero />
+      <HomePage />
       <Projects />
       <TechStack />
       <Gallery />
