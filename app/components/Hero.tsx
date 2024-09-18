@@ -31,13 +31,14 @@ const Hero = () => {
   return (
     <motion.section
       id="hero"
-      className="h-screen w-full max-w-screen bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white"
+      className="h-screen w-full max-w-screen bg-cover bg-center flex items-center justify-center text-white"
       ref={ref}
       initial="hidden"
       animate={controls}
+      style={{ backgroundImage: 'url(/path-to-your-image.jpg)' }} // Replace with your image path
     >
       <motion.div
-        className="text-center"
+        className="text-center bg-black bg-opacity-50 p-8 rounded-lg" // Optional: Add background color to improve text readability
         variants={heroVariants}
       >
         <motion.h1
