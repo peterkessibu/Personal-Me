@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     <motion.section
       id="hero"
-      className="h-screen bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white"
+      className="h-screen w-full max-w-screen bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white"
       ref={ref}
       initial="hidden"
       animate={controls}

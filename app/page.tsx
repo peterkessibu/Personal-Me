@@ -4,10 +4,10 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import TechStack from './components/TechStack';
 import MotivationalQuotes from './components/MotivationalQuotes';
-// import Hobbies from './components/Hobbies';
+import Hobbies from './components/Hobbies';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
-// import Contact from './components/Contact';
+import Contact from './components/Contact';
 
 const Home = () => {
   return (
@@ -18,8 +18,8 @@ const Home = () => {
       <TechStack />
       <Gallery /> 
       <MotivationalQuotes />
-      {/* <Hobbies /> */}
-      {/* <Contact /> */}
+      <Hobbies /> 
+      <Contact />
       <Footer />
     </div>
   );

@@ -57,7 +57,7 @@ const Contact = () => {
         }
 
         emailjs
-            .send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_USER_ID')
+            .send('service_2fvuxsr', 'template_bd0pbc9', formData, 'peter.essibu@stu.uc.edu.gh')
             .then(
                 () => setSuccess('Message sent successfully!'),
                 () => setError('Failed to send message. Please try again later.')

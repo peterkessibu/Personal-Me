@@ -12,7 +12,7 @@ const Projects = () => {
   return (
     <motion.section
       id="projects"
-      className="p-10"
+      className="p-10 bg-blue-600 w-full max-w-screen"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}

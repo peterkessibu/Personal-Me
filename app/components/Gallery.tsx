@@ -34,7 +34,7 @@ const Gallery = () => {
   return (
     <motion.section
       id="gallery"
-      className="p-10 bg-white"
+      className="p-10 bg-white w-full max-w-screen"
       ref={ref}
       variants={sectionVariants}
       initial="hidden"
