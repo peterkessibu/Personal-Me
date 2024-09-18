@@ -1,27 +1,23 @@
 'use client';
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { AiFillInstagram, AiFillMail, AiFillLinkedin } from 'react-icons/ai';
 import emailjs from 'emailjs-com';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-// Define the form data structure
-interface FormData {
-    name: string;
-    email: string;
-    phone: string;
-    message: string;
-}
-
+// Contact Component
 const Contact = () => {
-    const [formData, setFormData] = useState < FormData > ({ name: '', email: '', phone: '', message: '' });
-    const [error, setError] = useState < string > ('');
-    const [success, setSuccess] = useState < string > ('');
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '', honeypot: '' });
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
 
     // Validate form input
-    const validateForm = (): string => {
-        const { name, email, phone, message } = formData;
+    const validateForm = () => {
+        const { name, email, phone, message, honeypot } = formData;
+        if (honeypot) {
+            return 'Spam detected!';
+        }
         if (!name || !email || !phone || !message) {
             return 'All fields are required';
         }
@@ -29,26 +25,26 @@ const Contact = () => {
         if (!emailRegex.test(email)) {
             return 'Please enter a valid email';
         }
-        if (phone.length < 10) {
+        if (phone.length <= 10) {
             return 'Please enter a valid phone number';
         }
         return '';
     };
 
     // Handle input change for text fields
-    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
         setError('');
         setSuccess('');
     };
 
     // Handle phone number input change
-    const handlePhoneChange = (value: string) => {
+    const handlePhoneChange = (value) => {
         setFormData({ ...formData, phone: value });
     };
 
     // Handle form submission
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const validationError = validateForm();
         if (validationError) {
@@ -56,8 +52,20 @@ const Contact = () => {
             return;
         }
 
+        const templateParams = {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+        };
+
         emailjs
-            .send('service_2fvuxsr', 'template_bd0pbc9', formData, 'peter.essibu@stu.uc.edu.gh')
+            .send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+                templateParams,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY 
+            )
             .then(
                 () => setSuccess('Message sent successfully!'),
                 () => setError('Failed to send message. Please try again later.')
@@ -88,6 +96,17 @@ const Contact = () => {
 
             {/* Contact Form */}
             <form onSubmit={handleSubmit} className="max-w-md lg:max-w-lg mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-lg space-y-4 sm:space-y-6">
+                <div className="hidden">
+                    <label htmlFor="honeypot" className="block mb-1 sm:mb-2 text-sm sm:text-base font-medium text-gray-600">Leave this field empty</label>
+                    <input
+                        type="text"
+                        name="honeypot"
+                        id="honeypot"
+                        value={formData.honeypot}
+                        onChange={handleChange}
+                        className="hidden"
+                    />
+                </div>
                 <div>
                     <label htmlFor="name" className="block mb-1 sm:mb-2 text-sm sm:text-base font-medium text-gray-600">Name</label>
                     <input
