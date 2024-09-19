@@ -62,10 +62,10 @@ const Home = () => {
           </button>
 
           {/* Centered Links for large screens */}
-          <div className="hidden lg:flex flex-1 justify-center">
+          <div className="hidden lg:flex flex-1 justify-center text-lg">
             <ul className="flex space-x-6">
               <li>
-                <Link href="#hero">Home</Link>
+                <Link href="#experience">Career Profile</Link>
               </li>
               <li>
                 <Link href="#projects">Projects</Link>

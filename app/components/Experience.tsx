@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const experiences = [
     {
-        title: 'Software Engineer',
+        title: 'Software Engineer Fellow',
         company: 'HEADSTARTER',
         duration: 'July 2024 - Sept 2024',
         description: 'Worked on building 5 software projects',
@@ -29,7 +29,7 @@ const experiences = [
 
 const Experience = () => {
     return (
-        <div className="bg-gray-100 min-h-screen py-16">
+        <div className="bg-gray-100 min-h-screen py-16" id='experience'>
             <div className="container mx-auto px-4">
                 <motion.h2
                     className="text-5xl font-bold text-center mb-12 text-gray-900"
