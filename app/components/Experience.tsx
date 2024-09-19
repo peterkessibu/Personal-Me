@@ -5,17 +5,17 @@ import Image from 'next/image';
 
 const experiences = [
     {
-        title: 'Frontend Developer',
-        company: 'Tech Corp',
-        duration: 'Jan 2020 - Present',
-        description: 'Worked on creating stunning user interfaces with React.js and optimized applications for maximum speed.',
+        title: 'Software Engineer',
+        company: 'HEADSTARTER',
+        duration: 'July 2024 - Sept 2024',
+        description: 'Worked on building 5 software projects',
         logo: '/images/Experience/headstarter.png', // Ensure this path is correct
     },
     {
-        title: 'UI/UX Designer',
-        company: 'Design Studio',
-        duration: 'Jun 2018 - Dec 2019',
-        description: 'Designed user-friendly interfaces, conducted user research, and improved the overall user experience for multiple clients.',
+        title: 'Student',
+        company: 'UNIVERSITY OF CAPE COAST',
+        duration: 'Jan 2022 - present',
+        description: 'BSc. Computer Science',
         logo: '/images/Experience/citsa.jpg', // Ensure this path is correct
     },
     {
