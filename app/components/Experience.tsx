@@ -28,6 +28,12 @@ const experiences = [
 ];
 
 const Experience = () => {
+    // Hook to check if section is in view
+    const { ref: sectionRef } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+
     return (
         <div className="bg-gray-100 min-h-screen py-16" id='experience'>
             <div className="container mx-auto px-4">
@@ -45,8 +51,10 @@ const Experience = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
+                    ref={sectionRef}
                 >
                     {experiences.map((experience, index) => {
+                        // Use useInView for each experience
                         const { ref, inView } = useInView({
                             triggerOnce: true,
                             threshold: 0.2,
@@ -85,7 +93,6 @@ const Experience = () => {
                                 </div>
                             </motion.div>
                         );
-
                     })}
                 </motion.div>
             </div>

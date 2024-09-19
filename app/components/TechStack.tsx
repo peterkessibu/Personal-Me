@@ -52,7 +52,7 @@ const TechStack = () => {
           transition={{ duration: 1.5 }}
           className="flex flex-col items-center"
         >
-          <h3 className="text-lg font-semibold mb-4">Frameworks</h3>
+          <p className="text-lg font-semibold mb-4">Frameworks</p>
           <div className="grid grid-cols-2 gap-6">
             {techStack.frameworks.map((tech, index) => (
               <div key={index} className="bg-white shadow-md rounded-lg p-6 flex items-center justify-center transition-transform transform hover:scale-105">
@@ -75,7 +75,7 @@ const TechStack = () => {
           transition={{ duration: 1.5 }}
           className="flex flex-col items-center"
         >
-          <h3 className="text-lg font-semibold mb-4">Libraries</h3>
+          <p className="text-lg font-semibold mb-4">Libraries</p>
           <div className="grid grid-cols-2 gap-6">
             {techStack.libraries.map((tech, index) => (
               <div key={index} className="bg-white shadow-md rounded-lg p-6 flex items-center justify-center transition-transform transform hover:scale-105">
@@ -97,7 +97,7 @@ const TechStack = () => {
           transition={{ duration: 1.5 }}
           className="flex flex-col items-center"
         >
-          <h3 className="text-lg font-semibold mb-4">AI Integrations</h3>
+          <p className="text-lg font-semibold mb-4">AI Integrations</p>
           <div className="grid grid-cols-2 gap-6">
             {techStack.aiIntegrations.map((tech, index) => (
               <div key={index} className="bg-white shadow-md rounded-lg p-6 flex items-center justify-center transition-transform transform hover:scale-105">
@@ -119,7 +119,7 @@ const TechStack = () => {
           transition={{ duration: 1.5 }}
           className="flex flex-col items-center"
         >
-          <h3 className="text-lg font-semibold mb-4">Languages</h3>
+          <p className="text-lg font-semibold mb-4">Languages</p>
           <div className="grid grid-cols-2 gap-6">
             {techStack.languages.map((tech, index) => (
               <div key={index} className="bg-white shadow-md rounded-lg p-6 flex items-center justify-center transition-transform transform hover:scale-105">
@@ -142,7 +142,7 @@ const TechStack = () => {
           transition={{ duration: 1.5 }}
           className="flex flex-col items-center"
         >
-          <h3 className="text-lg font-semibold mb-4">Design Tools</h3>
+          <p className="text-lg font-semibold mb-4">Design Tools</p>
           <div className="grid grid-cols-2 gap-6">
             {techStack.designTools.map((tech, index) => (
               <div key={index} className="bg-white shadow-md rounded-lg p-6 flex items-center justify-center transition-transform transform hover:scale-105">

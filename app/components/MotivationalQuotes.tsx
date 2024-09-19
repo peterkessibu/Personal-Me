@@ -26,18 +26,10 @@ const MotivationalQuotes = () => {
     <motion.section
       id="quotes"
       ref={ref}
-      className="p-10 w-full max-w-screen bg-gradient-to-r from-yellow-400 to-orange-500 text-white"
+      className="p-10 w-full bg-gradient-to-r from-yellow-500 to-orange-400 text-white"
       initial="hiddenLeft"
       animate={inView ? 'visible' : 'hiddenLeft'}
-      style={{
-        backgroundImage: `url('/path/to/your/texture-image.jpg')`,
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
-        backdropFilter: 'blur(5px)',
-      }}
     >
-      <h2 className="text-3xl font-bold text-center mb-8">Motivational Quotes</h2>
-
       <div className="flex flex-wrap justify-center gap-8">
         {quotes.map((quote, index) => (
           <motion.div

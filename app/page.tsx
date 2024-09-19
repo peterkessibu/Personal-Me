@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { IoMdClose } from 'react-icons/io';
 import { RiMenu4Line } from 'react-icons/ri';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -39,10 +38,26 @@ const Home = () => {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      // Ensure scrolling is enabled when component is unmounted
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = 'auto'; // Reset scroll behavior
     };
   }, []);
+
+  const handleClick = (sectionId: string) => {
+    // Scroll to the component with the provided ID
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+      targetSection.classList.add('mt-20');  // Add mt-20 class
+      targetSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+
+    // Close the menu if it's open (mobile view)
+    if (isOpen) {
+      toggleMenu();
+    }
+  };
 
   return (
     <div>
@@ -65,16 +80,16 @@ const Home = () => {
           <div className="hidden lg:flex flex-1 justify-center text-lg">
             <ul className="flex space-x-6">
               <li>
-                <Link href="#experience">Career Profile</Link>
+                <button onClick={() => handleClick('experience')}>Career Profile</button>
               </li>
               <li>
-                <Link href="#projects">Projects</Link>
+                <button onClick={() => handleClick('projects')}>Projects</button>
               </li>
               <li>
-                <Link href="#techstack">Tech Stack</Link>
+                <button onClick={() => handleClick('techstack')}>Tech Stack</button>
               </li>
               <li>
-                <Link href="#quotes">Quotes</Link>
+                <button onClick={() => handleClick('quotes')}>Quotes</button>
               </li>
             </ul>
           </div>
@@ -105,38 +120,56 @@ const Home = () => {
                 className="space-y-6 text-center text-2xl font-semibold"
               >
                 <li>
-                  <Link href="#hero" onClick={toggleMenu} className="text-gray-800 hover:text-gray-600">
+                  <button onClick={() => handleClick('hero')} className="text-gray-800 hover:text-gray-600">
                     Home
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link href="#projects" onClick={toggleMenu} className="text-gray-800 hover:text-gray-600">
+                  <button onClick={() => handleClick('projects')} className="text-gray-800 hover:text-gray-600">
                     Projects
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link href="#techstack" onClick={toggleMenu} className="text-gray-800 hover:text-gray-600">
+                  <button onClick={() => handleClick('techstack')} className="text-gray-800 hover:text-gray-600">
                     Tech Stack
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link href="#quotes" onClick={toggleMenu} className="text-gray-800 hover:text-gray-600">
+                  <button onClick={() => handleClick('quotes')} className="text-gray-800 hover:text-gray-600">
                     Quotes
-                  </Link>
+                  </button>
                 </li>
               </motion.ul>
             </motion.div>
           )}
         </AnimatePresence>
       </header>
-      <Hero />
-      <HomePage />
-      <Projects />
-      <TechStack />
-      <Gallery />
-      <MotivationalQuotes />
-      <Hobbies />
-      <Contact />
+
+      {/* Add IDs to the wrappers of each component to enable scrolling */}
+      <div id="hero">
+        <Hero />
+      </div>
+      <div id="experience">
+        <HomePage />
+      </div>
+      <div id="projects">
+        <Projects />
+      </div>
+      <div id="techstack">
+        <TechStack />
+      </div>
+      <div id="gallery">
+        <Gallery />
+      </div>
+      <div id="quotes">
+        <MotivationalQuotes />
+      </div>
+      <div id="hobbies">
+        <Hobbies />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
       <Footer />
     </div>
   );
