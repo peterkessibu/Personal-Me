@@ -40,7 +40,7 @@ const Hero = () => {
       {/* Fullscreen background image */}
       <div className="absolute inset-0 z-0 w-full h-full flex items-center justify-center overflow-hidden">
         <Image
-          src="/images/me_image.png"
+          src="/images/Hero/me_image.png"
           alt="Background"
           fill={true} // Replaces layout="fill"
           style={{ objectFit: 'cover' }} // Replaces objectFit="cover"
