@@ -2,12 +2,13 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 const Hero = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
-    triggerOnce: false, // Animation will trigger every time the section comes into view
-    threshold: 0.2,     // Animation triggers when 20% of the section is visible
+    triggerOnce: false,
+    threshold: 0.2,
   });
 
   useEffect(() => {
@@ -31,29 +32,35 @@ const Hero = () => {
   return (
     <motion.section
       id="hero"
-      className="h-screen w-full max-w-screen bg-cover bg-center flex items-center justify-center text-white"
+      className="relative h-screen w-full max-w-screen flex items-center justify-center text-white"
       ref={ref}
       initial="hidden"
       animate={controls}
-      style={{ backgroundImage: 'url(/path-to-your-image.jpg)' }} // Replace with your image path
     >
+      {/* Fullscreen background image */}
+      <div className="absolute inset-0 z-0 w-full h-full flex items-center justify-center overflow-hidden">
+        <Image
+          src="/images/me_image.png"
+          alt="Background"
+          fill={true} // Replaces layout="fill"
+          style={{ objectFit: 'cover' }} // Replaces objectFit="cover"
+          quality={100}
+          priority={true}
+        />
+      </div>
+
+
+      {/* Text content over the image */}
       <motion.div
-        className="text-center bg-black bg-opacity-50 p-8 rounded-lg" // Optional: Add background color to improve text readability
+        className="relative z-10 w-full flex items-start justify-center p-4 mb-[416px]"
         variants={heroVariants}
       >
         <motion.h1
-          className="text-4xl md:text-6xl font-bold"
+          className="lg:text-[160px] md:text-6xl text-[#110b2e] font-bold absolute top-1 mx-auto" // Responsive text sizes and center alignment
           variants={textVariants}
         >
-          Hi, I&apos;m [Your Name]
+          PETER ESSIBU
         </motion.h1>
-        <motion.p
-          className="text-lg md:text-2xl mt-4"
-          variants={textVariants}
-          transition={{ delay: 0.5 }}
-        >
-          I build web applications that solve real-world problems.
-        </motion.p>
       </motion.div>
     </motion.section>
   );

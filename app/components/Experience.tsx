@@ -1,3 +1,4 @@
+'use client'
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -7,14 +8,14 @@ const experiences = [
         company: 'Tech Corp',
         duration: 'Jan 2020 - Present',
         description: 'Worked on creating stunning user interfaces with React.js and optimized applications for maximum speed.',
-        logo: '/path-to-logo1.png', // Optional logo
+        logo: '', // Ensure this path is correct
     },
     {
         title: 'UI/UX Designer',
         company: 'Design Studio',
         duration: 'Jun 2018 - Dec 2019',
         description: 'Designed user-friendly interfaces, conducted user research, and improved the overall user experience for multiple clients.',
-        logo: '/path-to-logo2.png', // Optional logo
+        logo: '/images/logo2.png', // Ensure this path is correct
     },
     {
         title: 'Software Engineer',
