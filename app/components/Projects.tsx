@@ -19,7 +19,7 @@ const Projects = () => {
   return (
     <motion.section
       id="projects"
-      className="p-10 h-screen bg-white w-full"
+      className="p-10 bg-white w-full"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -36,14 +36,14 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <div className="absolute right-2 flex space-x-5 top-2 mr-3">
-              <a href={project.links.demo} className="text-gray-700 hover:text-blue-500 transition duration-300">
+              <a href={project.links.demo} className="text-gray-700 hover:text-[#7881f5] transition duration-300">
                 <FaLink className="w-5 h-5" />
               </a>
-              <a href={project.links.github} className="text-gray-700 hover:text-gray-900 transition duration-300">
+              <a href={project.links.github} className="text-gray-700 hover:text-black transition duration-300">
                 <FaGithub className="w-5 h-5" />
               </a>
-              <a href={project.links.youtube} className="text-gray-700 hover:text-red-500 transition duration-300">
-                <FaYoutube className="w-6 h-6" />
+              <a href={project.links.youtube} className="text-gray-700 hover:text-[#ca3939] transition duration-300">
+                <FaYoutube className="w-5 h-5" />
               </a>
             </div>
             <motion.img
