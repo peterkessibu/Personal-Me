@@ -2,6 +2,8 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaLink, FaYoutube } from 'react-icons/fa';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Projects = () => {
   const { ref, inView } = useInView({
@@ -11,9 +13,29 @@ const Projects = () => {
 
   // Example project data
   const projects = [
-    { name: "Project 1", description: "Project 1 description", imgSrc: "/path/to/image1.jpg", links: { github: '#', demo: '#', youtube: '#' } },
-    { name: "Project 2", description: "Project 2 description", imgSrc: "/path/to/image2.jpg", links: { github: '#', demo: '', youtube: '' } },
-    // Add more projects as needed
+    {
+      name: "LearnTab",
+      description: [
+        {
+          title: "Description", subFeatures: ["Dynamic Flashcard Creation: Generate flashcards on various topics using AI models.", "Responsive Design: Optimized for mobile, tablet, and desktop views.", "Real - Time Updates: Uses Firebase for real - time data management."] },
+        { title: "Tech Stack", subFeatures: ["Next Js", "Firebase", "AI Integration - Gemini API"] }
+      ],
+      imgSrc: "/images/Projects/learntab_img.png",
+      links: {
+        github: 'https://github.com/peterkessibu/LearnTab',
+        demo: 'https://learn-tab.vercel.app',
+        youtube: ''
+      }
+    },
+    {
+      name: "Project 2",
+      description: [
+        { title: "Feature A", subFeatures: [] },
+        { title: "Feature B", subFeatures: ["Sub-feature B.1", "Sub-feature B.2"] }
+      ],
+      imgSrc: "/path/to/image2.jpg",
+      links: { github: '#', demo: '', youtube: '' }
+    },
   ];
 
   return (
@@ -26,56 +48,74 @@ const Projects = () => {
       transition={{ duration: 0.5 }}
     >
       <h2 className="text-3xl font-bold text-center my-4">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+      <div className="grid grid-cols-1 gap-6 p-6">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="border p-6 rounded-lg shadow-lg relative overflow-hidden transition-transform transform hover:scale-105"
+            className="border p-10 rounded-lg shadow-lg relative overflow-hidden transition-transform transform hover:scale-105"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <div className="absolute right-2 flex space-x-5 top-2 mr-3">
-              {project.links.demo && (
-                <a href={project.links.demo} className="text-gray-700 hover:text-[#7881f5] transition duration-300">
-                  <FaLink className="w-5 h-5" />
-                </a>
-              )}
-              {project.links.github && (
-                <a href={project.links.github} className="text-gray-700 hover:text-black transition duration-300">
-                  <FaGithub className="w-5 h-5" />
-                </a>
-              )}
-              {project.links.youtube && (
-                <a href={project.links.youtube} className="text-gray-700 hover:text-[#ca3939] transition duration-300">
-                  <FaYoutube className="w-5 h-5" />
-                </a>
-              )}
+            {/* Navbar with project name and links */}
+            <div className="absolute top-0 left-0 w-full p-4 z-20 flex justify-between items-center mb-4">
+              <h3 className="text-xl font-bold">{project.name}</h3>
+              <div className="flex space-x-3">
+                {project.links.demo && (
+                  <Link href={project.links.demo} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#7881f5] transition duration-300">
+                    <FaLink className="w-5 h-5" />
+                  </Link>
+                )}
+                {project.links.github && (
+                  <Link href={project.links.github} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition duration-300">
+                    <FaGithub className="w-5 h-5" />
+                  </Link>
+                )}
+                {project.links.youtube && (
+                  <Link href={project.links.youtube} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#ca3939] transition duration-300">
+                    <FaYoutube className="w-5 h-5" />
+                  </Link>
+                )}
+              </div>
             </div>
-            <motion.img
-              src={project.imgSrc}
-              alt={project.name}
-              className="w-full h-40 object-cover mb-4"
+
+            {/* Image */}
+            <motion.div
+              className="w-full mb-4 mt-8"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-            />
-            <motion.h3
-              className="text-2xl font-bold mb-2"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2 }}
             >
-              {project.name}
-            </motion.h3>
-            <motion.p
-              className="text-gray-600"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              {project.description}
-            </motion.p>
+              <Image
+                src={project.imgSrc}
+                alt={project.name}
+                layout="responsive"
+                width={700}
+                height={475}
+                objectFit="cover"
+                className="rounded-t-xl p-4"
+              />
+            </motion.div>
+
+            {/* Description */}
+            {project.description && (
+              <div className="bg-white bg-opacity-80 p-2 md:p-6 mt-4">
+                <ol className="list-decimal ml-5 text-gray-600">
+                  {project.description.map((feature, i) => (
+                    <li key={i} className="mb-2">
+                      {feature.title}
+                      {feature.subFeatures.length > 0 && (
+                        <ul className="list-disc ml-5 mt-1 text-gray-500">
+                          {feature.subFeatures.map((sub, j) => (
+                            <li key={j}>{sub}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
           </motion.div>
         ))}
       </div>
