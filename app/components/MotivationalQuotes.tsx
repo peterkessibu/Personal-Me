@@ -26,7 +26,7 @@ const MotivationalQuotes = () => {
     <motion.section
       id="quotes"
       ref={ref}
-      className="p-10 w-full bg-gradient-to-r from-yellow-500 to-orange-400 text-white"
+      className="p-10 w-full max-w-screen bg-gradient-to-r from-yellow-500 to-orange-400 text-white"
       initial="hiddenLeft"
       animate={inView ? 'visible' : 'hiddenLeft'}
     >

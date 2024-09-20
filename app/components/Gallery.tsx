@@ -1,12 +1,12 @@
-'use client'
+'use client';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 
 const Gallery = () => {
   const { ref, inView } = useInView({
-    triggerOnce: false, // Ensures the animation can happen multiple times when it enters the viewport
-    threshold: 0.1, // Triggers the animation when 10% of the section is in view
+    triggerOnce: false,
+    threshold: 0.1,
   });
 
   // Variants for section animation
@@ -25,10 +25,15 @@ const Gallery = () => {
     }),
     hover: { scale: 1.05, boxShadow: '0px 4px 20px rgba(0,0,0,0.2)' },
   };
+
+  // Combined images array
   const images = [
     '/images/pic1.jpg',
     '/images/pic2.jpg',
     '/images/pic3.jpg',
+    '/images/reading.png',
+    '/images/coding.png',
+    '/images/hiking.png',
   ];
 
   return (
@@ -40,7 +45,7 @@ const Gallery = () => {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >
-      <h2 className="text-3xl font-bold text-center mb-8">Gallery</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">Gallery & Hobbies</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {images.map((src, index) => (
           <motion.div
@@ -52,7 +57,13 @@ const Gallery = () => {
             animate={inView ? "visible" : "hidden"}
             whileHover="hover"
           >
-            <Image src={src} alt={`Picture ${index + 1}`} width={400} height={400} />
+            <Image
+              src={src}
+              alt={`Image ${index + 1}`}
+              width={400}
+              height={400}
+              className="object-cover"
+            />
           </motion.div>
         ))}
       </div>

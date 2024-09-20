@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const TechStack = () => {
   const { ref, inView } = useInView({
-    triggerOnce: true,
+    triggerOnce: false, // Allow animation every time it comes into view
     threshold: 0.2,
   });
 
@@ -40,7 +40,7 @@ const TechStack = () => {
       ref={ref}
       initial={{ opacity: 0 }}
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 0.5 }}
     >
       <h2 className="text-3xl font-bold text-center mb-8">Tech Stack</h2>
 
@@ -49,7 +49,7 @@ const TechStack = () => {
         <motion.div
           initial={{ opacity: 0, x: -70 }}
           animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -70 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 0.5 }}
           className="flex flex-col items-center"
         >
           <p className="text-lg font-semibold mb-4">Frameworks</p>
@@ -72,7 +72,7 @@ const TechStack = () => {
         <motion.div
           initial={{ opacity: 0, x: 0 }}
           animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 0 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 0.5 }}
           className="flex flex-col items-center"
         >
           <p className="text-lg font-semibold mb-4">Libraries</p>
@@ -90,11 +90,12 @@ const TechStack = () => {
             ))}
           </div>
         </motion.div>
+
         {/* AI Integrations Section */}
         <motion.div
           initial={{ opacity: 0, x: 70 }}
           animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 70 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 0.5 }}
           className="flex flex-col items-center"
         >
           <p className="text-lg font-semibold mb-4">AI Integrations</p>
@@ -112,11 +113,12 @@ const TechStack = () => {
             ))}
           </div>
         </motion.div>
+
         {/* Languages Section */}
         <motion.div
           initial={{ opacity: 0, x: 70 }}
           animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 70 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 0.5 }}
           className="flex flex-col items-center"
         >
           <p className="text-lg font-semibold mb-4">Languages</p>
@@ -139,7 +141,7 @@ const TechStack = () => {
         <motion.div
           initial={{ opacity: 0, x: 70 }}
           animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 70 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 0.5 }}
           className="flex flex-col items-center"
         >
           <p className="text-lg font-semibold mb-4">Design Tools</p>

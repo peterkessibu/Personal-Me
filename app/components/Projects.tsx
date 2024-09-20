@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaLink, FaYoutube } from 'react-icons/fa';
@@ -12,7 +12,7 @@ const Projects = () => {
   // Example project data
   const projects = [
     { name: "Project 1", description: "Project 1 description", imgSrc: "/path/to/image1.jpg", links: { github: '#', demo: '#', youtube: '#' } },
-    { name: "Project 2", description: "Project 2 description", imgSrc: "/path/to/image2.jpg", links: { github: '#', demo: '#', youtube: '#' } },
+    { name: "Project 2", description: "Project 2 description", imgSrc: "/path/to/image2.jpg", links: { github: '#', demo: '', youtube: '' } },
     // Add more projects as needed
   ];
 
@@ -36,15 +36,21 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <div className="absolute right-2 flex space-x-5 top-2 mr-3">
-              <a href={project.links.demo} className="text-gray-700 hover:text-[#7881f5] transition duration-300">
-                <FaLink className="w-5 h-5" />
-              </a>
-              <a href={project.links.github} className="text-gray-700 hover:text-black transition duration-300">
-                <FaGithub className="w-5 h-5" />
-              </a>
-              <a href={project.links.youtube} className="text-gray-700 hover:text-[#ca3939] transition duration-300">
-                <FaYoutube className="w-5 h-5" />
-              </a>
+              {project.links.demo && (
+                <a href={project.links.demo} className="text-gray-700 hover:text-[#7881f5] transition duration-300">
+                  <FaLink className="w-5 h-5" />
+                </a>
+              )}
+              {project.links.github && (
+                <a href={project.links.github} className="text-gray-700 hover:text-black transition duration-300">
+                  <FaGithub className="w-5 h-5" />
+                </a>
+              )}
+              {project.links.youtube && (
+                <a href={project.links.youtube} className="text-gray-700 hover:text-[#ca3939] transition duration-300">
+                  <FaYoutube className="w-5 h-5" />
+                </a>
+              )}
             </div>
             <motion.img
               src={project.imgSrc}

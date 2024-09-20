@@ -8,7 +8,6 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import TechStack from './components/TechStack';
 import MotivationalQuotes from './components/MotivationalQuotes';
-import Hobbies from './components/Hobbies';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
@@ -78,7 +77,7 @@ const Home = () => {
 
           {/* Centered Links for large screens */}
           <div className="hidden lg:flex flex-1 justify-center text-lg">
-            <ul className="flex space-x-6">
+            <ul className="flex space-x-16">
               <li>
                 <button onClick={() => handleClick('experience')}>Career Profile</button>
               </li>
@@ -89,7 +88,7 @@ const Home = () => {
                 <button onClick={() => handleClick('techstack')}>Tech Stack</button>
               </li>
               <li>
-                <button onClick={() => handleClick('quotes')}>Quotes</button>
+                <button onClick={() => handleClick('contact')}>Contact</button>
               </li>
             </ul>
           </div>
@@ -135,8 +134,8 @@ const Home = () => {
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => handleClick('quotes')} className="text-gray-800 hover:text-gray-600">
-                    Quotes
+                  <button onClick={() => handleClick('contact')} className="text-gray-800 hover:text-gray-600">
+                    Contact
                   </button>
                 </li>
               </motion.ul>
@@ -163,9 +162,6 @@ const Home = () => {
       </div>
       <div id="quotes">
         <MotivationalQuotes />
-      </div>
-      <div id="hobbies">
-        <Hobbies />
       </div>
       <div id="contact">
         <Contact />
