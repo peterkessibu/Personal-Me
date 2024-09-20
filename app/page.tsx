@@ -37,7 +37,7 @@ const Home = () => {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      document.body.style.overflow = 'auto'; // Reset scroll behavior
+      document.body.style.overflow = 'auto';
     };
   }, []);
 
@@ -119,24 +119,34 @@ const Home = () => {
                 className="space-y-6 text-center text-2xl font-semibold"
               >
                 <li>
-                  <button onClick={() => handleClick('hero')} className="text-gray-800 hover:text-gray-600">
-                    Home
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => handleClick('projects')} className="text-gray-800 hover:text-gray-600">
-                    Projects
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => handleClick('techstack')} className="text-gray-800 hover:text-gray-600">
-                    Tech Stack
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => handleClick('contact')} className="text-gray-800 hover:text-gray-600">
-                    Contact
-                  </button>
+                  <ul>
+                    <li>
+                      <button onClick={() => handleClick('hero')} className="text-gray-800 hover:text-gray-600">
+                        Home
+                      </button>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <button onClick={() => handleClick('projects')} className="text-gray-800 hover:text-gray-600">
+                        Projects
+                      </button>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <button onClick={() => handleClick('techstack')} className="text-gray-800 hover:text-gray-600">
+                        Tech Stack
+                      </button>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <button onClick={() => handleClick('contact')} className="text-gray-800 hover:text-gray-600">
+                        Contact
+                      </button>
+                    </li>
+                  </ul>
                 </li>
               </motion.ul>
             </motion.div>
