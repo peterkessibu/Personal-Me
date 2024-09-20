@@ -27,7 +27,7 @@ export const experiences = [
 
 const Experience = () => {
     return (
-        <div className="bg-gray-100 min-h-screen py-16" id='experience'>
+        <div className="bg-[#eaeefaf1] min-h-screen py-8" id='experience'>
             <div className="container mx-auto px-4">
                 <h2 className="text-5xl font-bold text-center mb-12 text-gray-900">
                     Career Profile
@@ -37,7 +37,7 @@ const Experience = () => {
                     {experiences.map((experience, index) => (
                         <div
                             key={index}
-                            className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 mt-4 flex"
+                            className="bg-white shadow-lg border-gray-400 rounded-lg overflow-hidden transform transition-transform hover:scale-105 mt-4 flex"
                         >
                             {/* Image Container */}
                             <div className="flex-none w-48 relative">

@@ -36,7 +36,7 @@ const TechStack = () => {
   return (
     <section
       id="techstack"
-      className="p-10 bg-[#e0e7fdea] w-full max-w-screen"
+      className="p-10 bg-[#eaeefaf1] w-full max-w-screen"
       ref={ref}
     >
       <h2 className="text-3xl font-bold text-center mb-8">Tech Stack</h2>
@@ -47,7 +47,7 @@ const TechStack = () => {
           <p className="text-lg font-semibold mb-4">Frameworks</p>
           <div className="grid grid-cols-2 gap-6">
             {techStack.frameworks.map((tech, index) => (
-              <div key={index} className="bg-white shadow-md rounded-lg p-6 flex items-center justify-center hover:scale-105">
+              <div key={index} className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center hover:scale-105">
                 <Image
                   src={tech.src}
                   alt={tech.alt}
@@ -65,7 +65,7 @@ const TechStack = () => {
           <p className="text-lg font-semibold mb-4">Libraries</p>
           <div className="grid grid-cols-2 gap-6">
             {techStack.libraries.map((tech, index) => (
-              <div key={index} className="bg-white shadow-md rounded-lg p-6 flex items-center justify-center hover:scale-105">
+              <div key={index} className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center hover:scale-105">
                 <Image
                   src={tech.src}
                   alt={tech.alt}
@@ -83,7 +83,7 @@ const TechStack = () => {
           <p className="text-lg font-semibold mb-4">AI Integrations</p>
           <div className="grid grid-cols-3 gap-6">
             {techStack.aiIntegrations.map((tech, index) => (
-              <div key={index} className="bg-white shadow-md rounded-lg p-6 flex items-center justify-center hover:scale-105">
+              <div key={index} className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center hover:scale-105">
                 <Image
                   src={tech.src}
                   alt={tech.alt}
@@ -101,7 +101,7 @@ const TechStack = () => {
           <p className="text-lg font-semibold mb-4">Languages</p>
           <div className="grid grid-cols-3 gap-6">
             {techStack.languages.map((tech, index) => (
-              <div key={index} className="bg-white shadow-md rounded-lg p-6 flex items-center justify-center hover:scale-105">
+              <div key={index} className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center hover:scale-105">
                 <Image
                   src={tech.src}
                   alt={tech.alt}
@@ -119,7 +119,7 @@ const TechStack = () => {
           <p className="text-lg font-semibold mb-4">Design Tools</p>
           <div className="grid grid-cols-1 gap-6">
             {techStack.designTools.map((tech, index) => (
-              <div key={index} className="bg-white shadow-md rounded-lg p-6 flex items-center justify-center hover:scale-105">
+              <div key={index} className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center hover:scale-105">
                 <Image
                   src={tech.src}
                   alt={tech.alt}

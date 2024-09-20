@@ -41,14 +41,14 @@ const Projects = () => {
   return (
     <motion.section
       id="projects"
-      className="p-10 bg-white w-full"
+      className="p-4 bg-white w-full"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5 }}
     >
       <h2 className="text-3xl font-bold text-center my-4">Projects</h2>
-      <div className="grid grid-cols-1 gap-6 p-6">
+      <div className="grid grid-cols-1 gap-y-5 p-6">
         {projects.map((project, index) => (
           <motion.div
             key={index}
