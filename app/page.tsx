@@ -66,7 +66,7 @@ const Home = () => {
           scrolled
             ? "bg-opacity-80 backdrop-blur-xl shadow-lg"
             : "bg-transparent"
-        } text-[#111263] z-50`}
+        } text-[#111263] z-50 font-semibold`}
       >
         <nav className="flex justify-between items-center my-3 ml-6">
           {/* Menu button for mobile view */}
@@ -135,10 +135,10 @@ const Home = () => {
                   <ul>
                     <li>
                       <button
-                        onClick={() => handleClick("hero")}
+                        onClick={() => handleClick("experience")}
                         className="text-gray-800 hover:text-gray-600"
                       >
-                        Home
+                        Career Proflie
                       </button>
                     </li>
                   </ul>
