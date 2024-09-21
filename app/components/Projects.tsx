@@ -16,9 +16,10 @@ const Projects = () => {
       name: "LearnTab",
       description: [
         {
-          title: "Description", subFeatures: ["Dynamic Flashcard Creation: Generate flashcards on various topics using AI models."]
+          title: "Description", subFeatures: ["LearnTab is a web application designed to help users create, manage, and review flashcards. It offers a modern interface with responsive design and various features to enhance the flashcard creation experience."]
         },
-        { title: "Features", subFeatures: ["Next Js", "Firebase", "AI Integration - Gemini API"] },
+        {
+          title: "Features", subFeatures: ["Dynamic Flashcard Creation: Generate flashcards on various topics using AI models", "Responsive Design: Optimized for mobile, tablet, and desktop views.","Real - Time Updates: Uses Firebase for real - time data management."]},
         { title: "Tech Stack", subFeatures: ["Next Js", "Firebase", "AI Integration - Gemini API"] }
       ],
       imgSrc: "/images/Projects/learntab_img.png",
@@ -31,8 +32,10 @@ const Projects = () => {
     {
       name: "Mart Customer Assistant - AI Powered",
       description: [
-        { title: "Description", subFeatures: ['Shelfsense is an inventory management application that allows users to add, edit, remove, and sort inventory items. It also provides the ability to search through the inventory list and displays the total count of all items in the inventory.'] },
-        { title: "Tech Stack", subFeatures: ["Sub-feature B.1", "Sub-feature B.2"] }
+        { title: "Description", subFeatures: ['This is an AI-powered chatbot designed to help with customer service of a mart.The chatbot interacts with users, providing assistance for items and overall mart day-to-day task.'] },
+        {
+          title: "Features", subFeatures: ["User Authentication: Google Sign-In using Firebase Authentication.", "Real - time Chat: Users can ask interview - related questions, and the chatbot responds with relevant information.", "Responsive Design: Styled using TailwindCSS, the app is mobile- friendly and responsive.", "Powered by OpenAI: The chatbot uses OpenAI's GPT model for generating intelligent and relevant responses to interview questions."]},
+        { title: "Tech Stack", subFeatures: ["Next JS", "Firebase" , "AI Integration - OpenAI"] },
       ],
       imgSrc: "/path/to/image2.jpg",
       links: { github: 'https://github.com/peterkessibu/AI-Mart-Chatbot', demo: '', youtube: 'https://youtu.be/3dZsz88QfYk?si=VH4eGlOgufyIqvmL' }
