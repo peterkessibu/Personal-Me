@@ -9,11 +9,11 @@ const MotivationalQuotes = () => {
   });
 
   const quotes = [
-    "The only limit to our realization of tomorrow is our doubts of today.",
-    "Success is not the key to happiness. Happiness is the key to success.",
-    "The future belongs to those who believe in the beauty of their dreams.",
-    "It does not matter how slowly you go as long as you do not stop.",
-    "Believe you can and you're halfway there.",
+    "Doing research is not taking action. Talking to people about what you're doing is not taking action. Taking action is taking action.",
+    "The happiness of pursuit is not the pursuit of happiness.",
+    "They say Baby steps are the most important steps. But I say, Babies grow",
+    "Just Do It !",
+    "nOBODY cARES, wORK hARDER, bE sMARTER, aND sTAY hUMBLE !",
   ];
 
   const cardVariants = {
@@ -40,7 +40,7 @@ const MotivationalQuotes = () => {
             variants={cardVariants}
             transition={{ delay: index * 0.2 }}
           >
-            <p className="italic">{quote}</p>
+            <p className="italic text-center justify-center">{quote}</p>
           </motion.div>
         ))}
       </div>

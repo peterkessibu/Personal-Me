@@ -43,20 +43,28 @@ const Projects = () => {
     {
       name: "ShelfSense - Pantry Tracker",
       description: [
-        { title: "Feature A", subFeatures: [] },
-        { title: "Feature B", subFeatures: ["Sub-feature B.1", "Sub-feature B.2"] }
+        { title: "Description", subFeatures: ["Shelfsense is an inventory management application that allows users to add, edit, remove, and sort inventory items. It also provides the ability to search through the inventory list and displays the total count of all items in the inventory."] },
+        {
+          title: "Features", subFeatures: ["Add Items: Users can add items to the inventory with a specified name and quantity.",
+          "Edit Items: Users can edit the name and quantity of items already in the inventory.",
+          "Remove Items: Users can remove items from the inventory.",
+          "Sort Items: Inventory items can be sorted alphabetically by name.",
+          "Search Items: Users can search for specific items using the search bar.",
+          "Real-Time Updates: The app provides real-time updates using Firebase Firestore.",
+] },
+        { title: "Tech Stack", subFeatures: ["Next JS", "Firebase"] },
       ],
-      imgSrc: "/images/Projects/shelfsense_img.jpg",
+      imgSrc: "/images/Projects/shelfsense_img.png",
       links: { github: 'https://github.com/peterkessibu/Pantry-Tracker', demo: '', youtube: 'https://youtu.be/yOQJVGSe92E?si=JEleKE3P0RpP_R3Y' }
     },
     {
       name: "Previous Personal Project",
       description: [
-        { title: "Feature A", subFeatures: [] },
-        { title: "Feature B", subFeatures: ["Sub-feature B.1", "Sub-feature B.2"] }
+        { title: "Description", subFeatures: ["A personal website"] },
+        { title: "Tech Stack", subFeatures: ["HTML", "Tailwindcss", "Javascript"] }
       ],
       imgSrc: "/images/Projects/personal_web_img.png",
-      links: { github: 'https://github.com/peterkessibu/Pantry-Tracker', demo: '', youtube: 'https://youtu.be/yOQJVGSe92E?si=JEleKE3P0RpP_R3Y' }
+      links: { github: 'https://github.com/peterkessibu/Personal-Website', demo: 'https://peterkessibu.netlify.app/', youtube: '' }
     },
   ];
 
