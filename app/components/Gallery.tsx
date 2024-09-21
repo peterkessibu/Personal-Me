@@ -1,12 +1,12 @@
-'use client';
-import Image from 'next/image';
+"use client";
+import Image from "next/image";
 
 const Gallery = () => {
   // Combined images array
   const images = [
-    '/images/Gallery/me_image_1.jpg',
-    '/images/Gallery/me_image_2.jpg',
-    '/images/Gallery/me_image_3.jpg',
+    "/images/Gallery/me_image_1.jpg",
+    "/images/Gallery/me_image_2.jpg",
+    "/images/Gallery/me_image_3.jpg",
   ];
 
   return (
@@ -18,8 +18,8 @@ const Gallery = () => {
             key={index}
             src={src}
             alt={`Image ${index + 1}`}
-            width={400}  // Set the width
-            height={0}   // Remove fixed height
+            width={400} // Set the width
+            height={0} // Remove fixed height
             className="object-contain w-full h-auto rounded-b-xl" // Maintain the aspect ratio
           />
         ))}

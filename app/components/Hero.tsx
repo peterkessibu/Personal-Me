@@ -1,8 +1,8 @@
-'use client';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
-import Image from 'next/image';
+"use client";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import Image from "next/image";
 
 const Hero = () => {
   const controls = useAnimation();
@@ -13,9 +13,9 @@ const Hero = () => {
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     } else {
-      controls.start('hidden');
+      controls.start("hidden");
     }
   }, [controls, inView]);
 
@@ -43,12 +43,11 @@ const Hero = () => {
           src="/images/Hero/me_image.png"
           alt="Background"
           fill={true} // Replaces layout="fill"
-          style={{ objectFit: 'cover' }} // Replaces objectFit="cover"
+          style={{ objectFit: "cover" }} // Replaces objectFit="cover"
           quality={100}
           priority={true}
         />
       </div>
-
 
       {/* Text content over the image */}
       <motion.div

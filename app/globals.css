@@ -2,17 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html,
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
-/* .motion.h2,h2 {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-} */

@@ -1,6 +1,6 @@
-'use client';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+"use client";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const MotivationalQuotes = () => {
   const { ref, inView } = useInView({
@@ -28,15 +28,21 @@ const MotivationalQuotes = () => {
       ref={ref}
       className="p-5 w-full max-w-screen bg-gradient-to-r from-blue-200 to-blue-400 via-blue-300 text-white"
       initial="hiddenLeft"
-      animate={inView ? 'visible' : 'hiddenLeft'}
+      animate={inView ? "visible" : "hiddenLeft"}
     >
       <div className="flex flex-wrap justify-center gap-8">
         {quotes.map((quote, index) => (
           <motion.div
             key={index}
             className="bg-white text-gray-900 p-6 rounded-lg shadow-lg w-64 md:w-80"
-            initial={index % 2 === 0 ? 'hiddenLeft' : 'hiddenRight'}
-            animate={inView ? 'visible' : index % 2 === 0 ? 'hiddenLeft' : 'hiddenRight'}
+            initial={index % 2 === 0 ? "hiddenLeft" : "hiddenRight"}
+            animate={
+              inView
+                ? "visible"
+                : index % 2 === 0
+                  ? "hiddenLeft"
+                  : "hiddenRight"
+            }
             variants={cardVariants}
             transition={{ delay: index * 0.2 }}
           >

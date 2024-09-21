@@ -1,9 +1,9 @@
-'use client';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FaGithub, FaLink, FaYoutube } from 'react-icons/fa';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { FaGithub, FaLink, FaYoutube } from "react-icons/fa";
+import Link from "next/link";
+import Image from "next/image";
 
 const Projects = () => {
   const { ref, inView } = useInView({
@@ -16,55 +16,105 @@ const Projects = () => {
       name: "LearnTab - Flashcard Creator",
       description: [
         {
-          title: "Description", subFeatures: ["LearnTab is a web application designed to help users create, manage, and review flashcards. It offers a modern interface with responsive design and various features to enhance the flashcard creation experience."]
+          title: "Description",
+          subFeatures: [
+            "LearnTab is a web application designed to help users create, manage, and review flashcards. It offers a modern interface with responsive design and various features to enhance the flashcard creation experience.",
+          ],
         },
         {
-          title: "Features", subFeatures: ["Dynamic Flashcard Creation: Generate flashcards on various topics using AI models", "Responsive Design: Optimized for mobile, tablet, and desktop views.","Real - Time Updates: Uses Firebase for real - time data management."]},
-        { title: "Tech Stack", subFeatures: ["Next Js", "Firebase", "AI Integration - Gemini API"] }
+          title: "Features",
+          subFeatures: [
+            "Dynamic Flashcard Creation: Generate flashcards on various topics using AI models",
+            "Responsive Design: Optimized for mobile, tablet, and desktop views.",
+            "Real - Time Updates: Uses Firebase for real - time data management.",
+          ],
+        },
+        {
+          title: "Tech Stack",
+          subFeatures: ["Next Js", "Firebase", "AI Integration - Gemini API"],
+        },
       ],
       imgSrc: "/images/Projects/learntab_img.png",
       links: {
-        github: 'https://github.com/peterkessibu/LearnTab',
-        demo: 'https://learn-tab.vercel.app',
-        youtube: 'https://youtu.be/o7JCf9YURLI?si=lSr_SU-mM0Fvo71X'
-      }
+        github: "https://github.com/peterkessibu/LearnTab",
+        demo: "https://learn-tab.vercel.app",
+        youtube: "https://youtu.be/o7JCf9YURLI?si=lSr_SU-mM0Fvo71X",
+      },
     },
     {
       name: "Mart Customer Assistant - AI Powered",
       description: [
-        { title: "Description", subFeatures: ['This is an AI-powered chatbot designed to help with customer service of a mart.The chatbot interacts with users, providing assistance for items and overall mart day-to-day task.'] },
         {
-          title: "Features", subFeatures: ["User Authentication: Google Sign-In using Firebase Authentication.", "Real - time Chat: Users can ask interview - related questions, and the chatbot responds with relevant information.", "Responsive Design: Styled using TailwindCSS, the app is mobile- friendly and responsive.", "Powered by OpenAI: The chatbot uses OpenAI's GPT model for generating intelligent and relevant responses to interview questions."]},
-        { title: "Tech Stack", subFeatures: ["Next JS", "Firebase" , "AI Integration - OpenAI"] },
+          title: "Description",
+          subFeatures: [
+            "This is an AI-powered chatbot designed to help with customer service of a mart.The chatbot interacts with users, providing assistance for items and overall mart day-to-day task.",
+          ],
+        },
+        {
+          title: "Features",
+          subFeatures: [
+            "User Authentication: Google Sign-In using Firebase Authentication.",
+            "Real - time Chat: Users can ask interview - related questions, and the chatbot responds with relevant information.",
+            "Responsive Design: Styled using TailwindCSS, the app is mobile- friendly and responsive.",
+            "Powered by OpenAI: The chatbot uses OpenAI's GPT model for generating intelligent and relevant responses to interview questions.",
+          ],
+        },
+        {
+          title: "Tech Stack",
+          subFeatures: ["Next JS", "Firebase", "AI Integration - OpenAI"],
+        },
       ],
       imgSrc: "/images/Projects/ai_chatbot_img.png",
-      links: { github: 'https://github.com/peterkessibu/AI-Mart-Chatbot', demo: '', youtube: 'https://youtu.be/3dZsz88QfYk?si=VH4eGlOgufyIqvmL' }
+      links: {
+        github: "https://github.com/peterkessibu/AI-Mart-Chatbot",
+        demo: "",
+        youtube: "https://youtu.be/3dZsz88QfYk?si=VH4eGlOgufyIqvmL",
+      },
     },
     {
       name: "ShelfSense - Pantry Tracker",
       description: [
-        { title: "Description", subFeatures: ["Shelfsense is an inventory management application that allows users to add, edit, remove, and sort inventory items. It also provides the ability to search through the inventory list and displays the total count of all items in the inventory."] },
         {
-          title: "Features", subFeatures: ["Add Items: Users can add items to the inventory with a specified name and quantity.",
-          "Edit Items: Users can edit the name and quantity of items already in the inventory.",
-          "Remove Items: Users can remove items from the inventory.",
-          "Sort Items: Inventory items can be sorted alphabetically by name.",
-          "Search Items: Users can search for specific items using the search bar.",
-          "Real-Time Updates: The app provides real-time updates using Firebase Firestore.",
-] },
+          title: "Description",
+          subFeatures: [
+            "Shelfsense is an inventory management application that allows users to add, edit, remove, and sort inventory items. It also provides the ability to search through the inventory list and displays the total count of all items in the inventory.",
+          ],
+        },
+        {
+          title: "Features",
+          subFeatures: [
+            "Add Items: Users can add items to the inventory with a specified name and quantity.",
+            "Edit Items: Users can edit the name and quantity of items already in the inventory.",
+            "Remove Items: Users can remove items from the inventory.",
+            "Sort Items: Inventory items can be sorted alphabetically by name.",
+            "Search Items: Users can search for specific items using the search bar.",
+            "Real-Time Updates: The app provides real-time updates using Firebase Firestore.",
+          ],
+        },
         { title: "Tech Stack", subFeatures: ["Next JS", "Firebase"] },
       ],
       imgSrc: "/images/Projects/shelfsense_img.png",
-      links: { github: 'https://github.com/peterkessibu/Pantry-Tracker', demo: '', youtube: 'https://youtu.be/yOQJVGSe92E?si=JEleKE3P0RpP_R3Y' }
+      links: {
+        github: "https://github.com/peterkessibu/Pantry-Tracker",
+        demo: "",
+        youtube: "https://youtu.be/yOQJVGSe92E?si=JEleKE3P0RpP_R3Y",
+      },
     },
     {
       name: "Previous Personal Project",
       description: [
         { title: "Description", subFeatures: ["A personal website"] },
-        { title: "Tech Stack", subFeatures: ["HTML", "Tailwindcss", "Javascript"] }
+        {
+          title: "Tech Stack",
+          subFeatures: ["HTML", "Tailwindcss", "Javascript"],
+        },
       ],
       imgSrc: "/images/Projects/personal_web_img.png",
-      links: { github: 'https://github.com/peterkessibu/Personal-Website', demo: 'https://peterkessibu.netlify.app/', youtube: '' }
+      links: {
+        github: "https://github.com/peterkessibu/Personal-Website",
+        demo: "https://peterkessibu.netlify.app/",
+        youtube: "",
+      },
     },
   ];
 
@@ -77,7 +127,9 @@ const Projects = () => {
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="text-5xl font-bold text-center my-12 text-[#06061f]">Projects</h2>
+      <h2 className="text-5xl font-bold text-center my-12 text-[#06061f]">
+        Projects
+      </h2>
       <div className="grid grid-cols-1 gap-y-5 p-6">
         {projects.map((project, index) => (
           <motion.div
@@ -91,17 +143,32 @@ const Projects = () => {
               <h3 className="text-xl font-bold">{project.name}</h3>
               <div className="flex space-x-3">
                 {project.links.demo && (
-                  <Link href={project.links.demo} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#7881f5] transition duration-300">
+                  <Link
+                    href={project.links.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-[#7881f5] transition duration-300"
+                  >
                     <FaLink className="w-5 h-5" />
                   </Link>
                 )}
                 {project.links.github && (
-                  <Link href={project.links.github} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-black transition duration-300">
+                  <Link
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-black transition duration-300"
+                  >
                     <FaGithub className="w-5 h-5" />
                   </Link>
                 )}
                 {project.links.youtube && (
-                  <Link href={project.links.youtube} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#ca3939] transition duration-300">
+                  <Link
+                    href={project.links.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-[#ca3939] transition duration-300"
+                  >
                     <FaYoutube className="w-5 h-5" />
                   </Link>
                 )}
