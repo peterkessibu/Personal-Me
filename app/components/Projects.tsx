@@ -16,25 +16,44 @@ const Projects = () => {
       name: "LearnTab",
       description: [
         {
-          title: "Description", subFeatures: ["Dynamic Flashcard Creation: Generate flashcards on various topics using AI models.", "Responsive Design: Optimized for mobile, tablet, and desktop views.", "Real - Time Updates: Uses Firebase for real - time data management."]
+          title: "Description", subFeatures: ["Dynamic Flashcard Creation: Generate flashcards on various topics using AI models."]
         },
+        { title: "Features", subFeatures: ["Next Js", "Firebase", "AI Integration - Gemini API"] },
         { title: "Tech Stack", subFeatures: ["Next Js", "Firebase", "AI Integration - Gemini API"] }
       ],
       imgSrc: "/images/Projects/learntab_img.png",
       links: {
         github: 'https://github.com/peterkessibu/LearnTab',
         demo: 'https://learn-tab.vercel.app',
-        youtube: ''
+        youtube: 'https://youtu.be/o7JCf9YURLI?si=lSr_SU-mM0Fvo71X'
       }
     },
     {
-      name: "Project 2",
+      name: "Mart Customer Assistant - AI Powered",
+      description: [
+        { title: "Description", subFeatures: ['Shelfsense is an inventory management application that allows users to add, edit, remove, and sort inventory items. It also provides the ability to search through the inventory list and displays the total count of all items in the inventory.'] },
+        { title: "Tech Stack", subFeatures: ["Sub-feature B.1", "Sub-feature B.2"] }
+      ],
+      imgSrc: "/path/to/image2.jpg",
+      links: { github: 'https://github.com/peterkessibu/AI-Mart-Chatbot', demo: '', youtube: 'https://youtu.be/3dZsz88QfYk?si=VH4eGlOgufyIqvmL' }
+    },
+    {
+      name: "ShelfSense",
       description: [
         { title: "Feature A", subFeatures: [] },
         { title: "Feature B", subFeatures: ["Sub-feature B.1", "Sub-feature B.2"] }
       ],
       imgSrc: "/path/to/image2.jpg",
-      links: { github: 'https://github.com/peterkessibu/AI-Mart-Chatbot', demo: '', youtube: 'https://youtu.be/3dZsz88QfYk?si=VH4eGlOgufyIqvmL' }
+      links: { github: 'https://github.com/peterkessibu/Pantry-Tracker', demo: '', youtube: 'https://youtu.be/yOQJVGSe92E?si=JEleKE3P0RpP_R3Y' }
+    },
+    {
+      name: "Project 3",
+      description: [
+        { title: "Feature A", subFeatures: [] },
+        { title: "Feature B", subFeatures: ["Sub-feature B.1", "Sub-feature B.2"] }
+      ],
+      imgSrc: "/path/to/image2.jpg",
+      links: { github: 'https://github.com/peterkessibu/Pantry-Tracker', demo: '', youtube: 'https://youtu.be/yOQJVGSe92E?si=JEleKE3P0RpP_R3Y' }
     },
   ];
 
