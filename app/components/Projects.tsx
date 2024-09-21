@@ -13,7 +13,7 @@ const Projects = () => {
 
   const projects = [
     {
-      name: "LearnTab",
+      name: "LearnTab - Flashcard Creator",
       description: [
         {
           title: "Description", subFeatures: ["LearnTab is a web application designed to help users create, manage, and review flashcards. It offers a modern interface with responsive design and various features to enhance the flashcard creation experience."]
@@ -37,25 +37,25 @@ const Projects = () => {
           title: "Features", subFeatures: ["User Authentication: Google Sign-In using Firebase Authentication.", "Real - time Chat: Users can ask interview - related questions, and the chatbot responds with relevant information.", "Responsive Design: Styled using TailwindCSS, the app is mobile- friendly and responsive.", "Powered by OpenAI: The chatbot uses OpenAI's GPT model for generating intelligent and relevant responses to interview questions."]},
         { title: "Tech Stack", subFeatures: ["Next JS", "Firebase" , "AI Integration - OpenAI"] },
       ],
-      imgSrc: "/path/to/image2.jpg",
+      imgSrc: "/images/Projects/ai_chatbot_img.png",
       links: { github: 'https://github.com/peterkessibu/AI-Mart-Chatbot', demo: '', youtube: 'https://youtu.be/3dZsz88QfYk?si=VH4eGlOgufyIqvmL' }
     },
     {
-      name: "ShelfSense",
+      name: "ShelfSense - Pantry Tracker",
       description: [
         { title: "Feature A", subFeatures: [] },
         { title: "Feature B", subFeatures: ["Sub-feature B.1", "Sub-feature B.2"] }
       ],
-      imgSrc: "/path/to/image2.jpg",
+      imgSrc: "/images/Projects/shelfsense_img.jpg",
       links: { github: 'https://github.com/peterkessibu/Pantry-Tracker', demo: '', youtube: 'https://youtu.be/yOQJVGSe92E?si=JEleKE3P0RpP_R3Y' }
     },
     {
-      name: "Project 3",
+      name: "Previous Personal Project",
       description: [
         { title: "Feature A", subFeatures: [] },
         { title: "Feature B", subFeatures: ["Sub-feature B.1", "Sub-feature B.2"] }
       ],
-      imgSrc: "/path/to/image2.jpg",
+      imgSrc: "/images/Projects/personal_web_img.png",
       links: { github: 'https://github.com/peterkessibu/Pantry-Tracker', demo: '', youtube: 'https://youtu.be/yOQJVGSe92E?si=JEleKE3P0RpP_R3Y' }
     },
   ];
