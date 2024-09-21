@@ -34,7 +34,7 @@ const Projects = () => {
         { title: "Feature B", subFeatures: ["Sub-feature B.1", "Sub-feature B.2"] }
       ],
       imgSrc: "/path/to/image2.jpg",
-      links: { github: '', demo: '', youtube: 'https://youtu.be/3dZsz88QfYk?si=VH4eGlOgufyIqvmL' }
+      links: { github: 'https://github.com/peterkessibu/AI-Mart-Chatbot', demo: '', youtube: 'https://youtu.be/3dZsz88QfYk?si=VH4eGlOgufyIqvmL' }
     },
   ];
 
