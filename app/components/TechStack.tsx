@@ -28,7 +28,7 @@ export const techStack = {
 };
 
 const TechStack = () => {
-  const { ref, inView } = useInView({
+  const { ref } = useInView({
     triggerOnce: true, // Animates only once for performance
     threshold: 0.2,
   });
@@ -39,7 +39,7 @@ const TechStack = () => {
       className="p-10 bg-[#eaeefaf1] w-full max-w-screen"
       ref={ref}
     >
-      <h2 className="text-3xl font-bold text-center mb-8">Tech Stack</h2>
+      <h2 className="text-5xl font-bold text-center my-12 text-[#06061f]">Tech Stack</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Frameworks Section */}

@@ -6,7 +6,7 @@ export const experiences = [
         title: 'Software Engineer Fellow',
         company: 'HEADSTARTER',
         duration: 'July 2024 - Sept 2024',
-        description: 'Worked on building 5 software projects',
+        description: 'Worked on building five(5) software projects',
         logo: '/images/Experience/headstarter.png',
     },
     {
@@ -15,21 +15,14 @@ export const experiences = [
         duration: 'Jan 2022 - present',
         description: 'BSc. Computer Science',
         logo: '/images/Experience/citsa.jpg',
-    },
-    {
-        title: 'Software Engineer',
-        company: 'CodeBase Inc.',
-        duration: 'Sep 2016 - May 2018',
-        description: 'Developed scalable backend services, integrated third-party APIs, and led a team of 5 developers.',
-        logo: '',
-    },
+    }
 ];
 
 const Experience = () => {
     return (
-        <div className="bg-[#eaeefaf1] min-h-screen py-8" id='experience'>
+        <div className="bg-[#eaeefaf1] py-8" id='experience'>
             <div className="container mx-auto px-4">
-                <h2 className="text-5xl font-bold text-center mb-12 text-gray-900">
+                <h2 className="text-5xl font-bold text-center my-12 text-[#06061f]">
                     Career Profile
                 </h2>
 

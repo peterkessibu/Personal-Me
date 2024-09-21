@@ -80,7 +80,7 @@ const Contact = () => {
 
     return (
         <section className=" p-6 bg-[#f8f8f8]">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 sm:mb-8">Contact Me</h2>
+            <h2 className="text-5xl font-bold text-center my-12 text-[#06061f]">Contact Me</h2>
 
             {/* Social Links */}
             <div className="flex justify-center space-x-4 sm:space-x-6 mb-6 sm:mb-8">
@@ -116,7 +116,7 @@ const Contact = () => {
                         id="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 border-[1px] border-gray-600 rounded-md text-sm"
+                        className="w-full px-3 py-2 border-[1px] focus:outline-0 border-gray-600 rounded-md text-sm"
                         required
                     />
                 </div>
@@ -128,7 +128,7 @@ const Contact = () => {
                         id="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                        className="w-full px-3 py-2 border-[1px] focus:outline-0 border-gray-600 rounded-md text-sm"
                         required
                     />
                 </div>
@@ -138,7 +138,7 @@ const Contact = () => {
                         country={'gh'}
                         value={formData.phone}
                         onChange={handlePhoneChange}
-                        inputClass="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                        inputClass="w-full px-3 py-2 border-[1px] border-black rounded-md text-sm"
                         required
                     />
                 </div>
@@ -149,7 +149,7 @@ const Contact = () => {
                         id="message"
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                        className="w-full px-3 py-2 border-[1px] focus:outline-0 border-gray-600 rounded-md text-sm"
                         rows={4}
                         required
                     />
