@@ -1,4 +1,5 @@
 "use client";
+import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -25,21 +26,26 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.8,
       ease: "easeInOut",
     },
   },
 };
 
 const Experience = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false, // Trigger animation once set to false, so to animate again
+    threshold: 0.1, // Trigger when 10% of the component is in view
+  });
+
   return (
-    <div className="bg-[#eaeefaf1] py-8" id="experience">
+    <div className="bg-[#eaeefaf1] py-8" id="experience" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-5xl font-bold text-center my-12 text-[#06061f]"
           initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+          transition={{ duration: 1.4, ease: "easeInOut" }}
         >
           Career Profile
         </motion.h2>
@@ -51,7 +57,7 @@ const Experience = () => {
               className="bg-white shadow-lg border-gray-400 rounded-lg overflow-hidden mt-4 flex"
               variants={cardVariants}
               initial="hidden"
-              animate="visible"
+              animate={inView ? "visible" : "hidden"}
               whileHover={{ scale: 1.05 }}
             >
               {/* Image Container */}
