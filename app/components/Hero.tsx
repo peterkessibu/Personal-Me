@@ -56,7 +56,7 @@ const Hero = () => {
         variants={heroVariants}
       >
         <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-800"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#080924]"
           variants={textVariants}
         >
           PETER ESSIBU
@@ -64,42 +64,57 @@ const Hero = () => {
 
         {/* Links Section */}
         <motion.div
-          className="flex justify-center items-center space-x-6 text-lg md:text-xl text-gray-600"
+          className="flex justify-center items-center space-x-6 text-lg md:text-xl"
           variants={textVariants}
         >
           {/* Resume Button */}
-          <Link href="" passHref>
-            <button className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+          <Link
+            href="https://drive.google.com/file/d/1C0MzFbdT253Yig5aAY1wS3x2pHjfI5LJ/view?usp=drive_link"
+            target="_blank"
+            passHref
+          >
+            <button className="px-6 py-3 bg-white border-2 border-[#080827] text-[#080827] rounded-lg hover:bg-[#080827] hover:text-white transform duration-500 ease-in-out ">
               Resume
             </button>
           </Link>
 
           {/* GitHub Link */}
-          <Link href="https://github.com/petekessibu" passHref>
+          <Link href="https://github.com/petekessibu" target="_blank" passHref>
             <div className="flex flex-col items-center">
-              <button className="flex items-center space-x-2 text-gray-800 hover:text-blue-600 px-4 py-2 md:py-0">
+              <button className="flex items-center space-x-2 text-[#080924] hover:text-[#2f2da8] px-4 py-2 md:py-0">
                 <FaGithub size={24} />
-                <span className="hidden md:inline">GitHub</span> {/* Hidden on mobile */}
+                <span className="hidden md:inline">GitHub</span>{" "}
+                {/* Hidden on mobile */}
               </button>
             </div>
           </Link>
 
           {/* Email Link */}
-          <Link href="mailto:peter.essibu@stu.ucc.edu.gh" passHref>
+          <Link
+            href="mailto:peter.essibu@stu.ucc.edu.gh"
+            target="_blank"
+            passHref
+          >
             <div className="flex flex-col items-center">
-              <button className="flex items-center space-x-2 text-gray-800 hover:text-blue-600 px-4 py-2 md:py-0">
+              <button className="flex items-center space-x-2 text-[#080924] hover:text-[#2f2da8] px-4 py-2 md:py-0">
                 <FaEnvelope size={24} />
-                <span className="hidden md:inline">Email</span> {/* Hidden on mobile */}
+                <span className="hidden md:inline">Email</span>{" "}
+                {/* Hidden on mobile */}
               </button>
             </div>
           </Link>
 
           {/* LinkedIn Link */}
-          <Link href="https://linkedin.com/in/peterkessibu" passHref>
+          <Link
+            href="https://linkedin.com/in/peterkessibu"
+            target="_blank"
+            passHref
+          >
             <div className="flex flex-col items-center">
-              <button className="flex items-center space-x-2 text-gray-800 hover:text-blue-600 px-4 py-2 md:py-0">
+              <button className="flex items-center space-x-2 text-[#080924] hover:text-[#2f2da8] px-4 py-2 md:py-0">
                 <FaLinkedin size={24} />
-                <span className="hidden md:inline">LinkedIn</span> {/* Hidden on mobile */}
+                <span className="hidden md:inline">LinkedIn</span>{" "}
+                {/* Hidden on mobile */}
               </button>
             </div>
           </Link>

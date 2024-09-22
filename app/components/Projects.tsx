@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Projects = () => {
   const { ref, inView } = useInView({
-    triggerOnce: false,  // Changed to trigger the animation every time it's in view
+    triggerOnce: false, // Changed to trigger the animation every time it's in view
     threshold: 0.1,
   });
 

@@ -136,7 +136,7 @@ const Home = () => {
                     <li>
                       <button
                         onClick={() => handleClick("experience")}
-                        className="text-gray-800 hover:text-gray-600"
+                        className="text-[#111263]"
                       >
                         Career Proflie
                       </button>
@@ -146,7 +146,7 @@ const Home = () => {
                     <li>
                       <button
                         onClick={() => handleClick("projects")}
-                        className="text-gray-800 hover:text-gray-600"
+                        className="text-[#111263]"
                       >
                         Projects
                       </button>
@@ -156,7 +156,7 @@ const Home = () => {
                     <li>
                       <button
                         onClick={() => handleClick("techstack")}
-                        className="text-gray-800 hover:text-gray-600"
+                        className="text-[#111263]"
                       >
                         Tech Stack
                       </button>
@@ -166,7 +166,7 @@ const Home = () => {
                     <li>
                       <button
                         onClick={() => handleClick("contact")}
-                        className="text-gray-800 hover:text-gray-600"
+                        className="text-[#111263]"
                       >
                         Contact
                       </button>
