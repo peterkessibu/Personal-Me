@@ -75,7 +75,7 @@ const Hero = () => {
           </Link>
 
           {/* GitHub Link */}
-          <Link href="https://github.com/yourgithub" passHref>
+          <Link href="https://github.com/petekessibu" passHref>
             <div className="flex flex-col items-center">
               <button className="flex items-center space-x-2 text-gray-800 hover:text-blue-600 px-4 py-2 md:py-0">
                 <FaGithub size={24} />
@@ -85,7 +85,7 @@ const Hero = () => {
           </Link>
 
           {/* Email Link */}
-          <Link href="mailto:yourmail@example.com" passHref>
+          <Link href="mailto:peter.essibu@stu.ucc.edu.gh" passHref>
             <div className="flex flex-col items-center">
               <button className="flex items-center space-x-2 text-gray-800 hover:text-blue-600 px-4 py-2 md:py-0">
                 <FaEnvelope size={24} />
@@ -95,7 +95,7 @@ const Hero = () => {
           </Link>
 
           {/* LinkedIn Link */}
-          <Link href="https://linkedin.com/in/yourlinkedin" passHref>
+          <Link href="https://linkedin.com/in/peterkessibu" passHref>
             <div className="flex flex-col items-center">
               <button className="flex items-center space-x-2 text-gray-800 hover:text-blue-600 px-4 py-2 md:py-0">
                 <FaLinkedin size={24} />
