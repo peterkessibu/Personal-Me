@@ -34,25 +34,25 @@ const Hero = () => {
   return (
     <motion.section
       id="hero"
-      className="relative w-full max-w-screen flex flex-col lg:flex-row items-center justify-center lg:h-screen p-6"
+      className="relative w-full max-w-screen flex flex-col lg:flex-row items-center justify-center lg:h-screen p-6 mb-20"
       ref={ref}
       initial="hidden"
       animate={controls}
     >
       {/* Image Section */}
-      <div className="w-full lg:w-1/2 h-screen lg:h-auto flex items-center justify-center mb-6 lg:mb-0 px-4 lg:px-8">
+      <div className="w-full lg:w-1/2 h-3/4 flex items-center justify-center p-4 mb-6 lg:mb-0 mt-[130px]">
         <Image
-          src="/images/Hero/me_image.png"
+          src="/images/Gallery/me_image_1.jpg"
           alt="Hero Image"
           width={500}
-          height={500}
+          height={300}
           className="rounded-lg object-cover"
         />
       </div>
 
       {/* Text Section */}
       <motion.div
-        className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6"
+        className="w-full lg:w-1/2 flex flex-col items-center text-center lg:text-left space-y-6"
         variants={heroVariants}
       >
         <motion.h1
@@ -77,9 +77,9 @@ const Hero = () => {
           {/* GitHub Link */}
           <Link href="https://github.com/yourgithub" passHref>
             <div className="flex flex-col items-center">
-              <button className="flex items-center space-x-2 text-gray-800 hover:text-blue-600">
+              <button className="flex items-center space-x-2 text-gray-800 hover:text-blue-600 px-4 py-2 md:py-0">
                 <FaGithub size={24} />
-                <span>GitHub</span>
+                <span className="hidden md:inline">GitHub</span> {/* Hidden on mobile */}
               </button>
             </div>
           </Link>
@@ -87,9 +87,9 @@ const Hero = () => {
           {/* Email Link */}
           <Link href="mailto:yourmail@example.com" passHref>
             <div className="flex flex-col items-center">
-              <button className="flex items-center space-x-2 text-gray-800 hover:text-blue-600">
+              <button className="flex items-center space-x-2 text-gray-800 hover:text-blue-600 px-4 py-2 md:py-0">
                 <FaEnvelope size={24} />
-                <span>Email</span>
+                <span className="hidden md:inline">Email</span> {/* Hidden on mobile */}
               </button>
             </div>
           </Link>
@@ -97,14 +97,13 @@ const Hero = () => {
           {/* LinkedIn Link */}
           <Link href="https://linkedin.com/in/yourlinkedin" passHref>
             <div className="flex flex-col items-center">
-              <button className="flex items-center space-x-2 text-gray-800 hover:text-blue-600">
+              <button className="flex items-center space-x-2 text-gray-800 hover:text-blue-600 px-4 py-2 md:py-0">
                 <FaLinkedin size={24} />
-                <span>LinkedIn</span>
+                <span className="hidden md:inline">LinkedIn</span> {/* Hidden on mobile */}
               </button>
             </div>
           </Link>
         </motion.div>
-
       </motion.div>
     </motion.section>
   );
