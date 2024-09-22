@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const Projects = () => {
   const { ref, inView } = useInView({
-    triggerOnce: true,
+    triggerOnce: false,  // Changed to trigger the animation every time it's in view
     threshold: 0.1,
   });
 
@@ -26,7 +26,7 @@ const Projects = () => {
           subFeatures: [
             "Dynamic Flashcard Creation: Generate flashcards on various topics using AI models",
             "Responsive Design: Optimized for mobile, tablet, and desktop views.",
-            "Real - Time Updates: Uses Firebase for real - time data management.",
+            "Real-Time Updates: Uses Firebase for real-time data management.",
           ],
         },
         {
@@ -47,15 +47,15 @@ const Projects = () => {
         {
           title: "Description",
           subFeatures: [
-            "This is an AI-powered chatbot designed to help with customer service of a mart.The chatbot interacts with users, providing assistance for items and overall mart day-to-day task.",
+            "This is an AI-powered chatbot designed to help with customer service of a mart. The chatbot interacts with users, providing assistance for items and overall mart day-to-day tasks.",
           ],
         },
         {
           title: "Features",
           subFeatures: [
             "User Authentication: Google Sign-In using Firebase Authentication.",
-            "Real - time Chat: Users can ask interview - related questions, and the chatbot responds with relevant information.",
-            "Responsive Design: Styled using TailwindCSS, the app is mobile- friendly and responsive.",
+            "Real-time Chat: Users can ask interview-related questions, and the chatbot responds with relevant information.",
+            "Responsive Design: Styled using TailwindCSS, the app is mobile-friendly and responsive.",
             "Powered by OpenAI: The chatbot uses OpenAI's GPT model for generating intelligent and relevant responses to interview questions.",
           ],
         },
@@ -71,51 +71,7 @@ const Projects = () => {
         youtube: "https://youtu.be/3dZsz88QfYk?si=VH4eGlOgufyIqvmL",
       },
     },
-    {
-      name: "ShelfSense - Pantry Tracker",
-      description: [
-        {
-          title: "Description",
-          subFeatures: [
-            "Shelfsense is an inventory management application that allows users to add, edit, remove, and sort inventory items. It also provides the ability to search through the inventory list and displays the total count of all items in the inventory.",
-          ],
-        },
-        {
-          title: "Features",
-          subFeatures: [
-            "Add Items: Users can add items to the inventory with a specified name and quantity.",
-            "Edit Items: Users can edit the name and quantity of items already in the inventory.",
-            "Remove Items: Users can remove items from the inventory.",
-            "Sort Items: Inventory items can be sorted alphabetically by name.",
-            "Search Items: Users can search for specific items using the search bar.",
-            "Real-Time Updates: The app provides real-time updates using Firebase Firestore.",
-          ],
-        },
-        { title: "Tech Stack", subFeatures: ["Next JS", "Firebase"] },
-      ],
-      imgSrc: "/images/Projects/shelfsense_img.png",
-      links: {
-        github: "https://github.com/peterkessibu/Pantry-Tracker",
-        demo: "",
-        youtube: "https://youtu.be/yOQJVGSe92E?si=JEleKE3P0RpP_R3Y",
-      },
-    },
-    {
-      name: "Previous Personal Project",
-      description: [
-        { title: "Description", subFeatures: ["A personal website"] },
-        {
-          title: "Tech Stack",
-          subFeatures: ["HTML", "Tailwindcss", "Javascript"],
-        },
-      ],
-      imgSrc: "/images/Projects/personal_web_img.png",
-      links: {
-        github: "https://github.com/peterkessibu/Personal-Website",
-        demo: "https://peterkessibu.netlify.app/",
-        youtube: "",
-      },
-    },
+    // Add other projects here...
   ];
 
   return (
@@ -125,19 +81,29 @@ const Projects = () => {
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
     >
-      <h2 className="text-5xl font-bold text-center my-12 text-[#06061f]">
+      <motion.h2
+        className="text-5xl font-bold text-center my-12 text-[#06061f]"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+      >
         Projects
-      </h2>
-      <div className="grid grid-cols-1 gap-y-5 p-6">
+      </motion.h2>
+
+      <div className="grid grid-cols-1 gap-y-8 p-6">
         {projects.map((project, index) => (
           <motion.div
             key={index}
             className="border p-10 rounded-lg shadow-lg relative overflow-hidden transition-transform transform hover:scale-105"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.15, // Stagger animation
+              ease: "easeInOut",
+            }}
           >
             <div className="absolute top-0 left-0 w-full p-4 z-20 flex justify-between items-center mb-4">
               <h3 className="text-xl font-bold">{project.name}</h3>
@@ -176,12 +142,12 @@ const Projects = () => {
             </div>
 
             <div className="flex flex-col md:flex-row">
-              {/* Image */}
+              {/* Image Animation */}
               <motion.div
                 className="w-full md:w-1/2 mb-4 mt-8"
-                initial={{ opacity: 0, y: -20 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
               >
                 <Image
                   src={project.imgSrc}
@@ -194,25 +160,23 @@ const Projects = () => {
                 />
               </motion.div>
 
-              {/* Description */}
-              {project.description && (
-                <div className="bg-white bg-opacity-80 p-2 md:p-6 mt-4 md:mt-0 md:ml-4 md:w-1/2">
-                  <ol className="list-decimal ml-5 text-gray-600">
-                    {project.description.map((feature, i) => (
-                      <li key={i} className="mb-2">
-                        {feature.title}
-                        {feature.subFeatures.length > 0 && (
-                          <ul className="list-disc ml-5 mt-1 text-gray-500">
-                            {feature.subFeatures.map((sub, j) => (
-                              <li key={j}>{sub}</li>
-                            ))}
-                          </ul>
-                        )}
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              )}
+              {/* Description Section */}
+              <div className="bg-white bg-opacity-80 p-2 md:p-6 mt-4 md:mt-0 md:ml-4 md:w-1/2">
+                <ol className="list-decimal ml-5 text-gray-600">
+                  {project.description.map((feature, i) => (
+                    <li key={i} className="mb-2">
+                      {feature.title}
+                      {feature.subFeatures.length > 0 && (
+                        <ul className="list-disc ml-5 mt-1 text-gray-500">
+                          {feature.subFeatures.map((sub, j) => (
+                            <li key={j}>{sub}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
           </motion.div>
         ))}
