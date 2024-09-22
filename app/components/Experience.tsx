@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export const experiences = [
   {
@@ -18,19 +19,40 @@ export const experiences = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const Experience = () => {
   return (
     <div className="bg-[#eaeefaf1] py-8" id="experience">
       <div className="container mx-auto px-4">
-        <h2 className="text-5xl font-bold text-center my-12 text-[#06061f]">
+        <motion.h2
+          className="text-5xl font-bold text-center my-12 text-[#06061f]"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        >
           Career Profile
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {experiences.map((experience, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white shadow-lg border-gray-400 rounded-lg overflow-hidden transform transition-transform hover:scale-105 mt-4 flex"
+              className="bg-white shadow-lg border-gray-400 rounded-lg overflow-hidden mt-4 flex"
+              variants={cardVariants}
+              initial="hidden"
+              animate="visible"
+              whileHover={{ scale: 1.05 }}
             >
               {/* Image Container */}
               <div className="flex-none w-48 relative">
@@ -62,7 +84,7 @@ const Experience = () => {
                   {experience.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -55,7 +55,7 @@ const Hero = () => {
         variants={heroVariants}
       >
         <motion.h1
-          className="text-[68px] md:text-8xl lg:text-[160px] text-[#110b2e] font-bold absolute top-1 mx-auto"
+          className="text-[60px] md:text-8xl lg:text-[160px] text-[#110b2e] font-bold absolute top-1 mx-auto"
           variants={textVariants}
         >
           PETER ESSIBU
