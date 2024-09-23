@@ -66,7 +66,7 @@ const Home = () => {
           scrolled
             ? "bg-opacity-80 backdrop-blur-xl shadow-lg"
             : "bg-transparent"
-        } text-[#111263] z-50 font-semibold`}
+        } text-[#06061f] z-50 font-semibold`}
       >
         <nav className="flex justify-between items-center my-3 ml-6">
           {/* Menu button for mobile view */}
@@ -136,7 +136,7 @@ const Home = () => {
                     <li>
                       <button
                         onClick={() => handleClick("experience")}
-                        className="text-[#111263]"
+                        className="text-[#06061f]"
                       >
                         Career Proflie
                       </button>
@@ -146,7 +146,7 @@ const Home = () => {
                     <li>
                       <button
                         onClick={() => handleClick("projects")}
-                        className="text-[#111263]"
+                        className="text-[#06061f]"
                       >
                         Projects
                       </button>
@@ -156,7 +156,7 @@ const Home = () => {
                     <li>
                       <button
                         onClick={() => handleClick("techstack")}
-                        className="text-[#111263]"
+                        className="text-[#06061f]"
                       >
                         Tech Stack
                       </button>
@@ -166,7 +166,7 @@ const Home = () => {
                     <li>
                       <button
                         onClick={() => handleClick("contact")}
-                        className="text-[#111263]"
+                        className="text-[#06061f]"
                       >
                         Contact
                       </button>

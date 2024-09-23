@@ -61,7 +61,7 @@ const Hero = () => {
           >
             PETER ESSIBU
           </motion.h1>
-          <span className="text-[#1a196e] text-xl font-semibold">AI Software Engineer</span>
+          <span className="text-[#06061f] text-xl font-semibold underline">AI Software Engineer</span>
       </div>
         {/* Links Section */}
         <motion.div

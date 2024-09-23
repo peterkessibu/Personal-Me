@@ -71,7 +71,48 @@ const Projects = () => {
         youtube: "https://youtu.be/3dZsz88QfYk?si=VH4eGlOgufyIqvmL",
       },
     },
-    // Add other projects here...
+    {
+      name: "ShelfSense - Pantry Tracker",
+      description: [
+        {
+          title: "Description",
+          subFeatures: [
+            "Shelfsense is an inventory management application that allows users to add, edit, remove, and sort inventory items. It also provides the ability to search through the inventory list and displays the total count of all items in the inventory.",
+          ],
+        },
+        {
+          title: "Features",
+          subFeatures: [
+            "Add Items: Users can add items to the inventory with a specified name and quantity.",
+            "Edit Items: Users can edit the name and quantity of items already in the inventory.",
+            "Remove Items: Users can remove items from the inventory.",
+            "Sort Items: Inventory items can be sorted alphabetically by name.",
+            "Search Items: Users can search for specific items using the search bar.",
+            "Real-Time Updates: The app provides real-time updates using Firebase Firestore.",
+          ],
+        },
+        { title: "Tech Stack", subFeatures: ["Next JS", "Firebase"] },
+      ],
+      imgSrc: "/images/Projects/shelfsense_img.png",
+      links: {
+        github: "https://github.com/peterkessibu/Pantry-Tracker",
+        demo: "",
+        youtube: "https://youtu.be/yOQJVGSe92E?si=JEleKE3P0RpP_R3Y",
+      },
+    },
+    {
+      name: "Previous Personal Project",
+      description: [
+        { title: "Description", subFeatures: ["A personal website"] },
+        { title: "Tech Stack", subFeatures: ["HTML", "Tailwindcss", "Javascript"] },
+      ],
+      imgSrc: "/images/Projects/personal_web_img.png",
+      links: {
+        github: "https://github.com/peterkessibu/Personal-Website",
+        demo: "https://peterkessibu.netlify.app/",
+        youtube: "",
+      },
+    },
   ];
 
   return (
@@ -113,7 +154,7 @@ const Projects = () => {
                     href={project.links.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-[#7881f5] transition duration-300"
+                    className="text-black hover:text-[#7881f5] transition duration-300"
                   >
                     <FaLink className="w-5 h-5" />
                   </Link>
@@ -123,7 +164,7 @@ const Projects = () => {
                     href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-black transition duration-300"
+                    className="text-black hover:text-black transition duration-300"
                   >
                     <FaGithub className="w-5 h-5" />
                   </Link>
@@ -133,7 +174,7 @@ const Projects = () => {
                     href={project.links.youtube}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-[#ca3939] transition duration-300"
+                    className="text-black hover:text-[#ca3939] transition duration-300"
                   >
                     <FaYoutube className="w-5 h-5" />
                   </Link>
@@ -161,13 +202,13 @@ const Projects = () => {
               </motion.div>
 
               {/* Description Section */}
-              <div className="bg-white bg-opacity-80 p-2 md:p-6 mt-4 md:mt-0 md:ml-4 md:w-1/2">
-                <ol className="list-decimal ml-5 text-gray-600">
+              <div className="bg-white p-2 md:p-6 mt-4 md:mt-0 md:ml-4 md:w-1/2">
+                <ol className="list-decimal ml-5 text-[#06061f]">
                   {project.description.map((feature, i) => (
                     <li key={i} className="mb-2">
                       {feature.title}
                       {feature.subFeatures.length > 0 && (
-                        <ul className="list-disc ml-5 mt-1 text-gray-500">
+                        <ul className="list-disc ml-3 mt-1 text-gray-500">
                           {feature.subFeatures.map((sub, j) => (
                             <li key={j}>{sub}</li>
                           ))}
