@@ -42,7 +42,7 @@ const Hero = () => {
       {/* Image Section */}
       <div className="w-full lg:w-1/2 h-3/4 flex items-center justify-center p-4 mb-6 lg:mb-0 mt-[130px]">
         <Image
-          src="/images/Gallery/me_image_1.jpg"
+          src="/images/Hero/me_image.png"
           alt="Hero Image"
           width={500}
           height={300}
@@ -52,16 +52,17 @@ const Hero = () => {
 
       {/* Text Section */}
       <motion.div
-        className="w-full lg:w-1/2 flex flex-col items-center text-center lg:text-left space-y-6"
+        className="w-full lg:w-1/2 items-center text-center lg:text-left space-y-6"
         variants={heroVariants}
-      >
-        <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#080924]"
-          variants={textVariants}
-        >
-          PETER ESSIBU
-        </motion.h1>
-
+      ><div className="flex flex-col space-y-3 items-center justify-center">
+          <motion.h1
+            className="text-4xl md:text-6xl lg:text-7xl font-bold flex flex-row text-[#080924]"
+            variants={textVariants}
+          >
+            PETER ESSIBU
+          </motion.h1>
+          <span className="text-[#1a196e] text-xl font-semibold">AI Software Engineer</span>
+      </div>
         {/* Links Section */}
         <motion.div
           className="flex justify-center items-center space-x-6 text-lg md:text-xl"
