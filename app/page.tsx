@@ -62,11 +62,10 @@ const Home = () => {
     <div>
       {/* Header Section */}
       <header
-        className={`fixed max-w-screen rounded-l-full right-0 left-0 w-full top-0 p-4 transition-transform duration-300 ${
-          scrolled
+        className={`fixed max-w-screen rounded-l-full right-0 left-0 w-full top-0 p-4 transition-transform duration-300 ${scrolled
             ? "bg-opacity-80 backdrop-blur-xl shadow-lg"
             : "bg-transparent"
-        } text-[#06061f] z-50 font-semibold`}
+          } text-[#06061f] z-50 font-semibold`}
       >
         <nav className="flex justify-between items-center my-3 ml-6">
           {/* Menu button for mobile view */}
@@ -86,22 +85,36 @@ const Home = () => {
           <div className="hidden lg:flex flex-1 justify-center text-lg">
             <ul className="flex space-x-16">
               <li>
-                <button onClick={() => handleClick("experience")}>
+                <button
+                  onClick={() => handleClick("experience")}
+                  className="hover:bg-[#06061f] hover:text-white transition-colors duration-300 px-4 py-2 rounded-lg"
+                >
                   Career Profile
                 </button>
               </li>
               <li>
-                <button onClick={() => handleClick("projects")}>
+                <button
+                  onClick={() => handleClick("projects")}
+                  className="hover:bg-[#06061f] hover:text-white transition-colors duration-300 px-4 py-2 rounded-lg"
+                >
                   Projects
                 </button>
               </li>
               <li>
-                <button onClick={() => handleClick("techstack")}>
+                <button
+                  onClick={() => handleClick("techstack")}
+                  className="hover:bg-[#06061f] hover:text-white transition-colors duration-300 px-4 py-2 rounded-lg"
+                >
                   Tech Stack
                 </button>
               </li>
               <li>
-                <button onClick={() => handleClick("contact")}>Contact</button>
+                <button
+                  onClick={() => handleClick("contact")}
+                  className="hover:bg-[#06061f] hover:text-white transition-colors duration-300 px-4 py-2 rounded-lg"
+                >
+                  Contact
+                </button>
               </li>
             </ul>
           </div>
@@ -132,41 +145,35 @@ const Home = () => {
                 className="space-y-6 text-center text-2xl font-semibold"
               >
                 <li>
-                  <ul>
+                  <ul className="space-y-8">
                     <li>
                       <button
                         onClick={() => handleClick("experience")}
-                        className="text-[#06061f]"
+                        className="text-[#06061f] transition-colors duration-300 border-[2px] hover:bg-[#06061f] hover:text-white rounded-lg p-6 shadow-xl"
                       >
-                        Career Proflie
+                        Career Profile
                       </button>
                     </li>
-                  </ul>
-                  <ul>
                     <li>
                       <button
                         onClick={() => handleClick("projects")}
-                        className="text-[#06061f]"
+                        className="text-[#06061f] transition-colors duration-300 border-[2px] hover:bg-[#06061f] hover:text-white rounded-lg p-6 shadow-xl"
                       >
                         Projects
                       </button>
                     </li>
-                  </ul>
-                  <ul>
                     <li>
                       <button
                         onClick={() => handleClick("techstack")}
-                        className="text-[#06061f]"
+                        className="text-[#06061f] transition-colors duration-300 border-[2px] hover:bg-[#06061f] hover:text-white rounded-lg p-6 shadow-xl"
                       >
                         Tech Stack
                       </button>
                     </li>
-                  </ul>
-                  <ul>
                     <li>
                       <button
                         onClick={() => handleClick("contact")}
-                        className="text-[#06061f]"
+                        className="text-[#06061f] transition-colors duration-300 border-[2px] hover:bg-[#06061f] hover:text-white rounded-lg p-6 shadow-xl"
                       >
                         Contact
                       </button>

@@ -80,7 +80,7 @@ const Hero = () => {
           </Link>
 
           {/* GitHub Link */}
-          <Link href="https://github.com/petekessibu" target="_blank" passHref>
+          <Link href="https://github.com/peterkessibu" target="_blank" passHref>
             <div className="flex flex-col items-center">
               <button className="flex items-center space-x-2 text-[#080924] hover:text-[#2f2da8] px-4 py-2 md:py-0">
                 <FaGithub size={24} />

@@ -85,29 +85,29 @@ const Contact = () => {
   };
 
   return (
-    <section className=" p-6 bg-[#f8f8f8]">
+    <div className=" p-6 bg-[#f8f8f8]">
       <h2 className="text-5xl font-bold text-center my-12 text-[#06061f]">
         Contact Me
       </h2>
 
       {/* Social Links */}
-      <div className="flex justify-center space-x-4 sm:space-x-6 mb-6 sm:mb-8">
+      <div className="flex justify-center space-x-7 mb-6">
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/_zheebuuu/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <AiFillInstagram className="w-8 h-8 hover:text-purple-600" />
+          <AiFillInstagram className="w-9 h-9 hover:text-purple-600" />
         </a>
-        <a href="mailto:your.email@example.com">
-          <AiFillMail className="w-8 h-8 hover:text-[#4e41ff]" />
+        <a href="mailto:peter.essibu@stu.ucc.edu.gh">
+          <AiFillMail className="w-9 h-9 hover:text-[#4e41ff]" />
         </a>
         <a
-          href="https://linkedin.com"
+          href="https://linkedin.com/in/peteressibu"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <AiFillLinkedin className="w-8 h-8 rounded-lg hover:text-[#3c65ee]" />
+          <AiFillLinkedin className="w-9 h-9 rounded-lg hover:text-[#3c65ee]" />
         </a>
       </div>
 
@@ -210,7 +210,7 @@ const Contact = () => {
           {loading ? "Sending..." : "Send"}
         </button>
       </form>
-    </section>
+    </div>
   );
 };
 
