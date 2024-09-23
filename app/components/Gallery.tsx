@@ -1,33 +1,31 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Gallery = () => {
-  // Combined images array
+  // Ref and useInView hook
+  const ref = useRef(null);
+  const frameworksInView = useInView(ref, { once: true });
+
   const images = [
     "/images/Gallery/me_image_1.jpg",
     "/images/Gallery/me_image_2.jpg",
     "/images/Gallery/me_image_3.jpg",
   ];
 
-  // Animation variants
-  const variants = {
-    hidden: (direction: number) => ({
-      opacity: 0,
-      y: direction > 0 ? 50 : -50,
-    }),
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.996,
-      },
-    },
-  };
-
   return (
     <div id="gallery" className="p-10 bg-white w-full max-w-screen">
-      <h2 className="text-3xl font-bold text-center mb-8 my-12">Gallery</h2>
+      <motion.h2
+        ref={ref}
+        className="text-5xl font-bold text-center my-12 text-[#06061f]"
+        initial={{ opacity: 0, y: -30 }}
+        animate={frameworksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+        transition={{ duration: 1.4, ease: "easeInOut" }}
+      >
+        Gallery
+      </motion.h2>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {images.map((src, index) => (
           <motion.div
@@ -35,7 +33,6 @@ const Gallery = () => {
             custom={index % 2 === 0 ? 1 : -1} // Alternate direction
             initial="hidden"
             animate="visible"
-            variants={variants}
           >
             <Image
               src={src}
