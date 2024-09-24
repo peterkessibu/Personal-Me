@@ -104,7 +104,10 @@ const Projects = () => {
       name: "Previous Personal Project",
       description: [
         { title: "Description", subFeatures: ["A personal website"] },
-        { title: "Tech Stack", subFeatures: ["HTML", "Tailwindcss", "Javascript"] },
+        {
+          title: "Tech Stack",
+          subFeatures: ["HTML", "Tailwindcss", "Javascript"],
+        },
       ],
       imgSrc: "/images/Projects/personal_web_img.png",
       links: {

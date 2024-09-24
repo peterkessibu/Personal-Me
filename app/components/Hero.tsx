@@ -54,15 +54,18 @@ const Hero = () => {
       <motion.div
         className="w-full lg:w-1/2 items-center text-center lg:text-left space-y-6"
         variants={heroVariants}
-      ><div className="flex flex-col space-y-3 items-center justify-center">
+      >
+        <div className="flex flex-col space-y-3 items-center justify-center">
           <motion.h1
             className="text-4xl md:text-6xl lg:text-7xl font-bold flex flex-row text-[#080924]"
             variants={textVariants}
           >
             PETER ESSIBU
           </motion.h1>
-          <span className="text-[#06061f] text-xl font-semibold underline">AI Software Engineer</span>
-      </div>
+          <span className="text-[#06061f] text-xl font-semibold underline">
+            AI Software Engineer
+          </span>
+        </div>
         {/* Links Section */}
         <motion.div
           className="flex justify-center items-center space-x-6 text-lg md:text-xl"

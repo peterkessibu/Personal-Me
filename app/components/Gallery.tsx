@@ -20,7 +20,9 @@ const Gallery = () => {
         ref={ref}
         className="text-5xl font-bold text-center my-12 text-[#06061f]"
         initial={{ opacity: 0, y: -30 }}
-        animate={frameworksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+        animate={
+          frameworksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
+        }
         transition={{ duration: 1.4, ease: "easeInOut" }}
       >
         Gallery

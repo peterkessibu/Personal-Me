@@ -62,10 +62,11 @@ const Home = () => {
     <div>
       {/* Header Section */}
       <header
-        className={`fixed max-w-screen rounded-l-full right-0 left-0 w-full top-0 p-4 transition-transform duration-300 ${scrolled
+        className={`fixed max-w-screen rounded-l-full right-0 left-0 w-full top-0 p-4 transition-transform duration-300 ${
+          scrolled
             ? "bg-opacity-80 backdrop-blur-xl shadow-lg"
             : "bg-transparent"
-          } text-[#06061f] z-50 font-semibold`}
+        } text-[#06061f] z-50 font-semibold`}
       >
         <nav className="flex justify-between items-center my-3 ml-6">
           {/* Menu button for mobile view */}
