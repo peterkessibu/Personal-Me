@@ -11,7 +11,6 @@ const MotivationalQuotes = () => {
   const quotes = [
     "Doing research is not taking action. Talking to people about what you're doing is not taking action. Taking action is taking action.",
     "The happiness of pursuit is not the pursuit of happiness.",
-    "They say Baby steps are the most important steps. But I say, Babies grow",
     "Just Do It !",
     "nOBODY cARES, wORK hARDER, bE sMARTER, aND sTAY hUMBLE !",
   ];
@@ -26,7 +25,7 @@ const MotivationalQuotes = () => {
     <motion.section
       id="quotes"
       ref={ref}
-      className="p-5 w-full max-w-screen bg-gradient-to-r from-blue-200 to-blue-400 via-blue-300 text-white"
+      className="p-5 w-full max-w-screen bg-gradient-to-tr from-blue-200 to-blue-400 via-blue-300 text-white"
       initial="hiddenLeft"
       animate={inView ? "visible" : "hiddenLeft"}
     >
