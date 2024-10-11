@@ -1,9 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
-// Moving static data to the server-side
 export const techStack = {
   frameworks: [
     { src: "/images/Techstack/next.png", alt: "Next.js" },
@@ -26,8 +25,7 @@ export const techStack = {
   ],
 };
 
-// Animation variants
-const slideInLeft = {
+const slideInLeft: Variants = {
   hidden: { opacity: 0, x: -50 },
   visible: {
     opacity: 1,
@@ -36,7 +34,7 @@ const slideInLeft = {
   },
 };
 
-const slideInRight = {
+const slideInRight: Variants = {
   hidden: { opacity: 0, x: 50 },
   visible: {
     opacity: 1,
@@ -92,9 +90,10 @@ const TechStack = () => {
           <p className="text-lg font-semibold mb-4">Frameworks</p>
           <div className="grid grid-cols-2 gap-6">
             {techStack.frameworks.map((tech, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center hover:scale-105"
+                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center"
+                whileHover={{ scale: 1.05 }}
               >
                 <Image
                   src={tech.src}
@@ -103,7 +102,7 @@ const TechStack = () => {
                   height={64}
                   className="w-18 h-18 object-contain"
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -119,9 +118,10 @@ const TechStack = () => {
           <p className="text-lg font-semibold mb-4">Libraries</p>
           <div className="grid grid-cols-2 gap-6">
             {techStack.libraries.map((tech, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center hover:scale-105"
+                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center"
+                whileHover={{ scale: 1.05 }}
               >
                 <Image
                   src={tech.src}
@@ -130,7 +130,7 @@ const TechStack = () => {
                   height={64}
                   className="w-18 h-18 object-contain"
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -146,9 +146,10 @@ const TechStack = () => {
           <p className="text-lg font-semibold mb-4">AI Integrations</p>
           <div className="grid grid-cols-3 gap-6">
             {techStack.aiIntegrations.map((tech, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center hover:scale-105"
+                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center"
+                whileHover={{ scale: 1.05 }}
               >
                 <Image
                   src={tech.src}
@@ -157,7 +158,7 @@ const TechStack = () => {
                   height={64}
                   className="w-18 h-18 object-contain"
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -173,9 +174,10 @@ const TechStack = () => {
           <p className="text-lg font-semibold mb-4">Languages</p>
           <div className="grid grid-cols-3 gap-6">
             {techStack.languages.map((tech, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center hover:scale-105"
+                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center"
+                whileHover={{ scale: 1.05 }}
               >
                 <Image
                   src={tech.src}
@@ -184,7 +186,7 @@ const TechStack = () => {
                   height={64}
                   className="w-18 h-18 object-contain"
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -200,9 +202,10 @@ const TechStack = () => {
           <p className="text-lg font-semibold mb-4">Design Tools</p>
           <div className="grid grid-cols-1 gap-6">
             {techStack.designTools.map((tech, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center hover:scale-105"
+                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center"
+                whileHover={{ scale: 1.05 }}
               >
                 <Image
                   src={tech.src}
@@ -211,7 +214,7 @@ const TechStack = () => {
                   height={64}
                   className="w-18 h-18 object-contain"
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

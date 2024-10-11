@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 export const experiences = [
   {
-    title: "Software Engineer Fellow",
+    title: "SWE Fellow",
     company: "HEADSTARTER",
     duration: "July 2024 - Sept 2024",
-    description: "Worked on building five(5) software projects",
+    description: "Built software projects",
     logo: "/images/Experience/headstarter.png",
   },
   {
@@ -21,21 +21,21 @@ export const experiences = [
 ];
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
+  hidden: { opacity: 0, x: -50 },
+  visible: (i: number) => ({
     opacity: 1,
-    y: 0,
+    x: 0,
     transition: {
-      duration: 0.8,
-      ease: "easeInOut",
+      delay: i * 0.1,
+      duration: 0.5,
     },
-  },
+  }),
 };
 
 const Experience = () => {
   const { ref, inView } = useInView({
     triggerOnce: false, // Trigger animation once set to false, so to animate again
-    threshold: 0.1, // Trigger when 10% of the component is in view
+    threshold: 0.08,
   });
 
   return (
@@ -58,10 +58,11 @@ const Experience = () => {
               variants={cardVariants}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
-              whileHover={{ scale: 1.05 }}
+              custom={index}
+              whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
             >
               {/* Image Container */}
-              <div className="flex-none w-48 relative">
+              <div className="flex-none w-24 sm:w-48 relative">
                 {experience.logo ? (
                   <Image
                     src={experience.logo}
@@ -76,17 +77,17 @@ const Experience = () => {
               </div>
 
               {/* Content Container */}
-              <div className="flex-auto p-6">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-2">
+              <div className="flex-auto p-3 sm:p-6">
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-1 sm:mb-2">
                   {experience.title}
                 </h3>
-                <p className="text-gray-600 text-lg mb-2">
+                <p className="text-base sm:text-lg text-gray-600 mb-1 sm:mb-2">
                   {experience.company}
                 </p>
-                <p className="text-sm text-gray-400 mb-2">
+                <p className="text-xs sm:text-sm text-gray-400 mb-1 sm:mb-2">
                   {experience.duration}
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   {experience.description}
                 </p>
               </div>

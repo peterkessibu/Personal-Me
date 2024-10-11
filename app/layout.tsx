@@ -7,7 +7,7 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
 });
 export const metadata: Metadata = {
-  title: "Personal Portfolio",
+  title: "Peter Essibu",
   description: "A personal portfolio website",
 };
 

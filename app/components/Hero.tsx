@@ -31,6 +31,16 @@ const Hero = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.3 } },
   };
 
+  const titleVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  };
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <motion.section
       id="hero"
@@ -62,9 +72,18 @@ const Hero = () => {
           >
             PETER ESSIBU
           </motion.h1>
-          <span className="text-[#06061f] text-xl font-semibold underline">
-            AI Software Engineer
-          </span>
+          <motion.span
+            className="text-[#06061f] text-xl font-semibold"
+            variants={titleVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {Array.from("AI Software Engineer").map((letter, index) => (
+              <motion.span key={index} variants={letterVariants}>
+                {letter === " " ? "\u00A0" : letter}
+              </motion.span>
+            ))}
+          </motion.span>
         </div>
         {/* Links Section */}
         <motion.div

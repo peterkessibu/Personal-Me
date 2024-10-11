@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const Gallery = () => {
+  const { scrollYProgress } = useScroll();
+
   // Ref and useInView hook
   const ref = useRef(null);
   const frameworksInView = useInView(ref, { once: true });
@@ -13,6 +15,8 @@ const Gallery = () => {
     "/images/Gallery/me_image_2.jpg",
     "/images/Gallery/me_image_3.jpg",
   ];
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
     <div id="gallery" className="p-10 bg-white w-full max-w-screen">
@@ -29,22 +33,20 @@ const Gallery = () => {
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {images.map((src, index) => (
-          <motion.div
-            key={index}
-            custom={index % 2 === 0 ? 1 : -1} // Alternate direction
-            initial="hidden"
-            animate="visible"
-          >
-            <Image
-              src={src}
-              alt={`Image ${index + 1}`}
-              width={400} // Set the width
-              height={0} // Remove fixed height
-              className="object-contain w-full h-auto rounded-b-xl" // Maintain the aspect ratio
-            />
-          </motion.div>
-        ))}
+        {images.map((imageSrc, index) => {
+          return (
+            <motion.div key={index} style={{ y }}>
+              <Image
+                src={imageSrc}
+                alt={`${index + 1}`}
+                width={500}
+                height={300}
+                layout="responsive"
+                className="rounded-lg"
+              />
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

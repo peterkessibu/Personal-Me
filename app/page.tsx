@@ -42,13 +42,17 @@ const Home = () => {
   }, []);
 
   const handleClick = (sectionId: string) => {
-    // Scroll to the component with the provided ID
     const targetSection = document.getElementById(sectionId);
     if (targetSection) {
-      targetSection.classList.add("mt-20"); // Add mt-20 class
-      targetSection.scrollIntoView({
+      const headerHeight = 80; // Adjust this value based on your header height
+      const targetPosition =
+        targetSection.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
         behavior: "smooth",
-        block: "start",
       });
     }
 
@@ -187,26 +191,25 @@ const Home = () => {
         </AnimatePresence>
       </header>
 
-      {/* Add IDs to the wrappers of each component to enable scrolling */}
       <div id="hero">
         <Hero />
       </div>
-      <div id="experience">
+      <div id="experience" className="section-padding">
         <HomePage />
       </div>
-      <div id="projects">
+      <div id="projects" className="section-padding">
         <Projects />
       </div>
-      <div id="techstack">
+      <div id="techstack" className="section-padding">
         <TechStack />
       </div>
-      <div id="gallery">
+      <div id="gallery" className="section-padding">
         <Gallery />
       </div>
-      <div id="quotes">
+      <div id="quotes" className="section-padding">
         <MotivationalQuotes />
       </div>
-      <div id="contact">
+      <div id="contact" className="section-padding">
         <Contact />
       </div>
       <Footer />

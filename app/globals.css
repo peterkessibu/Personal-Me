@@ -9,3 +9,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.section-padding {
+  padding-top: 26px;
+}

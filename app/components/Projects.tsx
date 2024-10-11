@@ -5,15 +5,20 @@ import { FaGithub, FaLink, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
 const Projects = () => {
   const { ref, inView } = useInView({
-    triggerOnce: false, // Changed to trigger the animation every time it's in view
+    triggerOnce: false,
     threshold: 0.1,
   });
 
   const projects = [
     {
-      name: "LearnTab - Flashcard Creator",
+      name: "LearnTab",
       description: [
         {
           title: "Description",
@@ -24,9 +29,9 @@ const Projects = () => {
         {
           title: "Features",
           subFeatures: [
-            "Dynamic Flashcard Creation: Generate flashcards on various topics using AI models",
-            "Responsive Design: Optimized for mobile, tablet, and desktop views.",
-            "Real-Time Updates: Uses Firebase for real-time data management.",
+            "Dynamic Flashcard Creation: AI-powered flashcards on various topics",
+            "Responsive Design: Optimized for all devices.",
+            "Real-Time Updates: Firebase for data management.",
           ],
         },
         {
@@ -42,7 +47,33 @@ const Projects = () => {
       },
     },
     {
-      name: "Mart Customer Assistant - AI Powered",
+      name: "ShelfSense",
+      description: [
+        {
+          title: "Description",
+          subFeatures: [
+            "Shelfsense is an inventory management application that allows users to add, edit, remove, and sort inventory items.",
+          ],
+        },
+        {
+          title: "Features",
+          subFeatures: [
+            "Add, Edit, and Remove Items: Users can manage inventory items with ease.",
+            "Sort and Search: Inventory items can be sorted alphabetically and searched for quickly.",
+            "Real-Time Updates: The app provides instant updates using Firebase Firestore.",
+          ],
+        },
+        { title: "Tech Stack", subFeatures: ["Next JS", "Firebase"] },
+      ],
+      imgSrc: "/images/Projects/shelfsense_img.png",
+      links: {
+        github: "https://github.com/peterkessibu/Pantry-Tracker",
+        demo: "https://shelfsense.vercel.app",
+        youtube: "https://youtu.be/yOQJVGSe92E?si=JEleKE3P0RpP_R3Y",
+      },
+    },
+    {
+      name: "Mart Customer Assistant",
       description: [
         {
           title: "Description",
@@ -53,10 +84,7 @@ const Projects = () => {
         {
           title: "Features",
           subFeatures: [
-            "User Authentication: Google Sign-In using Firebase Authentication.",
-            "Real-time Chat: Users can ask interview-related questions, and the chatbot responds with relevant information.",
-            "Responsive Design: Styled using TailwindCSS, the app is mobile-friendly and responsive.",
-            "Powered by OpenAI: The chatbot uses OpenAI's GPT model for generating intelligent and relevant responses to interview questions.",
+            "Real-time Chat with OpenAI GPT Model for Intelligent Responses, Responsive Design using TailwindCSS",
           ],
         },
         {
@@ -69,35 +97,6 @@ const Projects = () => {
         github: "https://github.com/peterkessibu/AI-Mart-Chatbot",
         demo: "",
         youtube: "https://youtu.be/3dZsz88QfYk?si=VH4eGlOgufyIqvmL",
-      },
-    },
-    {
-      name: "ShelfSense - Pantry Tracker",
-      description: [
-        {
-          title: "Description",
-          subFeatures: [
-            "Shelfsense is an inventory management application that allows users to add, edit, remove, and sort inventory items. It also provides the ability to search through the inventory list and displays the total count of all items in the inventory.",
-          ],
-        },
-        {
-          title: "Features",
-          subFeatures: [
-            "Add Items: Users can add items to the inventory with a specified name and quantity.",
-            "Edit Items: Users can edit the name and quantity of items already in the inventory.",
-            "Remove Items: Users can remove items from the inventory.",
-            "Sort Items: Inventory items can be sorted alphabetically by name.",
-            "Search Items: Users can search for specific items using the search bar.",
-            "Real-Time Updates: The app provides real-time updates using Firebase Firestore.",
-          ],
-        },
-        { title: "Tech Stack", subFeatures: ["Next JS", "Firebase"] },
-      ],
-      imgSrc: "/images/Projects/shelfsense_img.png",
-      links: {
-        github: "https://github.com/peterkessibu/Pantry-Tracker",
-        demo: "",
-        youtube: "https://youtu.be/yOQJVGSe92E?si=JEleKE3P0RpP_R3Y",
       },
     },
     {
@@ -136,7 +135,12 @@ const Projects = () => {
         Projects
       </motion.h2>
 
-      <div className="grid grid-cols-1 gap-y-8 p-6">
+      <motion.div
+        className="grid grid-cols-1 gap-y-8 p-6"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {projects.map((project, index) => (
           <motion.div
             key={index}
@@ -145,7 +149,7 @@ const Projects = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{
               duration: 0.5,
-              delay: index * 0.15, // Stagger animation
+              delay: index * 0.15,
               ease: "easeInOut",
             }}
           >
@@ -188,7 +192,7 @@ const Projects = () => {
             <div className="flex flex-col md:flex-row">
               {/* Image Animation */}
               <motion.div
-                className="w-full md:w-1/2 mb-4 mt-8"
+                className="w-full md:w-1/2 mb-4 mt-8 relative aspect-video"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -196,24 +200,25 @@ const Projects = () => {
                 <Image
                   src={project.imgSrc}
                   alt={project.name}
-                  layout="responsive"
-                  width={700}
-                  height={475}
-                  objectFit="cover"
-                  className="rounded-t-xl p-4"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={100}
+                  className="rounded-t-xl p-4 object-contain"
                 />
               </motion.div>
 
               {/* Description Section */}
-              <div className="bg-white p-2 md:p-6 mt-4 md:mt-0 md:ml-4 md:w-1/2">
-                <ol className="list-decimal ml-5 text-[#06061f]">
+              <div className="bg-white p-2 mt-0 ml-4 w-full">
+                <ol className="list-decimal ml-5 text-[#06061f] text-base sm:text-base">
                   {project.description.map((feature, i) => (
                     <li key={i} className="mb-2">
-                      {feature.title}
+                      <span className="font-semibold">{feature.title}</span>
                       {feature.subFeatures.length > 0 && (
-                        <ul className="list-disc ml-3 mt-1 text-gray-500">
+                        <ul className="list-disc ml-1 mt-1 text-gray-500 text-sm">
                           {feature.subFeatures.map((sub, j) => (
-                            <li key={j}>{sub}</li>
+                            <li key={j} className="mb-1">
+                              {sub}
+                            </li>
                           ))}
                         </ul>
                       )}
@@ -224,7 +229,7 @@ const Projects = () => {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </motion.section>
   );
 };
