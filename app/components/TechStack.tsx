@@ -66,9 +66,9 @@ const TechStack = () => {
   });
 
   return (
-    <section id="techstack" className="p-10 bg-[#eaeefaf1] w-full max-w-screen">
+    <section id="techstack" className="p-10 bg-white text-[#040413] w-full max-w-screen">
       <motion.h2
-        className="text-5xl font-bold text-center my-12 text-[#06061f]"
+        className="text-5xl font-bold text-center my-12"
         initial={{ opacity: 0, y: -30 }}
         animate={
           frameworksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }

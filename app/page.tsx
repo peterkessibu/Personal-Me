@@ -1,14 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { IoMdClose } from "react-icons/io";
-import { RiMenu4Line } from "react-icons/ri";
 import { motion, AnimatePresence } from "framer-motion";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import TechStack from "./components/TechStack";
-import MotivationalQuotes from "./components/MotivationalQuotes";
-import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import HomePage from "./components/Experience";
@@ -62,29 +58,42 @@ const Home = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div>
       {/* Header Section */}
       <header
-        className={`fixed max-w-screen rounded-l-full right-0 left-0 w-full top-0 p-4 transition-transform duration-300 ${
-          scrolled
-            ? "bg-opacity-80 backdrop-blur-xl shadow-lg"
-            : "bg-transparent"
-        } text-[#06061f] z-50 font-semibold`}
+        onClick={scrollToTop}
+        className={`fixed max-w-screen rounded-l-full right-0 left-0 w-full top-0 p-4 transition-transform duration-300 ${scrolled
+          ? "bg-opacity-80 backdrop-blur-xl shadow-lg"
+          : "bg-transparent"
+          } text-[#06061f] z-50 font-semibold cursor-pointer`}
       >
         <nav className="flex justify-between items-center my-3 ml-6">
           {/* Menu button for mobile view */}
-          <button
-            onClick={toggleMenu}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            className="lg:hidden"
-          >
-            {isOpen ? (
-              <IoMdClose className="w-8 h-8" />
-            ) : (
-              <RiMenu4Line className="w-6 h-6" />
-            )}
-          </button>
+          {!scrolled && (
+            <button
+              onClick={toggleMenu}
+              aria-label="Open menu"
+              className="lg:hidden"
+            >
+              <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(45)">
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+                <g id="SVGRepo_iconCarrier">
+                  <g id="Menu / Menu_Alt_05">
+                    <path id="Vector" d="M5 17H13M5 12H19M11 7H19" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </g>
+              </svg>
+            </button>
+          )}
 
           {/* Centered Links for large screens */}
           <div className="hidden lg:flex flex-1 justify-center text-lg">
@@ -138,9 +147,11 @@ const Home = () => {
               <button
                 onClick={toggleMenu}
                 aria-label="Close menu"
-                className="absolute top-4 right-4"
+                className="absolute top-10 mr-8 left-4"
               >
-                <IoMdClose className="w-8 h-8 text-gray-800" />
+                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 18L18 6M6 6l12 12" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
               </button>
 
               <motion.ul
@@ -202,12 +213,6 @@ const Home = () => {
       </div>
       <div id="techstack" className="section-padding">
         <TechStack />
-      </div>
-      <div id="gallery" className="section-padding">
-        <Gallery />
-      </div>
-      <div id="quotes" className="section-padding">
-        <MotivationalQuotes />
       </div>
       <div id="contact" className="section-padding">
         <Contact />

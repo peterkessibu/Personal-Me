@@ -39,7 +39,7 @@ const Experience = () => {
   });
 
   return (
-    <div className="bg-[#eaeefaf1] py-8" id="experience" ref={ref}>
+    <div className="bg-white py-8 text-text-[#040413]" id="experience" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-5xl font-bold text-center my-12 text-[#06061f]"

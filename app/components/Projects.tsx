@@ -120,14 +120,14 @@ const Projects = () => {
   return (
     <motion.section
       id="projects"
-      className="p-4 bg-white w-full"
+      className=" bg-white w-full text-[#040413]"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <motion.h2
-        className="text-5xl font-bold text-center my-12 text-[#06061f]"
+        className="text-5xl font-bold text-center my-12"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}

@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa"; // Import icons from React Icons
+import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa"; 
 
 const Hero = () => {
   const controls = useAnimation();
@@ -44,13 +44,13 @@ const Hero = () => {
   return (
     <motion.section
       id="hero"
-      className="relative w-full max-w-screen flex flex-col lg:flex-row items-center justify-center lg:h-screen p-6 mb-20"
+      className="relative w-full max-w-screen flex flex-col lg:flex-row items-center justify-center lg:h-screen p-6 mb-20 text-[#040413]"
       ref={ref}
       initial="hidden"
       animate={controls}
     >
       {/* Image Section */}
-      <div className="w-full lg:w-1/2 h-3/4 flex items-center justify-center p-4 mb-6 lg:mb-0 mt-[130px]">
+      <div className="w-full lg:w-1/2 h-3/4 flex items-center justify-center p-4 mb-6 lg:mb-0 mt-24 md:mt-[130px]">
         <Image
           src="/images/Hero/me_image.png"
           alt="Hero Image"
@@ -73,7 +73,7 @@ const Hero = () => {
             PETER ESSIBU
           </motion.h1>
           <motion.span
-            className="text-[#06061f] text-xl font-semibold"
+            className=" text-xl font-semibold"
             variants={titleVariants}
             initial="hidden"
             animate="visible"
