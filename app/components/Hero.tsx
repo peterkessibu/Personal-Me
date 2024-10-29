@@ -92,7 +92,7 @@ const Hero = () => {
         >
           {/* Resume Button */}
           <Link
-            href="https://drive.google.com/file/d/1C0MzFbdT253Yig5aAY1wS3x2pHjfI5LJ/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1AhXRUoIVRrrmxFTuyv8osAKYiDc6fEJj/view?usp=drive_link"
             target="_blank"
             passHref
           >
