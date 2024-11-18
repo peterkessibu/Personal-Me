@@ -40,16 +40,7 @@ const Home = () => {
   const handleClick = (sectionId: string) => {
     const targetSection = document.getElementById(sectionId);
     if (targetSection) {
-      const headerHeight = 80; // Adjust this value based on your header height
-      const targetPosition =
-        targetSection.getBoundingClientRect().top +
-        window.pageYOffset -
-        headerHeight;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
-      });
+      targetSection.scrollIntoView({ behavior: "smooth" });
     }
 
     // Close the menu if it's open (mobile view)
@@ -70,10 +61,11 @@ const Home = () => {
       {/* Header Section */}
       <header
         onClick={scrollToTop}
-        className={`fixed max-w-screen rounded-l-full right-0 left-0 w-full top-0 p-4 transition-transform duration-300 ${scrolled
-          ? "bg-opacity-80 backdrop-blur-xl shadow-lg"
-          : "bg-transparent"
-          } text-[#06061f] z-50 font-semibold cursor-pointer`}
+        className={`fixed max-w-screen rounded-l-full right-0 left-0 w-full top-0 p-4 transition-transform duration-300 ${
+          scrolled
+            ? "bg-opacity-80 backdrop-blur-xl shadow-lg"
+            : "bg-transparent"
+        } text-[#06061f] z-50 font-semibold cursor-pointer`}
       >
         <nav className="flex justify-between items-center my-3 ml-6">
           {/* Menu button for mobile view */}
@@ -83,15 +75,7 @@ const Home = () => {
               aria-label="Open menu"
               className="lg:hidden"
             >
-              <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(45)">
-                <g id="SVGRepo_bgCarrier" stroke-width="0" />
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-                <g id="SVGRepo_iconCarrier">
-                  <g id="Menu / Menu_Alt_05">
-                    <path id="Vector" d="M5 17H13M5 12H19M11 7H19" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </g>
-                </g>
-              </svg>
+              {/* ...SVG icon... */}
             </button>
           )}
 
@@ -149,9 +133,7 @@ const Home = () => {
                 aria-label="Close menu"
                 className="absolute top-10 mr-8 left-4"
               >
-                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 18L18 6M6 6l12 12" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+                {/* ...SVG icon... */}
               </button>
 
               <motion.ul
@@ -202,6 +184,7 @@ const Home = () => {
         </AnimatePresence>
       </header>
 
+      {/* Sections with IDs */} 
       <div id="hero">
         <Hero />
       </div>

@@ -19,27 +19,7 @@ const Projects = () => {
   const projects = [
     {
       name: "LearnTab",
-      description: [
-        {
-          title: "Description",
-          subFeatures: [
-            "LearnTab is a web application designed to help users create, manage, and review flashcards. It offers a modern interface with responsive design and various features to enhance the flashcard creation experience.",
-          ],
-        },
-        {
-          title: "Features",
-          subFeatures: [
-            "Dynamic Flashcard Creation: AI-powered flashcards on various topics",
-            "Responsive Design: Optimized for all devices.",
-            "Real-Time Updates: Firebase for data management.",
-          ],
-        },
-        {
-          title: "Tech Stack",
-          subFeatures: ["Next Js", "Firebase", "AI Integration - Gemini API"],
-        },
-      ],
-      imgSrc: "/images/Projects/learntab_img.png",
+      imgSrc: "/images/Projects/image.png",
       links: {
         github: "https://github.com/peterkessibu/LearnTab",
         demo: "https://learn-tab.vercel.app",
@@ -48,24 +28,7 @@ const Projects = () => {
     },
     {
       name: "ShelfSense",
-      description: [
-        {
-          title: "Description",
-          subFeatures: [
-            "Shelfsense is an inventory management application that allows users to add, edit, remove, and sort inventory items.",
-          ],
-        },
-        {
-          title: "Features",
-          subFeatures: [
-            "Add, Edit, and Remove Items: Users can manage inventory items with ease.",
-            "Sort and Search: Inventory items can be sorted alphabetically and searched for quickly.",
-            "Real-Time Updates: The app provides instant updates using Firebase Firestore.",
-          ],
-        },
-        { title: "Tech Stack", subFeatures: ["Next JS", "Firebase"] },
-      ],
-      imgSrc: "/images/Projects/shelfsense_img.png",
+      imgSrc: "/images/Projects/image copy.png",
       links: {
         github: "https://github.com/peterkessibu/Pantry-Tracker",
         demo: "https://shelfsense.vercel.app",
@@ -74,24 +37,6 @@ const Projects = () => {
     },
     {
       name: "Mart Customer Assistant",
-      description: [
-        {
-          title: "Description",
-          subFeatures: [
-            "This is an AI-powered chatbot designed to help with customer service of a mart. The chatbot interacts with users, providing assistance for items and overall mart day-to-day tasks.",
-          ],
-        },
-        {
-          title: "Features",
-          subFeatures: [
-            "Real-time Chat with OpenAI GPT Model for Intelligent Responses, Responsive Design using TailwindCSS",
-          ],
-        },
-        {
-          title: "Tech Stack",
-          subFeatures: ["Next JS", "Firebase", "AI Integration - OpenAI"],
-        },
-      ],
       imgSrc: "/images/Projects/ai_chatbot_img.png",
       links: {
         github: "https://github.com/peterkessibu/AI-Mart-Chatbot",
@@ -101,13 +46,6 @@ const Projects = () => {
     },
     {
       name: "Previous Personal Project",
-      description: [
-        { title: "Description", subFeatures: ["A personal website"] },
-        {
-          title: "Tech Stack",
-          subFeatures: ["HTML", "Tailwindcss", "Javascript"],
-        },
-      ],
       imgSrc: "/images/Projects/personal_web_img.png",
       links: {
         github: "https://github.com/peterkessibu/Personal-Website",
@@ -136,7 +74,7 @@ const Projects = () => {
       </motion.h2>
 
       <motion.div
-        className="grid grid-cols-1 gap-y-8 p-6"
+        className="grid grid-cols-1 gap-y-8 p-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -189,7 +127,7 @@ const Projects = () => {
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row">
+            <div className="flex flex-col md:flex-row items-center">
               {/* Image Animation */}
               <motion.div
                 className="w-full md:w-1/2 mb-4 mt-8 relative aspect-video"
@@ -206,26 +144,6 @@ const Projects = () => {
                   className="rounded-t-xl p-4 object-contain"
                 />
               </motion.div>
-
-              {/* Description Section */}
-              <div className="bg-white p-2 mt-0 ml-4 w-full">
-                <ol className="list-decimal ml-5 text-[#06061f] text-base sm:text-base">
-                  {project.description.map((feature, i) => (
-                    <li key={i} className="mb-2">
-                      <span className="font-semibold">{feature.title}</span>
-                      {feature.subFeatures.length > 0 && (
-                        <ul className="list-disc ml-1 mt-1 text-gray-500 text-sm">
-                          {feature.subFeatures.map((sub, j) => (
-                            <li key={j} className="mb-1">
-                              {sub}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                </ol>
-              </div>
             </div>
           </motion.div>
         ))}
