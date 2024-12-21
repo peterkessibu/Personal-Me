@@ -94,8 +94,8 @@ const TechStack = () => {
                   <Image
                     src={tech.src}
                     alt={tech.alt}
-                    width={64}
-                    height={64}
+                    width={72}
+                    height={72}
                     className="w-18 h-18 object-contain"
                   />
                 </motion.div>
