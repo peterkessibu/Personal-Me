@@ -44,7 +44,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="bg-[#040413]">
       {/* Header Section */}
       <header
         onClick={scrollToTop}
@@ -52,7 +52,7 @@ const Home = () => {
           scrolled
             ? "bg-opacity-80 backdrop-blur-xl shadow-lg"
             : "bg-transparent"
-        } text-[#06061f] z-50 font-semibold cursor-pointer`}
+        } z-50 font-semibold cursor-pointer`}
       >
         <nav className="flex justify-between items-center p-4 my-3 ml-6">
           {/* Menu button for mobile view */}

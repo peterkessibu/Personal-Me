@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaGithub, FaLink, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLink } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -67,7 +67,7 @@ const Projects = () => {
   return (
     <motion.section
       id="projects"
-      className="bg-white w-full text-[#040413]"
+      className="w-full text-[#31a9d8]"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -91,7 +91,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="border p-4 rounded-lg shadow-lg relative overflow-hidden transition-transform transform hover:scale-105"
+            className="border border-[#31a9d8] p-4 rounded-lg shadow-lg relative overflow-hidden transition-transform transform hover:scale-105"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -108,7 +108,7 @@ const Projects = () => {
                     href={project.links.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-black hover:text-[#7881f5] transition duration-300"
+                    className="transition duration-300"
                   >
                     <FaLink className="w-5 h-5" />
                   </Link>
@@ -118,19 +118,9 @@ const Projects = () => {
                     href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-black hover:text-black transition duration-300"
+                    className="transition duration-300"
                   >
                     <FaGithub className="w-5 h-5" />
-                  </Link>
-                )}
-                {project.links.youtube && (
-                  <Link
-                    href={project.links.youtube}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-black hover:text-[#ca3939] transition duration-300"
-                  >
-                    <FaYoutube className="w-5 h-5" />
                   </Link>
                 )}
               </div>
@@ -148,9 +138,9 @@ const Projects = () => {
                   src={project.imgSrc}
                   alt={project.name}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw"
                   quality={100}
-                  className="rounded-lg p-4 object-contain"
+                  className="rounded-lg p-6"
                 />
               </motion.div>
             </div>

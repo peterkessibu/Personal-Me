@@ -6,6 +6,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
 
+const links = [
+  {
+    href: "https://drive.google.com/file/d/1eMLBt-uvNp-WEAfIm8Tfsd3PVPew6QyO/view?usp=sharing",
+    label: "Resume",
+    isButton: true,
+    className: "px-6 py-3 border-2 text-[#31a9d8] border-[#31a9d8] rounded-lg hover:bg-[#1c1c69] hover:text-[#31a9d8] transform duration-500 ease-in-out",
+  },
+  {
+    href: "https://github.com/peterkessibu",
+    label: "GitHub",
+    icon: <FaGithub size={24} />,
+  },
+  {
+    href: "mailto:peter.essibu@stu.ucc.edu.gh",
+    label: "Email",
+    icon: <FaEnvelope size={24} />,
+  },
+  {
+    href: "https://linkedin.com/in/peterkessibu",
+    label: "LinkedIn",
+    icon: <FaLinkedin size={24} />,
+  },
+];
+
 const Hero = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
@@ -17,7 +41,7 @@ const Hero = () => {
     if (inView) {
       controls.start("visible");
     } else {
-      controls.start("hidden");
+        controls.start("hidden");
     }
   }, [controls, inView]);
 
@@ -44,7 +68,7 @@ const Hero = () => {
   return (
     <motion.section
       id="hero"
-      className="relative w-full max-w-screen flex flex-col lg:flex-row items-center justify-center lg:h-screen p-6 mb-20 text-[#040413]"
+      className="relative w-full max-w-screen flex flex-col lg:flex-row items-center justify-center lg:h-screen p-6 mb-20 bg-[#040413]"
       ref={ref}
       initial="hidden"
       animate={controls}
@@ -67,7 +91,7 @@ const Hero = () => {
       >
         <div className="flex flex-col space-y-3 items-center justify-center">
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold flex flex-row text-[#080924]"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold flex flex-row text-[#31a9d8]"
             variants={textVariants}
           >
             PETER ESSIBU
@@ -79,7 +103,7 @@ const Hero = () => {
             animate="visible"
           >
             {Array.from("AI Software Engineer").map((letter, index) => (
-              <motion.span key={index} variants={letterVariants}>
+              <motion.span key={index} variants={letterVariants} className="text-[#31a9d8]">
                 {letter === " " ? "\u00A0" : letter}
               </motion.span>
             ))}
@@ -90,57 +114,20 @@ const Hero = () => {
           className="flex justify-center items-center space-x-6 text-lg md:text-xl"
           variants={textVariants}
         >
-          {/* Resume Button */}
-          <Link
-            href="https://drive.google.com/file/d/1eMLBt-uvNp-WEAfIm8Tfsd3PVPew6QyO/view?usp=sharing"
-            target="_blank"
-            passHref
-          >
-            <button className="px-6 py-3 bg-white border-2 border-[#080827] text-[#080827] rounded-lg hover:bg-[#080827] hover:text-white transform duration-500 ease-in-out ">
-              Resume
-            </button>
-          </Link>
-
-          {/* GitHub Link */}
-          <Link href="https://github.com/peterkessibu" target="_blank" passHref>
-            <div className="flex flex-col items-center">
-              <button className="flex items-center space-x-2 text-[#080924] hover:text-[#2f2da8] px-4 py-2 md:py-0">
-                <FaGithub size={24} />
-                <span className="hidden md:inline">GitHub</span>{" "}
-                {/* Hidden on mobile */}
-              </button>
-            </div>
-          </Link>
-
-          {/* Email Link */}
-          <Link
-            href="mailto:peter.essibu@stu.ucc.edu.gh"
-            target="_blank"
-            passHref
-          >
-            <div className="flex flex-col items-center">
-              <button className="flex items-center space-x-2 text-[#080924] hover:text-[#2f2da8] px-4 py-2 md:py-0">
-                <FaEnvelope size={24} />
-                <span className="hidden md:inline">Email</span>{" "}
-                {/* Hidden on mobile */}
-              </button>
-            </div>
-          </Link>
-
-          {/* LinkedIn Link */}
-          <Link
-            href="https://linkedin.com/in/peterkessibu"
-            target="_blank"
-            passHref
-          >
-            <div className="flex flex-col items-center">
-              <button className="flex items-center space-x-2 text-[#080924] hover:text-[#2f2da8] px-4 py-2 md:py-0">
-                <FaLinkedin size={24} />
-                <span className="hidden md:inline">LinkedIn</span>{" "}
-                {/* Hidden on mobile */}
-              </button>
-            </div>
-          </Link>
+          {links.map((link, index) => (
+            <Link key={index} href={link.href} target="_blank" passHref>
+              {link.isButton ? (
+                <button className={link.className}>{link.label}</button>
+              ) : (
+                <div className="flex flex-col items-center">
+                  <button className="flex items-center space-x-2 text-[#31a9d8] hover:text-[#2f2da8] px-4 py-2 md:py-0">
+                    {link.icon}
+                    <span className="hidden md:inline">{link.label}</span>
+                  </button>
+                </div>
+              )}
+            </Link>
+          ))}
         </motion.div>
       </motion.div>
     </motion.section>

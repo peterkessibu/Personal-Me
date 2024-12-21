@@ -22,6 +22,7 @@ export const techStack = {
     { src: "/images/Techstack/openrouter.png", alt: "OpenRouter" },
     { src: "/images/Techstack/gemini.png", alt: "Gemini" },
     { src: "/images/Techstack/openai.png", alt: "OpenAI" },
+    { src: "/images/Techstack/together_ai.png", alt: "Together AI" },
   ],
 };
 
@@ -46,9 +47,9 @@ const slideInRight: Variants = {
 const sections = [
   { title: "Frameworks", items: techStack.frameworks, ref: "frameworksRef", inView: "frameworksInView", variants: slideInLeft },
   { title: "Libraries", items: techStack.libraries, ref: "librariesRef", inView: "librariesInView", variants: slideInRight },
+  { title: "Design Tools", items: techStack.designTools, ref: "designToolsRef", inView: "designToolsInView", variants: slideInLeft },
   { title: "Languages", items: techStack.languages, ref: "languagesRef", inView: "languagesInView", variants: slideInRight },
   { title: "AI Integrations", items: techStack.aiIntegrations, ref: "aiRef", inView: "aiInView", variants: slideInLeft },
-  { title: "Design Tools", items: techStack.designTools, ref: "designToolsRef", inView: "designToolsInView", variants: slideInLeft },
 ];
 
 const TechStack = () => {
@@ -62,7 +63,7 @@ const TechStack = () => {
   const inViews = { frameworksInView, librariesInView, languagesInView, aiInView, designToolsInView };
 
   return (
-    <section id="techstack" className="p-10 bg-white text-[#040413] w-full max-w-screen">
+    <section id="techstack" className="p-10 bg-[#040413] text-[#31a9d8] w-full max-w-screen">
       <motion.h2
         className="text-5xl font-bold text-center my-12"
         initial={{ opacity: 0, y: -30 }}
@@ -72,7 +73,7 @@ const TechStack = () => {
         Tech Stack
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {sections.map((section, index) => (
           <motion.div
             key={index}
@@ -83,7 +84,7 @@ const TechStack = () => {
             className="flex flex-col items-center"
           >
             <p className="text-lg font-semibold mb-4">{section.title}</p>
-            <div className={`grid grid-cols-${section.items.length > 2 ? 3 : 2} gap-6`}>
+            <div className={`grid grid-cols-2 gap-6`}>
               {section.items.map((tech, techIndex) => (
                 <motion.div
                   key={techIndex}

@@ -39,10 +39,10 @@ const Experience = () => {
   });
 
   return (
-    <div className="bg-white py-8 text-text-[#040413]" id="experience" ref={ref}>
+    <div className="bg-[#040413] text-[#31a9d8] py-8" id="experience" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.h2
-          className="text-5xl font-bold text-center my-12 text-[#06061f]"
+          className="text-5xl font-bold text-center my-12"
           initial={{ opacity: 0, y: -30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
           transition={{ duration: 1.4, ease: "easeInOut" }}
@@ -54,7 +54,7 @@ const Experience = () => {
           {experiences.map((experience, index) => (
             <motion.div
               key={index}
-              className="bg-white shadow-lg border-gray-400 rounded-lg overflow-hidden mt-4 flex"
+              className="shadow-lg bg-[#040413] text-[#31a9d8] border border-[#31a9d8] rounded-lg overflow-hidden mt-4 flex"
               variants={cardVariants}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
@@ -78,16 +78,16 @@ const Experience = () => {
 
               {/* Content Container */}
               <div className="flex-auto p-3 sm:p-6">
-                <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-1 sm:mb-2">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-1 sm:mb-2">
                   {experience.title}
                 </h3>
-                <p className="text-base sm:text-lg text-gray-600 mb-1 sm:mb-2">
+                <p className="text-base sm:text-lg mb-1 sm:mb-2">
                   {experience.company}
                 </p>
-                <p className="text-xs sm:text-sm text-gray-400 mb-1 sm:mb-2">
+                <p className="text-xs sm:text-sm mb-1 sm:mb-2">
                   {experience.duration}
                 </p>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                <p className="text-sm sm:text-base leading-relaxed">
                   {experience.description}
                 </p>
               </div>
