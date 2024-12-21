@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa"; 
+import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   const controls = useAnimation();
@@ -92,7 +92,7 @@ const Hero = () => {
         >
           {/* Resume Button */}
           <Link
-            href="https://drive.google.com/file/d/1ZxGNFAcHY3yla3_lUViGxMaatLZY48rO/view?usp=sharing"
+            href="https://drive.google.com/file/d/1eMLBt-uvNp-WEAfIm8Tfsd3PVPew6QyO/view?usp=sharing"
             target="_blank"
             passHref
           >

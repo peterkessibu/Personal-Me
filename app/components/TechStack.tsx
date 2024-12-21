@@ -43,181 +43,65 @@ const slideInRight: Variants = {
   },
 };
 
+const sections = [
+  { title: "Frameworks", items: techStack.frameworks, ref: "frameworksRef", inView: "frameworksInView", variants: slideInLeft },
+  { title: "Libraries", items: techStack.libraries, ref: "librariesRef", inView: "librariesInView", variants: slideInRight },
+  { title: "Languages", items: techStack.languages, ref: "languagesRef", inView: "languagesInView", variants: slideInRight },
+  { title: "AI Integrations", items: techStack.aiIntegrations, ref: "aiRef", inView: "aiInView", variants: slideInLeft },
+  { title: "Design Tools", items: techStack.designTools, ref: "designToolsRef", inView: "designToolsInView", variants: slideInLeft },
+];
+
 const TechStack = () => {
-  const { ref: frameworksRef, inView: frameworksInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
-  const { ref: librariesRef, inView: librariesInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
-  const { ref: languagesRef, inView: languagesInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
-  const { ref: aiRef, inView: aiInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
-  const { ref: designToolsRef, inView: designToolsInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.4,
-  });
+  const { ref: frameworksRef, inView: frameworksInView } = useInView({ triggerOnce: true, threshold: 0.4 });
+  const { ref: librariesRef, inView: librariesInView } = useInView({ triggerOnce: true, threshold: 0.4 });
+  const { ref: languagesRef, inView: languagesInView } = useInView({ triggerOnce: true, threshold: 0.4 });
+  const { ref: aiRef, inView: aiInView } = useInView({ triggerOnce: true, threshold: 0.4 });
+  const { ref: designToolsRef, inView: designToolsInView } = useInView({ triggerOnce: true, threshold: 0.4 });
+
+  const refs: Record<string, (node?: Element | null | undefined) => void> = { frameworksRef, librariesRef, languagesRef, aiRef, designToolsRef };
+  const inViews = { frameworksInView, librariesInView, languagesInView, aiInView, designToolsInView };
 
   return (
     <section id="techstack" className="p-10 bg-white text-[#040413] w-full max-w-screen">
       <motion.h2
         className="text-5xl font-bold text-center my-12"
         initial={{ opacity: 0, y: -30 }}
-        animate={
-          frameworksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
-        }
+        animate={frameworksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
         transition={{ duration: 1.4, ease: "easeInOut" }}
       >
         Tech Stack
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Frameworks Section */}
-        <motion.div
-          ref={frameworksRef}
-          variants={slideInLeft}
-          initial="hidden"
-          animate={frameworksInView ? "visible" : "hidden"}
-          className="flex flex-col items-center"
-        >
-          <p className="text-lg font-semibold mb-4">Frameworks</p>
-          <div className="grid grid-cols-2 gap-6">
-            {techStack.frameworks.map((tech, index) => (
-              <motion.div
-                key={index}
-                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-              >
-                <Image
-                  src={tech.src}
-                  alt={tech.alt}
-                  width={64}
-                  height={64}
-                  className="w-18 h-18 object-contain"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Libraries Section */}
-        <motion.div
-          ref={librariesRef}
-          variants={slideInRight}
-          initial="hidden"
-          animate={librariesInView ? "visible" : "hidden"}
-          className="flex flex-col items-center"
-        >
-          <p className="text-lg font-semibold mb-4">Libraries</p>
-          <div className="grid grid-cols-2 gap-6">
-            {techStack.libraries.map((tech, index) => (
-              <motion.div
-                key={index}
-                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-              >
-                <Image
-                  src={tech.src}
-                  alt={tech.alt}
-                  width={64}
-                  height={64}
-                  className="w-18 h-18 object-contain"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* AI Integrations Section */}
-        <motion.div
-          ref={aiRef}
-          variants={slideInLeft}
-          initial="hidden"
-          animate={aiInView ? "visible" : "hidden"}
-          className="flex flex-col items-center"
-        >
-          <p className="text-lg font-semibold mb-4">AI Integrations</p>
-          <div className="grid grid-cols-3 gap-6">
-            {techStack.aiIntegrations.map((tech, index) => (
-              <motion.div
-                key={index}
-                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-              >
-                <Image
-                  src={tech.src}
-                  alt={tech.alt}
-                  width={64}
-                  height={64}
-                  className="w-18 h-18 object-contain"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Languages Section */}
-        <motion.div
-          ref={languagesRef}
-          variants={slideInRight}
-          initial="hidden"
-          animate={languagesInView ? "visible" : "hidden"}
-          className="flex flex-col items-center"
-        >
-          <p className="text-lg font-semibold mb-4">Languages</p>
-          <div className="grid grid-cols-3 gap-6">
-            {techStack.languages.map((tech, index) => (
-              <motion.div
-                key={index}
-                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-              >
-                <Image
-                  src={tech.src}
-                  alt={tech.alt}
-                  width={64}
-                  height={64}
-                  className="w-18 h-18 object-contain"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Design Tools Section */}
-        <motion.div
-          ref={designToolsRef}
-          variants={slideInLeft}
-          initial="hidden"
-          animate={designToolsInView ? "visible" : "hidden"}
-          className="flex flex-col items-center"
-        >
-          <p className="text-lg font-semibold mb-4">Design Tools</p>
-          <div className="grid grid-cols-1 gap-6">
-            {techStack.designTools.map((tech, index) => (
-              <motion.div
-                key={index}
-                className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-              >
-                <Image
-                  src={tech.src}
-                  alt={tech.alt}
-                  width={64}
-                  height={64}
-                  className="w-18 h-18 object-contain"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        {sections.map((section, index) => (
+          <motion.div
+            key={index}
+            ref={refs[section.ref]}
+            variants={section.variants}
+            initial="hidden"
+            animate={inViews[section.inView as keyof typeof inViews] ? "visible" : "hidden"}
+            className="flex flex-col items-center"
+          >
+            <p className="text-lg font-semibold mb-4">{section.title}</p>
+            <div className={`grid grid-cols-${section.items.length > 2 ? 3 : 2} gap-6`}>
+              {section.items.map((tech, techIndex) => (
+                <motion.div
+                  key={techIndex}
+                  className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Image
+                    src={tech.src}
+                    alt={tech.alt}
+                    width={64}
+                    height={64}
+                    className="w-18 h-18 object-contain"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
