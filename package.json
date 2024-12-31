@@ -11,6 +11,7 @@
   "dependencies": {
     "@emailjs/nodejs": "^4.0.4",
     "@heroicons/react": "^2.1.5",
+    "@vercel/analytics": "^1.4.1",
     "emailjs-com": "^3.2.0",
     "firebase": "^10.13.1",
     "framer-motion": "^11.5.4",
