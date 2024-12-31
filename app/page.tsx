@@ -65,7 +65,6 @@ const Home = () => {
               {/* ...SVG icon... */}
             </button>
           )}
-
         </nav>
 
         {/* Animated Menu for small screens */}
@@ -77,8 +76,7 @@ const Home = () => {
               exit={{ opacity: 0, y: "-100%" }}
               transition={{ duration: 0.5 }}
               className="fixed h-screen inset-3 p-6 bg-white bg-opacity-95 backdrop-blur-md flex flex-col items-center justify-center z-50 lg:hidden overflow-hidden"
-            >
-            </motion.div>
+            ></motion.div>
           )}
         </AnimatePresence>
       </header>

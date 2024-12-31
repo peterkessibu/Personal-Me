@@ -11,7 +11,8 @@ const links = [
     href: "https://drive.google.com/file/d/1eMLBt-uvNp-WEAfIm8Tfsd3PVPew6QyO/view?usp=sharing",
     label: "Resume",
     isButton: true,
-    className: "px-6 py-3 border-2 text-[#31a9d8] border-[#31a9d8] rounded-lg hover:bg-[#1c1c69] hover:text-[#31a9d8] transform duration-500 ease-in-out",
+    className:
+      "px-6 py-3 border-2 text-[#31a9d8] border-[#31a9d8] rounded-lg hover:bg-[#1c1c69] hover:text-[#31a9d8] transform duration-500 ease-in-out",
   },
   {
     href: "https://github.com/peterkessibu",
@@ -24,7 +25,7 @@ const links = [
     icon: <FaEnvelope size={24} />,
   },
   {
-    href: "https://linkedin.com/in/peterkessibu",
+    href: "https://linkedin.com/in/peteressibu",
     label: "LinkedIn",
     icon: <FaLinkedin size={24} />,
   },
@@ -41,7 +42,7 @@ const Hero = () => {
     if (inView) {
       controls.start("visible");
     } else {
-        controls.start("hidden");
+      controls.start("hidden");
     }
   }, [controls, inView]);
 
@@ -94,7 +95,7 @@ const Hero = () => {
             className="text-4xl md:text-6xl lg:text-7xl font-bold flex flex-row text-[#31a9d8]"
             variants={textVariants}
           >
-            PETER ESSIBU
+            PETER ESSIBU.
           </motion.h1>
           <motion.span
             className=" text-xl font-semibold"
@@ -103,7 +104,11 @@ const Hero = () => {
             animate="visible"
           >
             {Array.from("AI Software Engineer").map((letter, index) => (
-              <motion.span key={index} variants={letterVariants} className="text-[#31a9d8]">
+              <motion.span
+                key={index}
+                variants={letterVariants}
+                className="text-[#31a9d8]"
+              >
                 {letter === " " ? "\u00A0" : letter}
               </motion.span>
             ))}

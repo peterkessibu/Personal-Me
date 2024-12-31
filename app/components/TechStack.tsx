@@ -45,29 +45,91 @@ const slideInRight: Variants = {
 };
 
 const sections = [
-  { title: "Frameworks", items: techStack.frameworks, ref: "frameworksRef", inView: "frameworksInView", variants: slideInLeft },
-  { title: "Libraries", items: techStack.libraries, ref: "librariesRef", inView: "librariesInView", variants: slideInRight },
-  { title: "Design Tools", items: techStack.designTools, ref: "designToolsRef", inView: "designToolsInView", variants: slideInLeft },
-  { title: "Languages", items: techStack.languages, ref: "languagesRef", inView: "languagesInView", variants: slideInRight },
-  { title: "AI Integrations", items: techStack.aiIntegrations, ref: "aiRef", inView: "aiInView", variants: slideInLeft },
+  {
+    title: "Frameworks",
+    items: techStack.frameworks,
+    ref: "frameworksRef",
+    inView: "frameworksInView",
+    variants: slideInLeft,
+  },
+  {
+    title: "Libraries",
+    items: techStack.libraries,
+    ref: "librariesRef",
+    inView: "librariesInView",
+    variants: slideInRight,
+  },
+  {
+    title: "Design Tools",
+    items: techStack.designTools,
+    ref: "designToolsRef",
+    inView: "designToolsInView",
+    variants: slideInLeft,
+  },
+  {
+    title: "Languages",
+    items: techStack.languages,
+    ref: "languagesRef",
+    inView: "languagesInView",
+    variants: slideInRight,
+  },
+  {
+    title: "AI Integrations",
+    items: techStack.aiIntegrations,
+    ref: "aiRef",
+    inView: "aiInView",
+    variants: slideInLeft,
+  },
 ];
 
 const TechStack = () => {
-  const { ref: frameworksRef, inView: frameworksInView } = useInView({ triggerOnce: true, threshold: 0.4 });
-  const { ref: librariesRef, inView: librariesInView } = useInView({ triggerOnce: true, threshold: 0.4 });
-  const { ref: languagesRef, inView: languagesInView } = useInView({ triggerOnce: true, threshold: 0.4 });
-  const { ref: aiRef, inView: aiInView } = useInView({ triggerOnce: true, threshold: 0.4 });
-  const { ref: designToolsRef, inView: designToolsInView } = useInView({ triggerOnce: true, threshold: 0.4 });
+  const { ref: frameworksRef, inView: frameworksInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+  const { ref: librariesRef, inView: librariesInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+  const { ref: languagesRef, inView: languagesInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+  const { ref: aiRef, inView: aiInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+  const { ref: designToolsRef, inView: designToolsInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
 
-  const refs: Record<string, (node?: Element | null | undefined) => void> = { frameworksRef, librariesRef, languagesRef, aiRef, designToolsRef };
-  const inViews = { frameworksInView, librariesInView, languagesInView, aiInView, designToolsInView };
+  const refs: Record<string, (node?: Element | null | undefined) => void> = {
+    frameworksRef,
+    librariesRef,
+    languagesRef,
+    aiRef,
+    designToolsRef,
+  };
+  const inViews = {
+    frameworksInView,
+    librariesInView,
+    languagesInView,
+    aiInView,
+    designToolsInView,
+  };
 
   return (
-    <section id="techstack" className="p-10 bg-[#040413] text-[#31a9d8] w-full max-w-screen">
+    <section
+      id="techstack"
+      className="p-10 bg-[#040413] text-[#31a9d8] w-full max-w-screen"
+    >
       <motion.h2
         className="text-5xl font-bold text-center my-12"
         initial={{ opacity: 0, y: -30 }}
-        animate={frameworksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+        animate={
+          frameworksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
+        }
         transition={{ duration: 1.4, ease: "easeInOut" }}
       >
         Tech Stack
@@ -80,7 +142,11 @@ const TechStack = () => {
             ref={refs[section.ref]}
             variants={section.variants}
             initial="hidden"
-            animate={inViews[section.inView as keyof typeof inViews] ? "visible" : "hidden"}
+            animate={
+              inViews[section.inView as keyof typeof inViews]
+                ? "visible"
+                : "hidden"
+            }
             className="flex flex-col items-center"
           >
             <p className="text-lg font-semibold mb-4">{section.title}</p>
@@ -88,7 +154,7 @@ const TechStack = () => {
               {section.items.map((tech, techIndex) => (
                 <motion.div
                   key={techIndex}
-                  className="bg-white shadow-lg border-gray-400 rounded-lg p-6 flex items-center justify-center"
+                  className="bg-white shadow-lg border-gray-400 rounded-lg p-2 lg:p-6 flex items-center justify-center"
                   whileHover={{ scale: 1.05 }}
                 >
                   <Image
