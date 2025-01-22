@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import TechStack from "./components/TechStack";
-import Footer from "./components/Footer";
-import HomePage from "./components/Experience";
+import Hero from "../components/Hero";
+import Projects from "../components/Projects";
+import TechStack from "../components/TechStack";
+import Footer from "../components/Footer";
+import HomePage from "../components/Experience";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
