@@ -1,4 +1,3 @@
-"use client";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FaGithub, FaLink } from "react-icons/fa";
