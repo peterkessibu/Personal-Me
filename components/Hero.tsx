@@ -102,7 +102,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
           >
-            {Array.from("AI Software Engineer").map((letter, index) => (
+            {Array.from("AI Engineer").map((letter, index) => (
               <motion.span
                 key={index}
                 variants={letterVariants}
