@@ -17,20 +17,20 @@ const Projects = () => {
 
   const projects = [
     {
-      name: "Lorem Colors",
-      imgSrc: "/images/Projects/lorem_colors.png",
-      links: {
-        github: "https://github.com/peterkessibu/lorem-colors",
-        demo: "https://lorem-colors.vercel.app",
-        youtube: "",
-      },
-    },
-    {
       name: "Cod-Aid",
       imgSrc: "/images/Projects/cod-aid.png",
       links: {
         github: "",
         demo: "https://cod-aid.vercel.app",
+        youtube: "",
+      },
+    },
+    {
+      name: "Lorem Colors",
+      imgSrc: "/images/Projects/lorem_colors.png",
+      links: {
+        github: "https://github.com/peterkessibu/lorem-colors",
+        demo: "https://lorem-colors.vercel.app",
         youtube: "",
       },
     },
