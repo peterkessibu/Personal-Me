@@ -3,17 +3,13 @@
 Welcome to my personal portfolio website! This site showcases my projects, skills, and experience as an AI Software Engineer. It's built using Next.js and designed to be responsive and engaging.
 
 ## Preview
-
-[![Portfolio Website Screenshot]]
-![Portfolio Website Screenshot](public/images/Hero/me.png)
+(public/images/Hero/me.png)
 
 ## Technologies Used
 
 *   **Next.js:** A React framework for building performant web applications.
 *   **Framer Motion:** A library for creating smooth and engaging animations.
 *   **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
-*   **Firebase:** A platform for building web applications.
-*   **Other Libraries:** React Icons, React Intersection Observer
 
 [**Insert a collage of logos for Next.js, Framer Motion, Tailwind CSS, and Firebase here**]
 
