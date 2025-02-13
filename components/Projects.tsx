@@ -26,6 +26,15 @@ const Projects = () => {
       },
     },
     {
+      name: "Cod-Aid",
+      imgSrc: "/images/Projects/cod-aid.png",
+      links: {
+        github: "",
+        demo: "https://cod-aid.vercel.app",
+        youtube: "",
+      },
+    },
+    {
       name: "LearnTab",
       imgSrc: "/images/Projects/learntab.png",
       links: {
