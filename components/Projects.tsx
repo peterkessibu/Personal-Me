@@ -26,6 +26,15 @@ const Projects = () => {
       },
     },
     {
+      name: "Hex AI",
+      imgSrc: "/images/Projects/hex-ai.png",
+      links: {
+        github: "",
+        demo: "https://lorem-colors-v1.vercel.app/",
+        youtube: "",
+      },
+    },
+    {
       name: "Lorem Colors",
       imgSrc: "/images/Projects/lorem_colors.png",
       links: {
@@ -146,9 +155,8 @@ const Projects = () => {
                   src={project.imgSrc}
                   alt={project.name}
                   fill
-                  sizes="(max-width: 768px) 100vw"
                   quality={100}
-                  className="rounded-lg p-6"
+                  className="rounded-lg p-6 object-contain"
                 />
               </motion.div>
             </div>

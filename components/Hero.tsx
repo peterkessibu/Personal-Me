@@ -7,7 +7,7 @@ import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
 
 const links = [
   {
-    href: "https://drive.google.com/file/d/1eMLBt-uvNp-WEAfIm8Tfsd3PVPew6QyO/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1IIvl3vN_HgrrROhxwVzaBvNvhZWXlu9N/view?usp=sharing",
     label: "Resume",
     isButton: true,
     className:
@@ -102,7 +102,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
           >
-            {Array.from("AI Software Engineer").map((letter, index) => (
+            {Array.from("AI Engineer").map((letter, index) => (
               <motion.span
                 key={index}
                 variants={letterVariants}
