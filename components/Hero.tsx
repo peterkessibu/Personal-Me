@@ -7,7 +7,7 @@ import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
 
 const links = [
   {
-    href: "https://drive.google.com/file/d/1IIvl3vN_HgrrROhxwVzaBvNvhZWXlu9N/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1JbUHDlO_7eAXtDYEPvtKq569IedmdN0Q/view?usp=sharing",
     label: "Resume",
     isButton: true,
     className:
