@@ -7,11 +7,11 @@ import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
 
 const links = [
   {
-    href: "https://drive.google.com/file/d/1JbUHDlO_7eAXtDYEPvtKq569IedmdN0Q/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1A3dmpc3SFMXw5kFKvVizyweyVjsGXTzC/view?usp=sharing",
     label: "Resume",
     isButton: true,
     className:
-      "px-6 py-3 border-2 text-[#31a9d8] border-[#31a9d8] rounded-lg hover:bg-[#1c1c69] hover:text-[#31a9d8] transform duration-500 ease-in-out",
+      "rounded-xl bg-purple-600 px-8 py-2 text-white outline outline-offset-4 outline-blue-300 transition-all duration-300 hover:scale-[1.03] hover:bg-purple-700 active:scale-[1.01]",
   },
   {
     href: "https://github.com/peterkessibu",
@@ -91,7 +91,7 @@ const Hero = () => {
       >
         <div className="flex flex-col space-y-3 items-center justify-center">
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold flex flex-row text-[#31a9d8]"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold flex flex-row text-purple-600"
             variants={textVariants}
           >
             PETER ESSIBU.
@@ -106,7 +106,7 @@ const Hero = () => {
               <motion.span
                 key={index}
                 variants={letterVariants}
-                className="text-[#31a9d8]"
+                className="text-purple-600"
               >
                 {letter === " " ? "\u00A0" : letter}
               </motion.span>
@@ -124,7 +124,7 @@ const Hero = () => {
                 <button className={link.className}>{link.label}</button>
               ) : (
                 <div className="flex flex-col items-center">
-                  <button className="flex items-center space-x-2 text-[#31a9d8] hover:text-[#2f2da8] px-4 py-2 md:py-0">
+                  <button className="flex items-center space-x-2 text-purple-600 hover:text-[#2f2da8] px-4 py-2 md:py-0">
                     {link.icon}
                     <span className="hidden md:inline">{link.label}</span>
                   </button>

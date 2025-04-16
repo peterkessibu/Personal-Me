@@ -38,7 +38,11 @@ const Experience = () => {
   });
 
   return (
-    <div className="bg-[#040413] text-[#31a9d8] py-8" id="experience" ref={ref}>
+    <div
+      className="bg-[#040413] text-purple-600 py-8"
+      id="experience"
+      ref={ref}
+    >
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-5xl font-bold text-center my-12"
@@ -53,7 +57,7 @@ const Experience = () => {
           {experiences.map((experience, index) => (
             <motion.div
               key={index}
-              className="shadow-lg bg-[#040413] text-[#31a9d8] border border-[#31a9d8] rounded-lg overflow-hidden mt-4 flex"
+              className="shadow-lg bg-[#040413] text-purple-600 border border-purple-600 rounded-lg overflow-hidden mt-4 flex"
               variants={cardVariants}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}

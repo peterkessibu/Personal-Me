@@ -17,6 +17,15 @@ const Projects = () => {
 
   const projects = [
     {
+      name: "Tiny-Notes-AI",
+      imgSrc: "/images/Projects/tiny-notes.png",
+      links: {
+        github: "https://github.com/peterkessibu/tinynote",
+        demo: "https://tinynote-ai.vercel.app/",
+        youtube: "",
+      },
+    },
+    {
       name: "Cod-Aid",
       imgSrc: "/images/Projects/cod-aid.png",
       links: {
@@ -84,7 +93,7 @@ const Projects = () => {
   return (
     <motion.section
       id="projects"
-      className="w-full text-[#31a9d8]"
+      className="w-full text-purple-600"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -108,7 +117,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="border border-[#31a9d8] p-4 rounded-lg shadow-lg relative overflow-hidden transition-transform transform hover:scale-105"
+            className="border border-purple-600 p-4 rounded-lg shadow-lg relative overflow-hidden transition-transform transform hover:scale-105"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -118,7 +127,9 @@ const Projects = () => {
             }}
           >
             <div className="absolute top-0 left-0 w-full p-4 z-20 flex justify-between items-center mb-4">
-              <h3 className="text-xl font-bold">{project.name}</h3>
+              <h3 className="text-xl font-bold text-purple-600">
+                {project.name}
+              </h3>
               <div className="flex space-x-3">
                 {project.links.demo && (
                   <Link

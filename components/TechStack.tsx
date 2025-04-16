@@ -121,7 +121,7 @@ const TechStack = () => {
   return (
     <section
       id="techstack"
-      className="p-10 bg-[#040413] text-[#31a9d8] w-full max-w-screen"
+      className="p-10 bg-[#040413] text-purple-600 w-full max-w-screen"
     >
       <motion.h2
         className="text-5xl font-bold text-center my-12"
@@ -153,7 +153,7 @@ const TechStack = () => {
               {section.items.map((tech, techIndex) => (
                 <motion.div
                   key={techIndex}
-                  className="bg-white shadow-lg border-gray-400 rounded-lg p-2 lg:p-6 flex items-center justify-center"
+                  className="bg-white shadow-lg border-t-4 border-purple-600 rounded-lg p-2 lg:p-6 flex items-center justify-center"
                   whileHover={{ scale: 1.05 }}
                 >
                   <Image

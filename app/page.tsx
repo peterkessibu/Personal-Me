@@ -44,7 +44,7 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-[#040413]">
+    <div className="bg-[#040413] text-purple-600">
       {/* Header Section */}
       <header
         onClick={scrollToTop}
