@@ -1,0 +1,147 @@
+{
+  "javascript": {
+    "name": "JavaScript",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    "color": "default"
+  },
+  "typescript": {
+    "name": "TypeScript",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    "color": "default"
+  },
+  "python": {
+    "name": "Python",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "color": "default"
+  },
+  "react": {
+    "name": "React",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "color": "default"
+  },
+  "nextjs": {
+    "name": "Next.js",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    "color": "default"
+  },
+  "fastapi": {
+    "name": "FastAPI",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+    "color": "default"
+  },
+  "html5": {
+    "name": "HTML5",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    "color": "default"
+  },
+  "css3": {
+    "name": "CSS3",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    "color": "default"
+  },
+  "tailwindcss": {
+    "name": "Tailwind CSS",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+    "color": "default"
+  },
+  "materialui": {
+    "name": "Material-UI",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+    "color": "default"
+  },
+  "postgresql": {
+    "name": "PostgreSQL",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    "color": "default"
+  },
+  "supabase": {
+    "name": "Supabase",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
+    "color": "default"
+  },
+  "firebase": {
+    "name": "Firebase",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+    "color": "default"
+  },
+  "prisma": {
+    "name": "Prisma",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
+    "color": "default"
+  },
+  "githubactions": {
+    "name": "GitHub Actions",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    "color": "default"
+  },
+  "vercel": {
+    "name": "Vercel",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+    "color": "default"
+  },
+  "netlify": {
+    "name": "Netlify",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg",
+    "color": "default"
+  },
+  "git": {
+    "name": "Git",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    "color": "default"
+  },
+  "github": {
+    "name": "GitHub",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    "color": "default"
+  },
+  "figma": {
+    "name": "Figma",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+    "color": "default"
+  },
+  "framer": {
+    "name": "Framer",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg",
+    "color": "default"
+  },
+  "vite": {
+    "name": "Vite",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
+    "color": "default"
+  },
+  "rollup": {
+    "name": "Rollup",
+    "icon": "https://rollupjs.org/favicon.png",
+    "color": "default"
+  },
+  "turbo": {
+    "name": "Turbo",
+    "icon": "https://turbo.build/images/favicon-dark/apple-touch-icon.png",
+    "color": "default"
+  },
+  "eslint": {
+    "name": "ESLint",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg",
+    "color": "default"
+  },
+  "prettier": {
+    "name": "Prettier",
+    "icon": "https://prettier.io/icon.png",
+    "color": "default"
+  },
+  "cypress": {
+    "name": "Cypress",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypress/cypress-original.svg",
+    "color": "default"
+  },
+  "playwright": {
+    "name": "Playwright",
+    "icon": "https://playwright.dev/img/playwright-logo.svg",
+    "color": "default"
+  },
+  "vitest": {
+    "name": "Vitest",
+    "icon": "https://vitest.dev/favicon.ico",
+    "color": "default"
+  }
+}

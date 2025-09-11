@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Hero from "../components/Hero";
+import TableballGame from "../components/Tableball";
 import Projects from "../components/Projects";
 import TechStack from "../components/TechStack";
 import Footer from "../components/Footer";
@@ -44,7 +45,7 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-[#040413] text-purple-600">
+    <div className="bg-[#000000] text-purple-600">
       {/* Header Section */}
       <header
         onClick={scrollToTop}
@@ -84,6 +85,9 @@ const Home = () => {
       {/* Sections with IDs */}
       <div id="hero">
         <Hero />
+      </div>
+      <div id="tableball">
+        <TableballGame />
       </div>
       <div id="experience" className="section-padding">
         <HomePage />

@@ -93,7 +93,7 @@ const Projects = () => {
   return (
     <motion.section
       id="projects"
-      className="w-full text-purple-600"
+      className="w-full text-white"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -117,7 +117,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="border border-purple-600 p-4 rounded-lg shadow-lg relative overflow-hidden transition-transform transform hover:scale-105"
+            className="border border-white p-4 rounded-lg shadow-lg relative overflow-hidden transition-transform transform hover:scale-105"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
