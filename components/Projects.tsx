@@ -100,7 +100,7 @@ const Projects = () => {
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
       <motion.h2
-        className="text-5xl font-bold text-center my-12"
+        className="text-5xl font-bold text-center my-12 text-white underline decoration-purple-600 outline outline-offset-2"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -127,7 +127,7 @@ const Projects = () => {
             }}
           >
             <div className="absolute top-0 left-0 w-full p-4 z-20 flex justify-between items-center mb-4">
-              <h3 className="text-xl font-bold text-purple-600">
+              <h3 className="text-xl font-bold text-white">
                 {project.name}
               </h3>
               <div className="flex space-x-3">
