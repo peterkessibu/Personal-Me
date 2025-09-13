@@ -1,7 +1,7 @@
 import { motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import skills from "../skills.json";
-import { DotOrbit } from "@paper-design/shaders-react";
+import { DotGrid } from "@paper-design/shaders-react";
 
 const slideInLeft: Variants = {
   hidden: { opacity: 0, x: -50 },
@@ -26,10 +26,11 @@ const sections = [
   { title: "Frameworks", keys: ["react", "nextjs"] as const, ref: "frameworksRef", inView: "frameworksInView", variants: slideInRight },
   { title: "Styling", keys: ["tailwindcss", "css3", "materialui"] as const, ref: "designToolsRef", inView: "designToolsInView", variants: slideInLeft },
   { title: "Data & Backend", keys: ["postgresql", "supabase", "firebase", "prisma"] as const, ref: "librariesRef", inView: "librariesInView", variants: slideInRight },
-  { title: "Tooling", keys: ["vite", "rollup", "turbo", "eslint", "prettier"] as const, ref: "aiRef", inView: "aiInView", variants: slideInLeft },
+  { title: "Tooling", keys: ["vite", "rollup", "turbo", "eslint", "prettier"] as const, ref: "toolingRef", inView: "toolingInView", variants: slideInLeft },
   { title: "Platforms", keys: ["vercel", "netlify", "githubactions"] as const, ref: "moreRef", inView: "moreInView", variants: slideInRight },
-  { title: "Testing", keys: ["cypress"] as const, ref: "testRef", inView: "testInView", variants: slideInLeft },
-  { title: "Design", keys: ["figma", "framer"] as const, ref: "designRef", inView: "designInView", variants: slideInRight },
+  { title: "AI Model Platforms", keys: ["openrouter", "together", "gemini", "openai", "groq"] as const, ref: "aiRef", inView: "aiInView", variants: slideInLeft },
+  { title: "Testing", keys: ["cypress"] as const, ref: "testRef", inView: "testInView", variants: slideInRight },
+  { title: "Design", keys: ["figma", "framer"] as const, ref: "designRef", inView: "designInView", variants: slideInLeft },
 ];
 
 type BadgeProps = { label: string };
@@ -41,6 +42,10 @@ const Badge = ({ label }: BadgeProps) => (
 );
 
 const TechStack = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
   const { ref: frameworksRef, inView: frameworksInView } = useInView({
     triggerOnce: true,
     threshold: 0.4,
@@ -50,6 +55,10 @@ const TechStack = () => {
     threshold: 0.4,
   });
   const { ref: languagesRef, inView: languagesInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+  const { ref: toolingRef, inView: toolingInView } = useInView({
     triggerOnce: true,
     threshold: 0.4,
   });
@@ -69,6 +78,7 @@ const TechStack = () => {
     frameworksRef,
     librariesRef,
     languagesRef,
+    toolingRef,
     aiRef,
     designToolsRef,
     moreRef,
@@ -79,6 +89,7 @@ const TechStack = () => {
     frameworksInView,
     librariesInView,
     languagesInView,
+    toolingInView,
     aiInView,
     designToolsInView,
     moreInView,
@@ -87,35 +98,43 @@ const TechStack = () => {
   };
 
   return (
-    <section
+    <motion.section
       id="techstack"
-      className="relative p-14 bg-[#000000] lg:h-screen w-full max-w-screen min-h-screen overflow-hidden"
+      className="relative w-full text-white bg-[#000000] min-h-screen"
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
     >
+      {/* Background Shader */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <DotOrbit
-          style={{ height: 500, width: '100%' }}
+        <DotGrid
+          style={{ width: "100%", height: "100%" }}
           colorBack="#000000"
-          stepsPerColor={3}
-          size={0.98}
-          sizeRange={0.66}
-          spreading={0.61}
-          scale={0.95}
-          speed={0.1}
-          colors={["#694e6e", "#150f14", "#0f0113"]}
+          colorFill="#ffffff"
+          colorStroke="#ffaa00"
+          size={1}
+          gapX={32}
+          gapY={32}
+          strokeWidth={0}
+          sizeRange={0}
+          opacityRange={0.5}
+          shape="circle"
+          scale={0.45}
+          rotation={0}
         />
       </div>
-      <div className="relative z-10 h-full">
-        <motion.h2
-          className="text-5xl font-bold text-center my-12 text-white"
-          initial={{ opacity: 0, y: -30 }}
-          animate={
-            frameworksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
-          }
-          transition={{ duration: 1.4, ease: "easeInOut" }}
-        >
-          Tech Stack
-        </motion.h2>
-
+      <motion.h2
+        className="relative z-20 text-5xl font-bold text-center text-white underline decoration-purple-600 outline outline-offset-2"
+        initial={{ opacity: 0, y: -30 }}
+        animate={
+          frameworksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }
+        }
+        transition={{ duration: 1.4, ease: "easeInOut" }}
+      >
+        Tech Stack
+      </motion.h2>
+      <div className="relative z-10 h-full p-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sections.map((section, index) => (
             <motion.div
@@ -146,7 +165,7 @@ const TechStack = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

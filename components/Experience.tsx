@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { DotGrid } from "@paper-design/shaders-react";
 
 type ExperienceItem = {
   title: string;
@@ -29,7 +30,7 @@ export const experiences: ExperienceItem[] = [
       "Applied prompt engineering for structured, job-specific outputs.",
       "Integrated resume parsing for milestone extraction vs job descriptions.",
       "Delivered Empulse (4-day build) with real-time productivity visualization.",
-      "Next.js 15, TS, TailwindCSS, Vercel CI/CD; SSR + ISR.",
+      "Next.js 15, TypeScript, TailwindCSS, Vercel CI/CD; SSR + ISR.",
       "Modular architecture enabling rapid iteration and scalability.",
     ],
     logo: "/images/Experience/mande.png",
@@ -53,11 +54,11 @@ export const experiences: ExperienceItem[] = [
     title: "Student",
     company: "University of Cape Coast",
     location: "Cape Coast, Ghana",
-    duration: "Jan 2022 – Present",
+    duration: "Jan 2022 – Aug 2025",
     summary: "BSc. Computer Science.",
     bullets: [
-      "Relevant coursework/projects and societies (dummy data placeholder).",
-      "Awards/hackathons as applicable (dummy data placeholder).",
+      "Relevant Courses: Algorithms, Data Structures, Introduction to Artificial Intelligence, Web Technology, Computer Networking, Computer Security, Database Design, Software Engineering, Programming and Problem Solving, Research Methods, Human Computer Interaction.",
+      "Awards/hackathons: 2nd In AYO App Hackathon: Led a team of 5 to develop the frontend of an e-commerce application, the main feature of the application was that it could automatically recommend products to the user based on their cart history.",
     ],
     logo: "/images/Experience/citsa.jpg",
   },
@@ -106,21 +107,41 @@ const Experience = () => {
   }, [openIndex]);
 
   return (
-    <div
-      className="bg-black text-white py-8"
+    <motion.section
+      className="relative w-full text-white bg-[#000000] min-h-screen"
       id="experience"
       ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
     >
-      <div className="container mx-auto px-4">
-        <motion.h2
-          className="text-5xl font-bold text-center my-12"
-          initial={{ opacity: 0, y: -30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
-          transition={{ duration: 1.4, ease: "easeInOut" }}
-        >
-          Career Profile
-        </motion.h2>
-
+      {/* Background Shader */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <DotGrid
+          style={{ width: "100%", height: "100%" }}
+          colorBack="#000000"
+          colorFill="#ffffff"
+          colorStroke="#ffaa00"
+          size={1}
+          gapX={32}
+          gapY={32}
+          strokeWidth={0}
+          sizeRange={0}
+          opacityRange={0.5}
+          shape="circle"
+          scale={0.45}
+          rotation={0}
+        />
+      </div>
+      <motion.h2
+        className="relative z-20 text-5xl font-bold mb-12 text-center text-white underline decoration-purple-600 outline outline-offset-2"
+        initial={{ opacity: 0, y: -30 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+        transition={{ duration: 1.4, ease: "easeInOut" }}
+      >
+        Career Profile
+      </motion.h2>
+      <div className="container px-4 mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-0">
           {experiences.map((experience, index) => {
             // Desktop-only internal dividers to create a 2x2 grid with borders like the image
@@ -135,12 +156,12 @@ const Experience = () => {
               <motion.button
                 key={index}
                 onClick={() => setOpenIndex(index)}
-                className={`text-left bg-black text-white rounded-lg md:rounded-none overflow-hidden mt-4 md:mt-0 flex focus:outline-none focus:ring-2 focus:ring-purple-500 ${borders} md:border-purple-700`}
+                className={`text-left bg-black text-white rounded-lg md:rounded-none overflow-hidden mt-4 md:mt-0 flex focus:outline-none focus:ring-2 focus:ring-white ${borders} md:border-white`}
                 variants={cardVariants}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 custom={index}
-                whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
                 {/* Image Container */}
                 <div className="flex-none w-24 sm:w-48 relative">
@@ -245,7 +266,7 @@ const Experience = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.section>
   );
 };
 

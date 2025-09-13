@@ -20,7 +20,7 @@ const links = [
     icon: <FaGithub size={24} />,
   },
   {
-    href: "mailto:peter.essibu@stu.ucc.edu.gh",
+    href: "mailto:pierreessibu@gmail.com",
     label: "Email",
     icon: <FaEnvelope size={24} />,
   },

@@ -143,5 +143,30 @@
     "name": "Vitest",
     "icon": "https://vitest.dev/favicon.ico",
     "color": "default"
+  },
+  "openrouter": {
+    "name": "OpenRouter",
+    "icon": "https://openrouter.ai/favicon.ico",
+    "color": "default"
+  },
+  "together": {
+    "name": "Together AI",
+    "icon": "https://together.ai/favicon.ico",
+    "color": "default"
+  },
+  "gemini": {
+    "name": "Google Gemini",
+    "icon": "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg",
+    "color": "default"
+  },
+  "openai": {
+    "name": "OpenAI",
+    "icon": "https://openai.com/favicon.ico",
+    "color": "default"
+  },
+  "groq": {
+    "name": "Groq",
+    "icon": "https://groq.com/wp-content/uploads/2024/03/PBG-mark1-color.svg",
+    "color": "default"
   }
 }

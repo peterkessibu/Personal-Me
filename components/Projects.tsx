@@ -3,6 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { FaGithub, FaLink } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+import { DotGrid } from "@paper-design/shaders-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -93,23 +94,41 @@ const Projects = () => {
   return (
     <motion.section
       id="projects"
-      className="w-full text-white"
+      className="relative w-full text-white bg-[#000000] min-h-screen"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
+      {/* Background Shader */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <DotGrid
+          style={{ width: "100%", height: "100%" }}
+          colorBack="#000000"
+          colorFill="#ffffff"
+          colorStroke="#ffaa00"
+          size={1}
+          gapX={32}
+          gapY={32}
+          strokeWidth={0}
+          sizeRange={0}
+          opacityRange={0.5}
+          shape="circle"
+          scale={0.45}
+          rotation={0}
+        />
+      </div>
       <motion.h2
-        className="text-5xl font-bold text-center my-12 text-white underline decoration-purple-600 outline outline-offset-2"
+        className="relative z-20 text-5xl font-bold text-center mb-12 text-white underline decoration-purple-600 outline outline-offset-2"
         initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+        transition={{ duration: 1.4, ease: "easeInOut" }}
       >
         Projects
       </motion.h2>
 
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4"
+        className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 p-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
