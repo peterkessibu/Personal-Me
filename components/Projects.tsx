@@ -18,6 +18,15 @@ const Projects = () => {
 
   const projects = [
     {
+      name: "MediScript AI",
+      imgSrc: "/images/Projects/mediscript.png",
+      links: {
+        github: "https://github.com/peterkessibu/medscript",
+        demo: "https://medi-script-one.vercel.app/",
+        youtube: "",
+      },
+    },
+    {
       name: "Tiny-Notes-AI",
       imgSrc: "/images/Projects/tiny-notes.png",
       links: {
