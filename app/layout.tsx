@@ -18,9 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <Analytics />
-      <body className={`${poppins.className}`}>{children}</body>
+    <html lang="en" data-scroll-behavior="smooth">
+      <body className={poppins.className}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

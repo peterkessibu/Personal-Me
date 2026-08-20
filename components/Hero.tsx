@@ -3,31 +3,35 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { DotGrid } from "@paper-design/shaders-react";
 
-const links = [
-  {
-    href: "https://drive.google.com/file/d/1A3dmpc3SFMXw5kFKvVizyweyVjsGXTzC/view?usp=sharing",
-    label: "Resume",
-    isButton: true,
-    className:
-      "rounded-xl bg-purple-600 px-8 py-2 text-white outline outline-offset-4 outline-blue-300 transition-all duration-300 hover:scale-[1.03] hover:bg-purple-700 active:scale-[1.01]",
-  },
+const socials = [
   {
     href: "https://github.com/peterkessibu",
     label: "GitHub",
-    icon: <FaGithub size={24} />,
+    icon: <FaGithub size={18} />,
   },
   {
     href: "mailto:pierreessibu@gmail.com",
     label: "Email",
-    icon: <FaEnvelope size={24} />,
+    icon: <FaEnvelope size={18} />,
   },
   {
     href: "https://linkedin.com/in/peteressibu",
     label: "LinkedIn",
-    icon: <FaLinkedin size={24} />,
+    icon: <FaLinkedin size={18} />,
+  },
+  {
+    href: "https://instagram.com/peteressibu",
+    label: "Instagram",
+    icon: <FaInstagram size={18} />,
+  },
+  {
+    href: "https://x.com/peteressibu",
+    label: "X",
+    icon: <FaXTwitter size={18} />,
   },
 ];
 
@@ -47,26 +51,23 @@ const Hero = () => {
   }, [controls, inView]);
 
   const heroVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
   };
 
   const textVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.3 } },
+    hidden: { opacity: 0, y: 28 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.15 } },
   };
-
-
 
   return (
     <motion.section
       id="hero"
-      className="relative w-full max-w-screen flex flex-col lg:flex-row items-center justify-center lg:h-screen p-6 mb-20 bg-[#000000]"
+      className="relative flex min-h-screen w-full max-w-screen items-start justify-center bg-[#000000] px-6 pb-24 pt-44 md:pt-52 lg:pt-50 lg:px-12"
       ref={ref}
       initial="hidden"
       animate={controls}
     >
-      {/* Background Shader */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <DotGrid
           style={{ width: "100%", height: "100%" }}
@@ -84,69 +85,83 @@ const Hero = () => {
           rotation={0}
         />
       </div>
-      {/* Text Section */}
-      <motion.div
-        className="w-full lg:w-1/2 items-center text-center lg:text-left space-y-6 z-10 mt-24 md:mt-[130px]"
-        variants={heroVariants}
-      >
-        <div className="flex flex-col space-y-4">
+
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <motion.div className="space-y-8 text-center lg:text-left" variants={heroVariants}>
+          <motion.div variants={textVariants} className="flex justify-center lg:justify-start">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-[0.22em] text-purple-200">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              Accra · AI Engineer
+            </span>
+          </motion.div>
+
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white"
+            className="text-5xl font-bold leading-[1.05] text-white md:text-6xl lg:text-7xl"
             variants={textVariants}
           >
-            <span className="block">I am Peter</span>
-            <span className="block text-purple-400">AI Engineer.</span>
           </motion.h1>
+
           <motion.p
-            className="text-base md:text-lg text-gray-200 max-w-2xl"
+            className="max-w-xl text-base leading-relaxed text-gray-300 md:text-lg mx-auto lg:mx-0"
             variants={textVariants}
           >
-            I build AI solutions for businesses and teams. To automate their processes and improve their efficiency. 
+            I design ai systems and RAG pipelines, with an
+            accessibility-first mindset for low-latency, two-way communication.
           </motion.p>
-        </div>
 
-        {/* Primary Actions */}
-        <motion.div
-          className="flex justify-center lg:justify-start items-center gap-4 md:gap-6"
-          variants={textVariants}
-        >
-          
+          <motion.div
+            className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
+            variants={textVariants}
+          >
+            <Link
+              href="https://drive.google.com/file/d/1A3dmpc3SFMXw5kFKvVizyweyVjsGXTzC/view?usp=sharing"
+              target="_blank"
+              className="rounded-full bg-purple-600 px-8 py-3 text-sm font-semibold text-white shadow-[0_0_0_4px_rgba(147,51,234,0.25)] transition hover:bg-purple-500"
+            >
+              View resume
+            </Link>
+            <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+              {socials.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  aria-label={link.label}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-purple-100 transition hover:border-purple-400 hover:bg-purple-600/20"
+                >
+                  {link.icon}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
 
-        {/* Social Links */}
         <motion.div
-          className="flex justify-center lg:justify-start items-center space-x-6 text-lg md:text-xl"
-          variants={textVariants}
+          className="mx-auto w-full max-w-md"
+          variants={heroVariants}
         >
-          {links
-            .filter((l) => !l.isButton)
-            .map((link, index) => (
-              <Link key={index} href={link.href} target="_blank" passHref>
-                <div className="flex flex-col items-center">
-                  <button className="flex items-center space-x-2 text-purple-200 hover:text-purple-300 px-4 py-2 md:py-0">
-                    {link.icon}
-                    <span className="hidden md:inline">{link.label}</span>
-                  </button>
-                </div>
-              </Link>
-            ))}
-          <Link href="https://drive.google.com/file/d/1A3dmpc3SFMXw5kFKvVizyweyVjsGXTzC/view?usp=sharing" target="_blank" passHref>
-            <button className="rounded-xl bg-purple-600 px-8 py-2 text-white outline outline-offset-4 outline-blue-300 transition-all duration-300 hover:scale-[1.03] hover:bg-purple-700 active:scale-[1.01]">
-              Resume
-            </button>
-          </Link>
+          <div className="group overflow-hidden rounded-[14px] border border-white/15 bg-[#1c1c1e] shadow-[0_30px_80px_rgba(88,28,135,0.25)]">
+            <div className="relative flex h-11 items-center border-b border-white/10 bg-[#2c2c2e] px-4">
+              <div className="flex items-center gap-2">
+                <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+                <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+                <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+              </div>
+              <p className="pointer-events-none absolute inset-x-0 text-center text-xs text-white/60">
+                peter — portrait
+              </p>
+            </div>
+            <div className="relative aspect-[4/5] w-full">
+              <Image
+                src="/images/Hero/image.png"
+                alt="Peter Essibu"
+                fill
+                className="object-cover grayscale transition duration-500 ease-out group-hover:grayscale-0"
+                priority
+              />
+            </div>
+          </div>
         </motion.div>
-      </motion.div>
-
-      {/* Image Section */}
-      <div className="w-full lg:w-1/2 h-3/4 grayscale flex items-center justify-center p-4 mb-6 lg:mb-0 mt-10 lg:mt-0 z-10">
-        <Image
-          src="/images/Hero/image.png"
-          alt="Hero Image"
-          width={400}
-          height={400}
-          className="rounded-2xl object-cover grayscale shadow-2xl border-4 outline outline-offset-4 outline-purple-600"
-        />
       </div>
     </motion.section>
   );

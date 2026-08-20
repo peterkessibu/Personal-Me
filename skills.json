@@ -29,6 +29,31 @@
     "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
     "color": "default"
   },
+  "django": {
+    "name": "Django",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+    "color": "default"
+  },
+  "reactnative": {
+    "name": "React Native",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "color": "default"
+  },
+  "adonisjs": {
+    "name": "AdonisJS",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adonisjs/adonisjs-original.svg",
+    "color": "default"
+  },
+  "pinecone": {
+    "name": "Pinecone",
+    "icon": "https://www.pinecone.io/favicon.ico",
+    "color": "default"
+  },
+  "chromadb": {
+    "name": "ChromaDB",
+    "icon": "https://www.trychroma.com/favicon.ico",
+    "color": "default"
+  },
   "html5": {
     "name": "HTML5",
     "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",

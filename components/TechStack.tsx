@@ -23,9 +23,9 @@ const slideInRight: Variants = {
 
 const sections = [
   { title: "Languages", keys: ["javascript", "typescript", "python"] as const, ref: "languagesRef", inView: "languagesInView", variants: slideInLeft },
-  { title: "Frameworks", keys: ["react", "nextjs"] as const, ref: "frameworksRef", inView: "frameworksInView", variants: slideInRight },
+  { title: "Frameworks", keys: ["react", "nextjs", "django", "reactnative", "adonisjs"] as const, ref: "frameworksRef", inView: "frameworksInView", variants: slideInRight },
   { title: "Styling", keys: ["tailwindcss", "css3", "materialui"] as const, ref: "designToolsRef", inView: "designToolsInView", variants: slideInLeft },
-  { title: "Data & Backend", keys: ["postgresql", "supabase", "firebase", "prisma"] as const, ref: "librariesRef", inView: "librariesInView", variants: slideInRight },
+  { title: "Data & Backend", keys: ["postgresql", "supabase", "firebase", "prisma", "pinecone", "chromadb"] as const, ref: "librariesRef", inView: "librariesInView", variants: slideInRight },
   { title: "Tooling", keys: ["vite", "rollup", "turbo", "eslint", "prettier"] as const, ref: "toolingRef", inView: "toolingInView", variants: slideInLeft },
   { title: "Platforms", keys: ["vercel", "netlify", "githubactions"] as const, ref: "moreRef", inView: "moreInView", variants: slideInRight },
   { title: "AI Model Platforms", keys: ["openrouter", "together", "gemini", "openai", "groq"] as const, ref: "aiRef", inView: "aiInView", variants: slideInLeft },
