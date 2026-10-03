@@ -117,6 +117,27 @@ const PIXEL_MAP = {
         [1, 0, 0, 0],
         [1, 1, 1, 1],
     ],
+    B: [
+        [1, 1, 1, 0],
+        [1, 0, 0, 1],
+        [1, 1, 1, 0],
+        [1, 0, 0, 1],
+        [1, 1, 1, 0],
+    ],
+    C: [
+        [1, 1, 1, 1],
+        [1, 0, 0, 0],
+        [1, 0, 0, 0],
+        [1, 0, 0, 0],
+        [1, 1, 1, 1],
+    ],
+    ",": [
+        [0, 0],
+        [0, 0],
+        [0, 1],
+        [0, 1],
+        [1, 0],
+    ],
 }
 
 interface Pixel {
@@ -175,7 +196,7 @@ export function TableBallGame() {
             const BALL_SPEED = 6 * scale
 
             pixelsRef.current = []
-            const words = ["DISCIPLINE", "IS ALL YOU NEED"]
+            const words = ["AS I BUILD,", "I CREATE"]
 
             const calculateWordWidth = (word: string, pixelSize: number) => {
                 return (
@@ -187,10 +208,14 @@ export function TableBallGame() {
                 )
             }
 
-            const totalWidthLarge = calculateWordWidth(words[0], LARGE_PIXEL_SIZE)
-            const totalWidthSmall = words[1].split(" ").reduce((width, word, index) => {
-                return width + calculateWordWidth(word, SMALL_PIXEL_SIZE) + (index > 0 ? WORD_SPACING * SMALL_PIXEL_SIZE : 0)
-            }, 0)
+            const measureLine = (line: string, pixelSize: number) => {
+                return line.split(" ").reduce((width, word, index) => {
+                    return width + calculateWordWidth(word, pixelSize) + (index > 0 ? WORD_SPACING * pixelSize : 0)
+                }, 0)
+            }
+
+            const totalWidthLarge = measureLine(words[0], LARGE_PIXEL_SIZE)
+            const totalWidthSmall = measureLine(words[1], SMALL_PIXEL_SIZE)
             const totalWidth = Math.max(totalWidthLarge, totalWidthSmall)
             const scaleFactor = ((canvas.width * 0.8) / totalWidth) * 0.95
 
@@ -206,40 +231,12 @@ export function TableBallGame() {
 
             words.forEach((word, wordIndex) => {
                 const pixelSize = wordIndex === 0 ? adjustedLargePixelSize : adjustedSmallPixelSize
-                const totalWidth =
-                    wordIndex === 0
-                        ? calculateWordWidth(word, adjustedLargePixelSize)
-                        : words[1].split(" ").reduce((width, w, index) => {
-                            return (
-                                width +
-                                calculateWordWidth(w, adjustedSmallPixelSize) +
-                                (index > 0 ? WORD_SPACING * adjustedSmallPixelSize : 0)
-                            )
-                        }, 0)
+                const totalWidth = measureLine(word, pixelSize)
 
                 let startX = (canvas.width - totalWidth) / 2
 
-                if (wordIndex === 1) {
-                    word.split(" ").forEach((subWord) => {
-                        subWord.split("").forEach((letter) => {
-                            const pixelMap = PIXEL_MAP[letter as keyof typeof PIXEL_MAP]
-                            if (!pixelMap) return
-
-                            for (let i = 0; i < pixelMap.length; i++) {
-                                for (let j = 0; j < pixelMap[i].length; j++) {
-                                    if (pixelMap[i][j]) {
-                                        const x = startX + j * pixelSize
-                                        const y = startY + i * pixelSize
-                                        pixelsRef.current.push({ x, y, size: pixelSize, hit: false })
-                                    }
-                                }
-                            }
-                            startX += (pixelMap[0].length + LETTER_SPACING) * pixelSize
-                        })
-                        startX += WORD_SPACING * adjustedSmallPixelSize
-                    })
-                } else {
-                    word.split("").forEach((letter) => {
+                word.split(" ").forEach((subWord) => {
+                    subWord.split("").forEach((letter) => {
                         const pixelMap = PIXEL_MAP[letter as keyof typeof PIXEL_MAP]
                         if (!pixelMap) return
 
@@ -254,7 +251,8 @@ export function TableBallGame() {
                         }
                         startX += (pixelMap[0].length + LETTER_SPACING) * pixelSize
                     })
-                }
+                    startX += WORD_SPACING * pixelSize
+                })
                 startY += wordIndex === 0 ? largeTextHeight + spaceBetweenLines : 0
             })
 
@@ -436,7 +434,7 @@ export function TableBallGame() {
             <canvas
                 ref={canvasRef}
                 className="block h-full w-full"
-                aria-label="Discipline is all you need: a silent paddle game"
+                aria-label="AS I BUILD, I CREATE"
             />
         </div>
     )
