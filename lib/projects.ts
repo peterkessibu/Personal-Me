@@ -57,7 +57,7 @@ export const projects: Project[] = [
     imgSrc: "/images/Projects/brain-tumor.png",
     links: {
       github: "https://github.com/peterkessibu/brain-tumor-classification",
-      demo: "",
+      demo: "https://brain-tumor-classification-nsfgzhpinkmqv8jxsdqbhn.streamlit.app/",
       youtube: "",
     },
   },

@@ -45,7 +45,7 @@ export const experiences: ExperienceItem[] = [
       "Designed RAG pipelines to contextualize user inputs with industry-specific data.",
       "Applied prompt engineering for structured storytelling outputs tailored to job applications.",
       "Integrated resume parsing to extract career milestones and align them with job descriptions.",
-      "Built Empulse in four days: a productivity-tracking tool with real-time progress visualization for National Service Personnels in Ghana.",
+      "Built Empulse in four days: a productivity-tracking tool with real-time progress visualization for service personnel in Ghana.",
       "Shipped Empulse with Next.js 15, TypeScript, TailwindCSS, Vercel CI/CD, SSR, and ISR.",
       "Building Mande Clarity on React Native and the Mande backend and AI services on Django.",
     ],
@@ -68,7 +68,7 @@ export const experiences: ExperienceItem[] = [
     ],
   },
   {
-    title: "National Service Personnel",
+    title: "",
     company: "GCB Bank PLC",
     duration: "October 2025 – Present",
     summary:
@@ -80,6 +80,7 @@ export const experiences: ExperienceItem[] = [
       "Helped secure loans for 70+ customers across the police, teaching, nursing, and public works, totalling over GHS 1 million, through needs assessment and product pitching.",
       "Contributed to the branch being ranked 2nd best high-performing branch in June.",
     ],
+    logo: "/images/Experience/gcb.png",
     products: [],
     tools: [],
     accent: "gcb",
@@ -203,13 +204,13 @@ export default function Experience() {
                   )}
                 >
                   {experience.logo ? (
-                    <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-[10px] border border-border bg-background">
+                    <span className="relative h-[82px] w-[82px] shrink-0 overflow-hidden rounded-[10px] border border-border bg-background">
                       <Image
                         src={experience.logo}
                         alt=""
-                        width={48}
-                        height={48}
-                        className="h-full w-full object-contain p-1"
+                        width={82}
+                        height={82}
+                        className="h-full w-full object-contain p-1.5"
                       />
                     </span>
                   ) : null}
@@ -309,13 +310,13 @@ export default function Experience() {
               <div className="max-h-[calc(85vh-3.5rem)] overflow-y-auto p-5 sm:p-6">
                 <div className="flex items-start gap-4">
                   {openExperience.logo ? (
-                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-[10px] border border-border">
+                    <div className="relative h-[95px] w-[95px] shrink-0 overflow-hidden rounded-[10px] border border-border">
                       <Image
                         src={openExperience.logo}
                         alt=""
-                        width={56}
-                        height={56}
-                        className="h-full w-full object-contain p-1"
+                        width={95}
+                        height={95}
+                        className="h-full w-full object-contain p-1.5"
                       />
                     </div>
                   ) : null}
@@ -349,7 +350,7 @@ export default function Experience() {
                 {openExperience.products.length > 0 ? (
                   <div className="mt-4 grid gap-3 sm:grid-cols-3">
                     {openExperience.products.map((product) => (
-                      <div key={product.name} className="rounded-[12px] border border-border p-3">
+                      <div key={product.name} className="rounded-xl border border-border p-3">
                         <p className="text-base font-medium">
                           {product.name}
                           {product.kind ? (
