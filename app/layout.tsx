@@ -24,6 +24,8 @@ const geistMono = Geist_Mono({
 
 const themeScript = `(function(){try{var s=localStorage.getItem("theme");var t=s==="light"||s==="dark"?s:(window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");var r=document.documentElement;r.classList.remove("light","dark");r.classList.add(t);r.style.colorScheme=t;}catch(e){}})();`;
 
+const themePaint = `html,body{background:#07060b;color:#fff}html.light,html.light body{background:#f7f6fb;color:#09090b}`;
+
 export const metadata: Metadata = {
   title: "Peter Essibu",
   description:
@@ -44,6 +46,7 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <style dangerouslySetInnerHTML={{ __html: themePaint }} />
       </head>
       <body className="bg-background text-foreground antialiased">
         <ThemeProvider>{children}</ThemeProvider>
