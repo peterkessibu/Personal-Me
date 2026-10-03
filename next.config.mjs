@@ -17,6 +17,22 @@ const nextConfig = {
         protocol: "https",
         hostname: "turbo.build",
       },
+      {
+        protocol: "https",
+        hostname: "api.iconify.design",
+      },
+      {
+        protocol: "https",
+        hostname: "www.trychroma.com",
+      },
+      {
+        protocol: "https",
+        hostname: "groq.com",
+      },
+      {
+        protocol: "https",
+        hostname: "prettier.io",
+      },
     ],
   },
 };

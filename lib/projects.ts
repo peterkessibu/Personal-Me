@@ -17,7 +17,7 @@ export const projects: Project[] = [
     imgSrc: "/images/Projects/mockly.png",
     links: {
       github: "",
-      demo: "",
+      demo: "https://usemockly.com",
       youtube: "",
     },
   },
