@@ -13,7 +13,6 @@ const localIcons: Record<string, string> = {
   react: "/images/Techstack/react.png",
   nextjs: "/images/Techstack/next.png",
   tailwindcss: "/images/Techstack/tailwindcss.png",
-  figma: "/images/Techstack/figma.png",
   gemini: "/images/Techstack/gemini.png",
   openai: "/images/Techstack/openai.png",
   openrouter: "/images/Techstack/openrouter.png",
@@ -29,12 +28,11 @@ const sections = [
   { title: "Platforms", keys: ["vercel", "netlify", "githubactions"] },
   { title: "AI Model Platforms", keys: ["openrouter", "together", "gemini", "openai", "groq"] },
   { title: "Testing", keys: ["cypress"] },
-  { title: "Design", keys: ["figma", "framer"] },
 ];
 
 function iconSrc(id: string, skill: Skill) {
   if (localIcons[id]) return { src: localIcons[id], remote: false };
-  if (skill.icon.startsWith("https://cdn.jsdelivr.net/")) {
+  if (skill.icon.startsWith("https://")) {
     return { src: skill.icon, remote: true };
   }
   return null;
@@ -71,7 +69,7 @@ export default function TechStack() {
                               width={18}
                               height={18}
                               unoptimized={icon.remote}
-                              className="h-[18px] w-[18px] object-contain"
+                              className={`h-[18px] w-[18px] object-contain${key === "pinecone" ? " dark:invert" : ""}`}
                             />
                           ) : null}
                           {skill.name}

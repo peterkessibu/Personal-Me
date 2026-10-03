@@ -46,12 +46,12 @@
   },
   "pinecone": {
     "name": "Pinecone",
-    "icon": "https://www.pinecone.io/favicon.ico",
+    "icon": "https://api.iconify.design/logos/pinecone-icon.svg",
     "color": "default"
   },
   "chromadb": {
     "name": "ChromaDB",
-    "icon": "https://www.trychroma.com/favicon.ico",
+    "icon": "https://www.trychroma.com/img/chroma.svg",
     "color": "default"
   },
   "html5": {
@@ -131,12 +131,12 @@
   },
   "rollup": {
     "name": "Rollup",
-    "icon": "https://rollupjs.org/favicon.png",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/rollup/rollup-original.svg",
     "color": "default"
   },
   "turbo": {
     "name": "Turbo",
-    "icon": "https://turbo.build/images/favicon-dark/apple-touch-icon.png",
+    "icon": "https://api.iconify.design/logos/turborepo-icon.svg",
     "color": "default"
   },
   "eslint": {
@@ -151,7 +151,7 @@
   },
   "cypress": {
     "name": "Cypress",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypress/cypress-original.svg",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/cypressio/cypressio-original.svg",
     "color": "default"
   },
   "playwright": {
@@ -186,7 +186,7 @@
   },
   "groq": {
     "name": "Groq",
-    "icon": "https://groq.com/wp-content/uploads/2024/03/PBG-mark1-color.svg",
+    "icon": "https://groq.com/favicon.svg",
     "color": "default"
   }
 }

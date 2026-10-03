@@ -68,6 +68,23 @@ export const experiences: ExperienceItem[] = [
     ],
   },
   {
+    title: "National Service Personnel",
+    company: "GCB Bank PLC",
+    duration: "October 2025 – Present",
+    summary:
+      "At GCB Bank, I drive customer growth and lending. I onboard customers onto the mobile app and USSD, open accounts and bring in deposits, follow up on drop-offs in the COS onboarding system, and help customers from the police, teaching, nursing, and public works secure loans. That work helped the branch rank among the top performers in June.",
+    bullets: [
+      "Onboarded 2,000+ customers onto the mobile app and USSD through customer outreach, branch referrals, and follow-up calls.",
+      "Brought in over GHS 300,000 in deposits through account opening, using marketing calls and walk-in conversions.",
+      "Reduced customer drop-off on the new COS onboarding system through follow-up and recovery calls, with a success rate above 40%.",
+      "Helped secure loans for 70+ customers across the police, teaching, nursing, and public works, totalling over GHS 1 million, through needs assessment and product pitching.",
+      "Contributed to the branch being ranked 2nd best high-performing branch in June.",
+    ],
+    products: [],
+    tools: [],
+    accent: "gcb",
+  },
+  {
     title: "AI Engineering Intern",
     company: "ShaQ Express",
     location: "Accra, Ghana | On-site",
@@ -120,23 +137,6 @@ export const experiences: ExperienceItem[] = [
     logo: "/images/Experience/headstarter.png",
     products: [],
     tools: ["Full-stack", "AI/ML", "Interview prep"],
-  },
-  {
-    title: "National Service Personnel",
-    company: "GCB Bank PLC",
-    duration: "October 2025 – Present",
-    summary:
-      "At GCB Bank, I drive customer growth and lending. I onboard customers onto the mobile app and USSD, open accounts and bring in deposits, follow up on drop-offs in the COS onboarding system, and help customers from the police, teaching, nursing, and public works secure loans. That work helped the branch rank among the top performers in June.",
-    bullets: [
-      "Onboarded 2,000+ customers onto the mobile app and USSD through customer outreach, branch referrals, and follow-up calls.",
-      "Brought in over GHS 300,000 in deposits through account opening, using marketing calls and walk-in conversions.",
-      "Reduced customer drop-off on the new COS onboarding system through follow-up and recovery calls, with a success rate above 40%.",
-      "Helped secure loans for 70+ customers across the police, teaching, nursing, and public works, totalling over GHS 1 million, through needs assessment and product pitching.",
-      "Contributed to the branch being ranked 2nd best high-performing branch in June.",
-    ],
-    products: [],
-    tools: [],
-    accent: "gcb",
   },
 ];
 
