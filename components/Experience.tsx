@@ -18,13 +18,14 @@ type ExperienceProduct = {
 type ExperienceItem = {
   title: string;
   company: string;
-  location: string;
+  location?: string;
   duration: string;
   summary: string;
   bullets: string[];
-  logo: string;
+  logo?: string;
   products: ExperienceProduct[];
   tools: string[];
+  accent?: "gcb";
 };
 
 const VISIBLE_TOOLS = 4;
@@ -120,6 +121,23 @@ export const experiences: ExperienceItem[] = [
     products: [],
     tools: ["Full-stack", "AI/ML", "Interview prep"],
   },
+  {
+    title: "National Service Personnel",
+    company: "GCB Bank PLC",
+    duration: "October 2025 – Present",
+    summary:
+      "At GCB Bank, I drive customer growth and lending. I onboard customers onto the mobile app and USSD, open accounts and bring in deposits, follow up on drop-offs in the COS onboarding system, and help customers from the police, teaching, nursing, and public works secure loans. That work helped the branch rank among the top performers in June.",
+    bullets: [
+      "Onboarded 2,000+ customers onto the mobile app and USSD through customer outreach, branch referrals, and follow-up calls.",
+      "Brought in over GHS 300,000 in deposits through account opening, using marketing calls and walk-in conversions.",
+      "Reduced customer drop-off on the new COS onboarding system through follow-up and recovery calls, with a success rate above 40%.",
+      "Helped secure loans for 70+ customers across the police, teaching, nursing, and public works, totalling over GHS 1 million, through needs assessment and product pitching.",
+      "Contributed to the branch being ranked 2nd best high-performing branch in June.",
+    ],
+    products: [],
+    tools: [],
+    accent: "gcb",
+  },
 ];
 
 const Chip = ({
@@ -171,30 +189,54 @@ export default function Experience() {
         <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
           {experiences.map((experience, index) => {
             const extraTools = Math.max(0, experience.tools.length - VISIBLE_TOOLS);
+            const isGcb = experience.accent === "gcb";
             return (
               <Reveal key={experience.company}>
                 <button
                   type="button"
                   onClick={() => setOpenIndex(index)}
-                  className="flex h-full w-full gap-4 rounded-[14px] border border-border bg-surface p-4 text-left transition duration-300 hover:border-primary/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:hover:-translate-y-1 md:hover:shadow-[0_24px_50px_-28px_var(--glow)]"
+                  className={cn(
+                    "flex h-full w-full gap-4 rounded-[14px] border bg-surface p-4 text-left transition duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 md:hover:-translate-y-1",
+                    isGcb
+                      ? "border-gcb/40 hover:border-gcb/70 focus-visible:outline-gcb"
+                      : "border-border hover:border-primary/40 focus-visible:outline-primary md:hover:shadow-[0_24px_50px_-28px_var(--glow)]",
+                  )}
                 >
-                  <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-[10px] border border-border bg-background">
-                    <Image
-                      src={experience.logo}
-                      alt=""
-                      width={48}
-                      height={48}
-                      className="h-full w-full object-contain p-1"
-                    />
-                  </span>
+                  {experience.logo ? (
+                    <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-[10px] border border-border bg-background">
+                      <Image
+                        src={experience.logo}
+                        alt=""
+                        width={48}
+                        height={48}
+                        className="h-full w-full object-contain p-1"
+                      />
+                    </span>
+                  ) : null}
                   <span className="min-w-0">
-                    <span className="block font-display text-xl font-semibold tracking-tight">
+                    {isGcb ? (
+                      <Chip variant="gcb">{experience.company}</Chip>
+                    ) : null}
+                    <span
+                      className={cn(
+                        "block font-display text-xl font-semibold tracking-tight",
+                        isGcb && "mt-2",
+                      )}
+                    >
                       {experience.title}
                     </span>
-                    <span className="mt-1 block text-base text-muted">
-                      {experience.company} · {experience.location}
-                    </span>
-                    <span className="mt-1 block font-mono text-sm text-muted">
+                    {isGcb ? null : (
+                      <span className="mt-1 block text-base text-muted">
+                        {experience.company}
+                        {experience.location ? ` · ${experience.location}` : ""}
+                      </span>
+                    )}
+                    <span
+                      className={cn(
+                        "mt-1 block font-mono text-sm",
+                        isGcb ? "text-gcb" : "text-muted",
+                      )}
+                    >
                       {experience.duration}
                     </span>
                     <span className="mt-3 block text-base leading-relaxed">
@@ -226,9 +268,6 @@ export default function Experience() {
             );
           })}
         </div>
-        <Reveal className="mt-5">
-          <Chip variant="gcb">Also at GCB</Chip>
-        </Reveal>
       </div>
 
       <AnimatePresence>
@@ -269,21 +308,40 @@ export default function Experience() {
               </div>
               <div className="max-h-[calc(85vh-3.5rem)] overflow-y-auto p-5 sm:p-6">
                 <div className="flex items-start gap-4">
-                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-[10px] border border-border">
-                    <Image
-                      src={openExperience.logo}
-                      alt=""
-                      width={56}
-                      height={56}
-                      className="h-full w-full object-contain p-1"
-                    />
-                  </div>
+                  {openExperience.logo ? (
+                    <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-[10px] border border-border">
+                      <Image
+                        src={openExperience.logo}
+                        alt=""
+                        width={56}
+                        height={56}
+                        className="h-full w-full object-contain p-1"
+                      />
+                    </div>
+                  ) : null}
                   <div>
-                    <h3 id="experience-title" className="font-display text-2xl font-semibold">
-                      {openExperience.title} · {openExperience.company}
+                    {openExperience.accent === "gcb" ? (
+                      <Chip variant="gcb">{openExperience.company}</Chip>
+                    ) : null}
+                    <h3
+                      id="experience-title"
+                      className={cn(
+                        "font-display text-2xl font-semibold",
+                        openExperience.accent === "gcb" && "mt-2",
+                      )}
+                    >
+                      {openExperience.title}
+                      {openExperience.accent === "gcb" ? null : ` · ${openExperience.company}`}
                     </h3>
-                    <p className="mt-1 text-base text-primary-bright">
-                      {openExperience.location} · {openExperience.duration}
+                    <p
+                      className={cn(
+                        "mt-1 text-base",
+                        openExperience.accent === "gcb" ? "text-gcb" : "text-primary-bright",
+                      )}
+                    >
+                      {openExperience.location
+                        ? `${openExperience.location} · ${openExperience.duration}`
+                        : openExperience.duration}
                     </p>
                   </div>
                 </div>
