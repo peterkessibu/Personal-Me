@@ -38,7 +38,7 @@ const Home = () => {
           scrolled ? "bg-black/80 backdrop-blur-xl shadow-lg" : "bg-transparent"
         }`}
       >
-        <h1 className="text-center text-2xl font-bold text-white underline decoration-purple-600 outline outline-offset-2 sm:text-4xl md:text-5xl">
+        <h1 className="text-center text-2xl font-bold text-white underline decoration-purple-600 outline-solid outline-offset-2 sm:text-4xl md:text-5xl">
           PETER KWAMENA ESSIBU
         </h1>
       </header>

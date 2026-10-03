@@ -193,7 +193,7 @@ const Experience = () => {
         />
       </div>
       <motion.h2
-        className="relative z-20 text-5xl font-bold mb-12 text-center text-white underline decoration-purple-600 outline outline-offset-2"
+        className="relative z-20 text-5xl font-bold mb-12 text-center text-white underline decoration-purple-600 outline-solid outline-offset-2"
         initial={{ opacity: 0, y: -30 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
         transition={{ duration: 1.4, ease: "easeInOut" }}
@@ -215,7 +215,7 @@ const Experience = () => {
               <motion.button
                 key={index}
                 onClick={() => setOpenIndex(index)}
-                className={`text-left bg-black text-white rounded-lg md:rounded-none overflow-hidden mt-4 md:mt-0 flex focus:outline-none focus:ring-2 focus:ring-white ${borders} md:border-white`}
+                className={`text-left bg-black text-white rounded-lg md:rounded-none overflow-hidden mt-4 md:mt-0 flex focus:outline-hidden focus:ring-2 focus:ring-white ${borders} md:border-white`}
                 variants={cardVariants}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}

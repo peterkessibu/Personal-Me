@@ -84,11 +84,6 @@
     "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
     "color": "default"
   },
-  "firebase": {
-    "name": "Firebase",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-    "color": "default"
-  },
   "prisma": {
     "name": "Prisma",
     "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",

@@ -195,7 +195,7 @@ const Projects = () => {
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
         transition={{ duration: 1.4, ease: "easeInOut" }}
       >
-        <h2 className="text-5xl font-bold text-white underline decoration-purple-600 outline outline-offset-2">
+        <h2 className="text-5xl font-bold text-white underline decoration-purple-600 outline-solid outline-offset-2">
           Projects
         </h2>
         <p className="mt-4 text-sm tracking-wide text-purple-300 uppercase">

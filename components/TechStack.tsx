@@ -25,7 +25,7 @@ const sections = [
   { title: "Languages", keys: ["javascript", "typescript", "python"] as const, ref: "languagesRef", inView: "languagesInView", variants: slideInLeft },
   { title: "Frameworks", keys: ["react", "nextjs", "django", "reactnative", "adonisjs"] as const, ref: "frameworksRef", inView: "frameworksInView", variants: slideInRight },
   { title: "Styling", keys: ["tailwindcss", "css3", "materialui"] as const, ref: "designToolsRef", inView: "designToolsInView", variants: slideInLeft },
-  { title: "Data & Backend", keys: ["postgresql", "supabase", "firebase", "prisma", "pinecone", "chromadb"] as const, ref: "librariesRef", inView: "librariesInView", variants: slideInRight },
+  { title: "Data & Backend", keys: ["postgresql", "supabase", "prisma", "pinecone", "chromadb"] as const, ref: "librariesRef", inView: "librariesInView", variants: slideInRight },
   { title: "Tooling", keys: ["vite", "rollup", "turbo", "eslint", "prettier"] as const, ref: "toolingRef", inView: "toolingInView", variants: slideInLeft },
   { title: "Platforms", keys: ["vercel", "netlify", "githubactions"] as const, ref: "moreRef", inView: "moreInView", variants: slideInRight },
   { title: "AI Model Platforms", keys: ["openrouter", "together", "gemini", "openai", "groq"] as const, ref: "aiRef", inView: "aiInView", variants: slideInLeft },
@@ -35,7 +35,7 @@ const sections = [
 
 type BadgeProps = { label: string };
 const Badge = ({ label }: BadgeProps) => (
-  <span className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white text-black shadow border-2 border-purple-600/40">
+  <span className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white text-black shadow-sm border-2 border-purple-600/40">
     {/* <Image src={icon} width={20} height={20} alt="" className="w-5 h-5" /> */}
     <span className="text-sm font-medium">{label}</span>
   </span>
@@ -125,7 +125,7 @@ const TechStack = () => {
         />
       </div>
       <motion.h2
-        className="relative z-20 text-5xl font-bold text-center text-white underline decoration-purple-600 outline outline-offset-2"
+        className="relative z-20 text-5xl font-bold text-center text-white underline decoration-purple-600 outline-solid outline-offset-2"
         initial={{ opacity: 0, y: -30 }}
         animate={
           frameworksInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }

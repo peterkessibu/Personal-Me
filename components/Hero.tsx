@@ -151,7 +151,7 @@ const Hero = () => {
                 peter — portrait
               </p>
             </div>
-            <div className="relative aspect-[4/5] w-full">
+            <div className="relative aspect-4/5 w-full">
               <Image
                 src="/images/Hero/image.png"
                 alt="Peter Essibu"
