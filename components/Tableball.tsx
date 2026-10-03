@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import { useMediaQuery } from "@/lib/use-media-query"
 
 const COLOR = "#FFFFFF"
 const HIT_COLOR = "#333333"
@@ -398,30 +399,80 @@ export function TableBallGame() {
             })
         }
 
-        const gameLoop = () => {
-            updateGame()
+        const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
+        let raf = 0
+
+        const render = () => {
+            if (!motionQuery.matches) updateGame()
             drawGame()
-            requestAnimationFrame(gameLoop)
+            if (!motionQuery.matches) raf = requestAnimationFrame(render)
+        }
+
+        const onResize = () => {
+            resizeCanvas()
+            drawGame()
+        }
+
+        const onMotionChange = () => {
+            cancelAnimationFrame(raf)
+            if (motionQuery.matches) drawGame()
+            else raf = requestAnimationFrame(render)
         }
 
         resizeCanvas()
-        window.addEventListener("resize", resizeCanvas)
-        gameLoop()
+        render()
+        window.addEventListener("resize", onResize)
+        motionQuery.addEventListener("change", onMotionChange)
 
         return () => {
-            window.removeEventListener("resize", resizeCanvas)
+            cancelAnimationFrame(raf)
+            window.removeEventListener("resize", onResize)
+            motionQuery.removeEventListener("change", onMotionChange)
         }
     }, [])
 
     return (
-        <div ref={containerRef} className="relative w-full h-[520px] my-16">
+        <div ref={containerRef} className="relative h-full w-full">
             <canvas
                 ref={canvasRef}
-                className="w-full h-full rounded-xl shadow-xl"
-                aria-label="Prompting Is All You Need: Pong game with pixel text"
+                className="block h-full w-full"
+                aria-label="Discipline is all you need: a silent paddle game"
             />
         </div>
     )
 }
 
-export default TableBallGame;
+export function TableballSection() {
+    const desktop = useMediaQuery("(min-width: 768px)")
+    const [open, setOpen] = useState(false)
+    const show = desktop || open
+
+    return (
+        <section id="tableball" className="scroll-mt-24 py-14 sm:py-20">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between gap-4">
+                    <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">
+                        Tableball
+                    </h2>
+                    <button
+                        type="button"
+                        className="inline-flex h-11 items-center rounded-full border border-border bg-surface px-4 text-base md:hidden"
+                        aria-expanded={open}
+                        onClick={() => setOpen((value) => !value)}
+                    >
+                        {open ? "Hide" : "Play"}
+                    </button>
+                </div>
+                <div
+                    className={`mt-6 h-[520px] overflow-hidden rounded-[14px] border border-border bg-black ${
+                        show ? "block" : "hidden md:block"
+                    }`}
+                >
+                    {show ? <TableBallGame /> : null}
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default TableballSection;
