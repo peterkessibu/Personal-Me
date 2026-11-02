@@ -68,14 +68,16 @@ export const experiences: ExperienceItem[] = [
     ],
   },
   {
-    title: "",
+    title: "Retail Banking Officer",
     company: "GCB Bank PLC",
-    duration: "October 2025 – Present",
+    location: "Ghana | National Service",
+    duration: "Jan 2026 – Oct 2026",
     summary:
       "GCB Bank PLC is Ghana’s largest indigenous bank, serving retail, SME and corporate customers nationwide.",
     bullets: [
       "Drove customer acquisition through field prospecting and outbound outreach, building a steady pipeline of new retail accounts and closing them with disciplined follow-up from first conversation to signed product.",
-      "Helped disburse almost GHS 3 million in customer loans, running applications end-to-end on the Loan Origination System (LOS) and moving files quickly through to approval.",
+      "Took GCB’s products directly to customers through market storms and school visits, opening new accounts and pitching savings and digital banking on the ground.",
+      "Helped disburse more than GHS 6 million in customer loans, running applications end-to-end on the Loan Origination System (LOS) and moving files quickly through to approval.",
       "Built and managed relationships with high-net-worth individuals through referral networks, turning trusted introductions into repeat business, larger deposits and new loan opportunities.",
       "Pitched savings, loan, card and digital banking products in clear, value-led language, handling objections on the spot and converting hesitant prospects into confident buyers.",
       "Kept onboarding fast and audit-ready on the Customer Onboarding System (COS), maintaining accurate KYC records in a regulated, target-driven sales environment.",
